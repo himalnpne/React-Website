@@ -1,0 +1,10 @@
+.skills {
+    padding: 2rem;
+    background-color: #f0f0f0;
+  }
+  
+  .skills ul {
+    list-style-type: square;
+    padding-left: 2rem;
+  }
+  
