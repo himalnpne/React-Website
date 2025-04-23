@@ -6,10 +6,10 @@ function Skills() {
     <section id="skills" className="skills">
       <h2>Skills</h2>
       <ul>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>CSS</li>
-        <li>Node.js</li>
+        <li>UI/UX</li>
+        <li>Web Design</li>
+        <li>Wordpress</li>
+        <li>Prompt ENgineering</li>
       </ul>
     </section>
   );
