@@ -32,6 +32,15 @@ function Header() {
     };
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    // Prevent body scrolling when menu is open
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isMenuOpen]);
+
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Blog', path: '/blog' },
@@ -63,7 +72,6 @@ function Header() {
                 key={item.name}
                 href={item.path}
                 className="nav-link"
-                onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </a>
@@ -83,24 +91,18 @@ function Header() {
         </nav>
       </div>
       
-      {/* Mobile Menu Overlay */}
+      {/* Menu Overlay */}
       <div 
-        className={`menu-overlay ${isMenuOpen ? 'open' : ''}`} 
+        className={`menu-overlay ${isMenuOpen ? 'open' : ''}`}
         onClick={() => setIsMenuOpen(false)}
       />
       
-      {/* Mobile Menu Content */}
+      {/* Expanded Menu Content */}
       <div 
         ref={menuRef}
         className={`expanded-menu ${isMenuOpen ? 'open' : ''}`}
       >
-        <button 
-          className="close-btn" 
-          onClick={() => setIsMenuOpen(false)}
-          aria-label="Close menu"
-        >
-          &times;
-        </button>
+        {/* The close button has been removed from here */}
         
         <div className="expanded-menu-container">
           <div className="menu-section">
@@ -116,13 +118,6 @@ function Header() {
                   {item.name}
                 </a>
               ))}
-              <a
-                href="/about"
-                className="menu-link"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </a>
             </div>
           </div>
           
@@ -143,8 +138,11 @@ function Header() {
           </div>
           
           <div className="menu-section contact-section">
-            <h3 className="menu-heading">Connect</h3>
+            <h3 className="menu-heading">Contact</h3>
             <div className="contact-info">
+              <a href="mailto:info@neupanehimal.com.np" className="menu-link">
+                info@neupanehimal.com.np
+              </a>
               <div className="social-links">
                 <a href="https://github.com/himalnpne" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

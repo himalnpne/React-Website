@@ -14,17 +14,12 @@ import Testimonials from './components/Testimonials';
 import Subscription from './components/Subscription';
 
 function App() {
-  // Remove basename during development
-  const isProduction = process.env.NODE_ENV === 'production';
-  const basename = isProduction ? '/React-Website' : '';
-
   return (
-    <Router basename={basename}>
+    <Router> {/* No basename needed for localhost */}
       <div className="App">
         <Header />
         
         <Routes>
-          {/* Home route */}
           <Route path="/" element={
             <>
               <Home />
@@ -32,14 +27,10 @@ function App() {
               <Subscription />
             </>
           } />
-          
-          {/* Individual routes */}
           <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
-          
-          {/* 404 route */}
           <Route path="*" element={<div>Page Not Found</div>} />
         </Routes>
         
