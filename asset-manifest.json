@@ -1,17 +1,23 @@
 {
   "files": {
-    "main.css": "/React-Website/static/css/main.bb79c230.css",
-    "main.js": "/React-Website/static/js/main.591320e4.js",
+    "main.css": "/React-Website/static/css/main.9053f824.css",
+    "main.js": "/React-Website/static/js/main.d7d6a329.js",
+    "static/media/fa-solid-900.ttf": "/React-Website/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/fa-brands-400.ttf": "/React-Website/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/fa-solid-900.woff2": "/React-Website/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/fa-brands-400.woff2": "/React-Website/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/fa-regular-400.ttf": "/React-Website/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
     "static/media/JosefinSans-Regular.woff": "/React-Website/static/media/JosefinSans-Regular.c8e74084b240c16bcb86.woff",
-    "static/media/JosefinSans-SemiBold.woff": "/React-Website/static/media/JosefinSans-SemiBold.bbc0d5d2a8affbb8486e.woff",
-    "static/media/JosefinSans-SemiBold.woff2": "/React-Website/static/media/JosefinSans-SemiBold.d36a80c765067d702b36.woff2",
+    "static/media/fa-regular-400.woff2": "/React-Website/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
     "static/media/JosefinSans-Regular.woff2": "/React-Website/static/media/JosefinSans-Regular.f4957adac433e264cd24.woff2",
+    "static/media/fa-v4compatibility.ttf": "/React-Website/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
+    "static/media/fa-v4compatibility.woff2": "/React-Website/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/React-Website/index.html",
-    "main.bb79c230.css.map": "/React-Website/static/css/main.bb79c230.css.map",
-    "main.591320e4.js.map": "/React-Website/static/js/main.591320e4.js.map"
+    "main.9053f824.css.map": "/React-Website/static/css/main.9053f824.css.map",
+    "main.d7d6a329.js.map": "/React-Website/static/js/main.d7d6a329.js.map"
   },
   "entrypoints": [
-    "static/css/main.bb79c230.css",
-    "static/js/main.591320e4.js"
+    "static/css/main.9053f824.css",
+    "static/js/main.d7d6a329.js"
   ]
 }
