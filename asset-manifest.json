@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/React-Website/static/css/main.0d7aa725.css",
-    "main.js": "/React-Website/static/js/main.79661696.js",
+    "main.css": "/React-Website/static/css/main.bb79c230.css",
+    "main.js": "/React-Website/static/js/main.591320e4.js",
     "static/media/JosefinSans-Regular.woff": "/React-Website/static/media/JosefinSans-Regular.c8e74084b240c16bcb86.woff",
     "static/media/JosefinSans-SemiBold.woff": "/React-Website/static/media/JosefinSans-SemiBold.bbc0d5d2a8affbb8486e.woff",
     "static/media/JosefinSans-SemiBold.woff2": "/React-Website/static/media/JosefinSans-SemiBold.d36a80c765067d702b36.woff2",
     "static/media/JosefinSans-Regular.woff2": "/React-Website/static/media/JosefinSans-Regular.f4957adac433e264cd24.woff2",
     "index.html": "/React-Website/index.html",
-    "main.0d7aa725.css.map": "/React-Website/static/css/main.0d7aa725.css.map",
-    "main.79661696.js.map": "/React-Website/static/js/main.79661696.js.map"
+    "main.bb79c230.css.map": "/React-Website/static/css/main.bb79c230.css.map",
+    "main.591320e4.js.map": "/React-Website/static/js/main.591320e4.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d7aa725.css",
-    "static/js/main.79661696.js"
+    "static/css/main.bb79c230.css",
+    "static/js/main.591320e4.js"
   ]
 }
