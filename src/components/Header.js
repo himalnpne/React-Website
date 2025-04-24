@@ -32,11 +32,22 @@ function Header() {
     };
   }, [isMenuOpen]);
 
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact', path: '/contact' }
+  ];
+
+  const portfolioItems = [
+    { name: 'Projects', path: '/projects' },
+    { name: 'Skills', path: '/skills' }
+  ];
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <div className="logo-container">
-          <a href="#home">
+          <a href="/" className="logo-link">
             <img 
               src={`${process.env.PUBLIC_URL}/logo.svg`}
               alt="Logo" 
@@ -46,16 +57,18 @@ function Header() {
         </div>
         
         <nav className="desktop-nav">
-          {['Home', 'Blog', 'Contact'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="nav-link"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
+          <div className="nav-links-container">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.path}
+                className="nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
           
           <button 
             ref={hamburgerRef}
@@ -70,11 +83,13 @@ function Header() {
         </nav>
       </div>
       
+      {/* Mobile Menu Overlay */}
       <div 
         className={`menu-overlay ${isMenuOpen ? 'open' : ''}`} 
         onClick={() => setIsMenuOpen(false)}
       />
       
+      {/* Mobile Menu Content */}
       <div 
         ref={menuRef}
         className={`expanded-menu ${isMenuOpen ? 'open' : ''}`}
@@ -91,30 +106,37 @@ function Header() {
           <div className="menu-section">
             <h3 className="menu-heading">Menu</h3>
             <div className="menu-links">
-              {['Home', 'Blog', 'Contact', 'About'].map((item) => (
+              {navItems.map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.name}
+                  href={item.path}
                   className="menu-link"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
+              <a
+                href="/about"
+                className="menu-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </a>
             </div>
           </div>
           
           <div className="menu-section">
             <h3 className="menu-heading">Portfolio</h3>
             <div className="menu-links">
-              {['Projects', 'Skills'].map((item) => (
+              {portfolioItems.map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.name}
+                  href={item.path}
                   className="menu-link"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
             </div>

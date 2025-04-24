@@ -1,7 +1,155 @@
+/* Footer.css */
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('../fonts/JosefinSans-Regular.woff2') format('woff2'),
+       url('../fonts/JosefinSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --accent-color: #4361ee;
+  --accent-light: rgba(67, 97, 238, 0.2);
+  --accent-gradient: linear-gradient(135deg, #4361ee, #3a0ca3);
+  --text-light: #f8f9fa;
+  --text-dark: #212529;
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-bg-darker: rgba(255, 255, 255, 0.35);
+  --glass-blur: 15px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 .footer {
-    background: #333;
-    color: #fff;
+  background: var(--glass-bg-darker);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  color: var(--text-dark);
+  padding: 1.5rem 2rem;
+  font-family: 'Josefin Sans', sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -2px 15px rgba(67, 97, 238, 0.1);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.email-section {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  justify-self: start;
+}
+
+.email-icon {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+
+.email-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.email-label {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  line-height: 1;
+}
+
+.email-address {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+}
+
+.email-address:hover {
+  color: var(--accent-color);
+}
+
+.social-links {
+  display: flex;
+  gap: 1.2rem;
+  justify-self: center;
+}
+
+.social-link {
+  color: var(--text-dark);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  font-size: 1rem;
+}
+
+.social-link:hover {
+  color: var(--accent-color);
+  background-color: rgba(67, 97, 238, 0.2);
+  transform: translateY(-2px);
+}
+
+.back-to-top {
+  background: transparent;
+  color: var(--text-dark);
+  border: 1px solid rgba(67, 97, 238, 0.3);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back-to-top:hover {
+  background: rgba(67, 97, 238, 0.1);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.copyright {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     text-align: center;
-    padding: 1rem;
   }
   
+  .email-section, .social-links, .back-to-top {
+    justify-self: center;
+  }
+  
+  .email-section {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}

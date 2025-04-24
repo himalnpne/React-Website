@@ -2,8 +2,7 @@
   "name": "my-react-app",
   "version": "0.1.0",
   "private": true,
-"homepage": "https://himalnpne.github.io/React-Website",
-
+  "homepage": "https://himalnpne.github.io/React-Website",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -11,6 +10,8 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.5.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
