@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React-Website/static/css/main.796eaed0.css",
-    "main.js": "/React-Website/static/js/main.24ed6aab.js",
+    "main.css": "/React-Website/static/css/main.293ecae9.css",
+    "main.js": "/React-Website/static/js/main.8f56dd06.js",
     "static/media/fa-solid-900.ttf": "/React-Website/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/niran.jpg": "/React-Website/static/media/niran.e67dffe30c76d8e70aee.jpg",
     "static/media/fa-brands-400.ttf": "/React-Website/static/media/fa-brands-400.1815e00441357e01619e.ttf",
@@ -17,11 +17,11 @@
     "static/media/fa-v4compatibility.ttf": "/React-Website/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/React-Website/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/React-Website/index.html",
-    "main.796eaed0.css.map": "/React-Website/static/css/main.796eaed0.css.map",
-    "main.24ed6aab.js.map": "/React-Website/static/js/main.24ed6aab.js.map"
+    "main.293ecae9.css.map": "/React-Website/static/css/main.293ecae9.css.map",
+    "main.8f56dd06.js.map": "/React-Website/static/js/main.8f56dd06.js.map"
   },
   "entrypoints": [
-    "static/css/main.796eaed0.css",
-    "static/js/main.24ed6aab.js"
+    "static/css/main.293ecae9.css",
+    "static/js/main.8f56dd06.js"
   ]
 }
