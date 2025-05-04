@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/React-Website/static/css/main.f37830c8.css",
+    "main.css": "/React-Website/static/css/main.bfa4e416.css",
     "main.js": "/React-Website/static/js/main.7592f516.js",
     "static/media/aayush.jpg": "/React-Website/static/media/aayush.04f808f1059a1b12f5e7.jpg",
     "static/media/anish.jpg": "/React-Website/static/media/anish.04f808f1059a1b12f5e7.jpg",
@@ -11,16 +11,18 @@
     "static/media/fa-brands-400.woff2": "/React-Website/static/media/fa-brands-400.c210719e60948b211a12.woff2",
     "static/media/fa-regular-400.ttf": "/React-Website/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
     "static/media/JosefinSans-Regular.woff": "/React-Website/static/media/JosefinSans-Regular.c8e74084b240c16bcb86.woff",
+    "static/media/JosefinSans-LightItalic.woff2": "/React-Website/static/media/JosefinSans-LightItalic.0592fb51053c0e3d97de.woff2",
     "static/media/fa-regular-400.woff2": "/React-Website/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
     "static/media/JosefinSans-Regular.woff2": "/React-Website/static/media/JosefinSans-Regular.f4957adac433e264cd24.woff2",
+    "static/media/JosefinSans-Medium.woff2": "/React-Website/static/media/JosefinSans-Medium.4b2414d474e36efc4b8e.woff2",
     "static/media/fa-v4compatibility.ttf": "/React-Website/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/React-Website/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/React-Website/index.html",
-    "main.f37830c8.css.map": "/React-Website/static/css/main.f37830c8.css.map",
+    "main.bfa4e416.css.map": "/React-Website/static/css/main.bfa4e416.css.map",
     "main.7592f516.js.map": "/React-Website/static/js/main.7592f516.js.map"
   },
   "entrypoints": [
-    "static/css/main.f37830c8.css",
+    "static/css/main.bfa4e416.css",
     "static/js/main.7592f516.js"
   ]
 }
