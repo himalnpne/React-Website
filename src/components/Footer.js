@@ -34,7 +34,7 @@ function Footer() {
                         <FiLinkedin />
                     </a>
 
-                    <a href="https://instagram.com/himsl_npne" className="social-link" target="_blank" rel="noopener noreferrer">
+                    <a href="https://instagram.com/himal_npne" className="social-link" target="_blank" rel="noopener noreferrer">
                         <FiInstagram />
                     </a>
                 </div>
