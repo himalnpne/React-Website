@@ -16,8 +16,9 @@ import {
 } from 'react-icons/fi';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaReact, FaFigma, FaWordpress, FaAws, FaLinux } from 'react-icons/fa';
-import { SiAdobexd, SiWireshark } from 'react-icons/si';
+import { FaReact, FaFigma, FaWordpress, FaAws, FaLinux, FaPython, FaDatabase } from 'react-icons/fa';
+import { SiAdobeillustrator, SiAdobexd, SiWireshark } from 'react-icons/si';
+import { FaC, FaFileExcel, FaFlutter } from 'react-icons/fa6';
 
 function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -161,13 +162,16 @@ function Home() {
   ];
 
   const techStack = [
-    { icon: <FaReact />, name: "React", color: "#61DAFB" },
-    { icon: <FaFigma />, name: "Figma", color: "#F24E1E" },
-    { icon: <SiAdobexd />, name: "Adobe XD", color: "#FF61F6" },
-    { icon: <FaWordpress />, name: "WordPress", color: "#21759B" },
-    { icon: <FaAws />, name: "AWS", color: "#FF9900" },
-    { icon: <FaLinux />, name: "Linux", color: "#FCC624" },
-    { icon: <SiWireshark />, name: "Wireshark", color: "#1679C7" }
+    { icon: <FaReact />, name: "React", color: "#28282B" },
+    { icon: <FaFigma />, name: "Figma", color: "#353935" },
+    { icon: <SiAdobeillustrator />, name: "Adobe Illuststor", color: "#1B1212" },
+    { icon: <FaWordpress />, name: "WordPress", color: "#023020" },
+    { icon: <FaLinux />, name: "Linux", color: "#F353935" },
+    { icon: <SiWireshark />, name: "Wireshark", color: "#1B1212" },
+    { icon: <FaFlutter />, name: "Flutter", color: "#28282B" },
+    { icon: <FaDatabase />, name: "PostgreSQL", color: "#353935" },
+    { icon: <FaPython />, name: "Python", color: "#28282B" },
+    
   ];
 
   const socialLinks = [

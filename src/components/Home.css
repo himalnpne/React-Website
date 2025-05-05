@@ -22,7 +22,32 @@
   --box-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+/* Font definitions */
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('../fonts/JosefinSans-Medium.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('../fonts/JosefinSans-LightItalic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Font loading states */
+.fonts-loading .home-title {
+  font-family: var(--font-family);
+  font-size-adjust: 0.5;
+}
+
+.fonts-loaded .home-title {
+  font-family: var(--font-family-josefin);
+}
 
 * {
   box-sizing: border-box;

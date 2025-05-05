@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
@@ -33,7 +34,6 @@ function Header() {
   }, [isMenuOpen]);
 
   useEffect(() => {
-    // Prevent body scrolling when menu is open
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -41,40 +41,48 @@ function Header() {
     }
   }, [isMenuOpen]);
 
+  // Navigation items (Main Menu)
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' }
   ];
 
+  // Portfolio items
   const portfolioItems = [
     { name: 'Projects', path: '/projects' },
     { name: 'Skills', path: '/skills' }
+  ];
+
+  // Vibe & Hobbies items (New Section)
+  const vibeItems = [
+    { name: 'VibeCheck', path: '/vibecheck' },
+    { name: 'Photos', path: '/photos' }
   ];
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <div className="logo-container">
-          <a href="/" className="logo-link">
+          <Link to="/" className="logo-link">
             <img 
               src={`${process.env.PUBLIC_URL}/logo.svg`}
               alt="Logo" 
               className="logo-img" 
             />
-          </a>
+          </Link>
         </div>
         
         <nav className="desktop-nav">
           <div className="nav-links-container">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.path}
+                to={item.path}
                 className="nav-link"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
           
@@ -102,41 +110,59 @@ function Header() {
         ref={menuRef}
         className={`expanded-menu ${isMenuOpen ? 'open' : ''}`}
       >
-        {/* The close button has been removed from here */}
-        
         <div className="expanded-menu-container">
+          {/* Main Menu Section */}
           <div className="menu-section">
             <h3 className="menu-heading">Menu</h3>
             <div className="menu-links">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.path}
+                  to={item.path}
                   className="menu-link"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
           
+          {/* Portfolio Section */}
           <div className="menu-section">
             <h3 className="menu-heading">Portfolio</h3>
             <div className="menu-links">
               {portfolioItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.path}
+                  to={item.path}
                   className="menu-link"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* New: Vibe & Hobbies Section */}
+          <div className="menu-section">
+            <h3 className="menu-heading">Vibe & Hobbies</h3>
+            <div className="menu-links">
+              {vibeItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className="menu-link"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
               ))}
             </div>
           </div>
           
+          {/* Contact Section */}
           <div className="menu-section contact-section">
             <h3 className="menu-heading">Contact</h3>
             <div className="contact-info">

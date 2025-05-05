@@ -12,10 +12,13 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Testimonials from './components/Testimonials';
 import Subscription from './components/Subscription';
+import VibeCheck from './components/VibeCheck';
+import Photos from './components/Photos';
+import Blog from './components/Blog'; // ADD THIS IMPORT
 
 function App() {
   return (
-    <Router> {/* No basename needed for localhost */}
+    <Router basename="/React-Website">
       <div className="App">
         <Header />
         
@@ -31,6 +34,9 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/vibecheck" element={<VibeCheck />} />
+          <Route path="/photos" element={<Photos />} />
+          <Route path="/blog" element={<Blog />} /> {/* ADD THIS ROUTE */}
           <Route path="*" element={<div>Page Not Found</div>} />
         </Routes>
         

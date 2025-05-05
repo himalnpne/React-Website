@@ -1,0 +1,50 @@
+.coming-soon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .coming-soon-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .coming-soon-text {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+  
+  .animated-person {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+    /* Updated to a "searching" GIF that fits better */
+    background-image: url('https://media.giphy.com/media/Lp5wuqMOmLUa6ZcVS1/giphy.gif');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .pulse-animation {
+    animation: pulse 2s infinite;
+  }

@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './Testimonials.css';
 
 // Import images
-import anishImage from './testimonials/anish.jpg';
-import prathamImage from './testimonials/anish.jpg';
-import aayushImage from './testimonials/aayush.jpg';
+import anishImage from './testimonials/anish1.jpg';
+import prathamImage from './testimonials/niran.jpg';
+import aayushImage from './testimonials/hemant.jpg';
 import defaultAvatar from './testimonials/default-avatar.png';
 
 const testimonials = [
   {
-    name: 'Anish Neupane',
+    name: 'Anish Neupane ',
     role: 'Graphic Designer',
     content: 'Himal helped me solve a critical issue with my MacBook that even Apple Support couldnt resolve. His expertise in tech is mind-blowing and his calm attitude made everything smooth. Highly recommend!',
     img: anishImage,
@@ -17,7 +17,7 @@ const testimonials = [
     lightAccent: 'var(--accent-light-purple)'
   },
   {
-    name: 'Pratham Sharma',
+    name: 'Niran Basnet',
     role: 'Mobile App Developer',
     content: 'As a mobile app developer new to UI/UX design, I learned so much from Himal detailed blog posts and his 1-on-1 feedback sessions. His designs are clean, user-friendly, and effective.',
     img: prathamImage,
@@ -25,7 +25,7 @@ const testimonials = [
     lightAccent: 'var(--accent-light-blue)'
   },
   {
-    name: 'Aayush Thapa',
+    name: 'Hemant Das',
     role: 'Full Stack Developer',
     content: 'Himal development insights saved me hours of debugging. I also admire his portfolio design; it inspired me to revamp my own site. Himal is a game-changer for the community.',
     img: aayushImage,
