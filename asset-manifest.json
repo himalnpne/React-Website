@@ -1,7 +1,17 @@
 {
   "files": {
-    "main.css": "/React-Website/static/css/main.bfa4e416.css",
-    "main.js": "/React-Website/static/js/main.815d49d6.js",
+    "main.css": "/React-Website/static/css/main.7cd56dad.css",
+    "main.js": "/React-Website/static/js/main.9c39474c.js",
+    "static/media/water-9528888.jpg": "/React-Website/static/media/water-9528888.3237b4fe82609824c273.jpg",
+    "static/media/nature-9528890.jpg": "/React-Website/static/media/nature-9528890.edc5fcc53800848f7bef.jpg",
+    "static/media/nature-9498242.jpg": "/React-Website/static/media/nature-9498242.bb59297d15d2e6df362d.jpg",
+    "static/media/sky-9543822.jpg": "/React-Website/static/media/sky-9543822.0c2c6b65f27a9cf030ba.jpg",
+    "static/media/buddhism-9456599.jpg": "/React-Website/static/media/buddhism-9456599.fe1f38977e459edeaa23.jpg",
+    "static/media/noodles-9528889.jpg": "/React-Website/static/media/noodles-9528889.16e7bc2a943643a22104.jpg",
+    "static/media/20220111_091459.jpg": "/React-Website/static/media/20220111_091459.26931998b56322d274be.jpg",
+    "static/media/nature-9432907.jpg": "/React-Website/static/media/nature-9432907.8d04e70823cae6c63414.jpg",
+    "static/media/mist-9432928.jpg": "/React-Website/static/media/mist-9432928.87110c8c7abf6db444ee.jpg",
+    "static/media/20211014_123916.jpg": "/React-Website/static/media/20211014_123916.d66f8cd8b2ff668e0cdc.jpg",
     "static/media/aayush.jpg": "/React-Website/static/media/aayush.04f808f1059a1b12f5e7.jpg",
     "static/media/anish.jpg": "/React-Website/static/media/anish.04f808f1059a1b12f5e7.jpg",
     "static/media/default-avatar.png": "/React-Website/static/media/default-avatar.04f808f1059a1b12f5e7.png",
@@ -18,11 +28,11 @@
     "static/media/fa-v4compatibility.ttf": "/React-Website/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/React-Website/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/React-Website/index.html",
-    "main.bfa4e416.css.map": "/React-Website/static/css/main.bfa4e416.css.map",
-    "main.815d49d6.js.map": "/React-Website/static/js/main.815d49d6.js.map"
+    "main.7cd56dad.css.map": "/React-Website/static/css/main.7cd56dad.css.map",
+    "main.9c39474c.js.map": "/React-Website/static/js/main.9c39474c.js.map"
   },
   "entrypoints": [
-    "static/css/main.bfa4e416.css",
-    "static/js/main.815d49d6.js"
+    "static/css/main.7cd56dad.css",
+    "static/js/main.9c39474c.js"
   ]
 }
