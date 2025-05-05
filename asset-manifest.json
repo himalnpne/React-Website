@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React-Website/static/css/main.5154881b.css",
-    "main.js": "/React-Website/static/js/main.b5aa359b.js",
+    "main.css": "/React-Website/static/css/main.05591848.css",
+    "main.js": "/React-Website/static/js/main.7be9b631.js",
     "static/media/water-9528888.jpg": "/React-Website/static/media/water-9528888.3237b4fe82609824c273.jpg",
     "static/media/nature-9528890.jpg": "/React-Website/static/media/nature-9528890.edc5fcc53800848f7bef.jpg",
     "static/media/nature-9498242.jpg": "/React-Website/static/media/nature-9498242.bb59297d15d2e6df362d.jpg",
@@ -29,11 +29,11 @@
     "static/media/fa-v4compatibility.ttf": "/React-Website/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/React-Website/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/React-Website/index.html",
-    "main.5154881b.css.map": "/React-Website/static/css/main.5154881b.css.map",
-    "main.b5aa359b.js.map": "/React-Website/static/js/main.b5aa359b.js.map"
+    "main.05591848.css.map": "/React-Website/static/css/main.05591848.css.map",
+    "main.7be9b631.js.map": "/React-Website/static/js/main.7be9b631.js.map"
   },
   "entrypoints": [
-    "static/css/main.5154881b.css",
-    "static/js/main.b5aa359b.js"
+    "static/css/main.05591848.css",
+    "static/js/main.7be9b631.js"
   ]
 }
