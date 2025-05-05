@@ -2,13 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Redirecting...</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <title>Redirecting to React-Website...</title>
     <script>
-      sessionStorage.redirect = location.pathname;
+      // Store the original path and redirect
+      const fullPath = window.location.pathname + window.location.search;
+      sessionStorage.setItem('redirect', fullPath);
       window.location.replace('/React-Website/');
     </script>
   </head>
   <body>
-    Redirecting...
+    <p>If you are not redirected automatically, <a href="/React-Website/">click here</a>.</p>
   </body>
 </html>
