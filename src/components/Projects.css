@@ -41,14 +41,6 @@
   --transition-normal: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   
 }
-* Font definitions */
-@font-face {
-  font-family: 'Josefin Sans';
-  src: url('../fonts/JosefinSans-Medium.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
 
 @font-face {
   font-family: 'Josefin Sans';
