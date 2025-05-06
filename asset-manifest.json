@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b2b2cbee.css",
-    "main.js": "/static/js/main.ea9c7856.js",
+    "main.js": "/static/js/main.cfa5bb51.js",
     "static/media/water-9528888.jpg": "/static/media/water-9528888.3237b4fe82609824c273.jpg",
     "static/media/nature-9528890.jpg": "/static/media/nature-9528890.edc5fcc53800848f7bef.jpg",
     "static/media/nature-9498242.jpg": "/static/media/nature-9498242.bb59297d15d2e6df362d.jpg",
@@ -34,15 +34,16 @@
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
     "static/media/JosefinSans-Regular.woff2": "/static/media/JosefinSans-Regular.f4957adac433e264cd24.woff2",
     "static/media/JosefinSans-Medium.woff2": "/static/media/JosefinSans-Medium.4b2414d474e36efc4b8e.woff2",
+    "static/media/music.gif": "/static/media/music.9059496fc968311c8a48.gif",
     "static/media/niran.jpg": "/static/media/niran.06f82f70a37a0bdde287.jpg",
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
     "main.b2b2cbee.css.map": "/static/css/main.b2b2cbee.css.map",
-    "main.ea9c7856.js.map": "/static/js/main.ea9c7856.js.map"
+    "main.cfa5bb51.js.map": "/static/js/main.cfa5bb51.js.map"
   },
   "entrypoints": [
     "static/css/main.b2b2cbee.css",
-    "static/js/main.ea9c7856.js"
+    "static/js/main.cfa5bb51.js"
   ]
 }
