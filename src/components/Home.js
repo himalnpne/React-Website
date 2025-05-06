@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import { 
   FiCode, 
@@ -647,8 +648,7 @@ function Home() {
           ))}
         </motion.div>
         
-        <motion.a 
-          href="#contact" 
+        <motion.div
           className="cta-button"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -657,16 +657,18 @@ function Home() {
           whileTap="tap"
           variants={ctaButton}
         >
-          <span className="cta-text">Let's Create Together</span>
-          <motion.span 
-            className="cta-arrow"
-            initial={{ x: 0 }}
-            whileHover={{ x: 5 }}
-            transition={{ type: "spring", stiffness: 500 }}
-          >
-            <FiArrowRight />
-          </motion.span>
-        </motion.a>
+          <Link to="/contact" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
+            <span className="cta-text">Let's Create Together</span>
+            <motion.span 
+              className="cta-arrow"
+              initial={{ x: 0 }}
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 500 }}
+            >
+              <FiArrowRight />
+            </motion.span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

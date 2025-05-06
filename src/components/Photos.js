@@ -68,7 +68,7 @@ const PhotoGallery = () => {
       
       <div className="photo-gallery-container">
         <h2 className="section-title">Photo Gallery</h2>
-        <p className="section-subtitle">A collection of moments in bento grid layout</p>
+        <p className="section-subtitle">A collection of Memories</p>
         
         <div className="bento-grid">
           {images.map((img, index) => {

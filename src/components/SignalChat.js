@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignalMessenger } from '@fortawesome/free-brands-svg-icons';
-import babyHelloGif from './baby-hello.gif';
+import babyHelloGif from './gif/baby-hello.gif';
 import './SignalChat.css';
 
 const SignalChat = () => {

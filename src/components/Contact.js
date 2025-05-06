@@ -54,7 +54,7 @@ const Contact = () => {
     <main className="form-container">
       <div className="form-header">
         <h1>Connect With Us</h1>
-        <p>Got a question? We'd love to hear from you. Send us a message!</p>
+        <p>Got a question? Send us a message!</p>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
