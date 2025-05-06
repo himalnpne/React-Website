@@ -13,7 +13,7 @@ const SignalChat = () => {
       setShowPopup(true);
       const hideTimer = setTimeout(() => {
         setShowPopup(false);
-      }, 8000);
+      }, 5000);
       return () => clearTimeout(hideTimer);
     }, 5000);
     return () => clearTimeout(timer);
