@@ -14,7 +14,8 @@ import Testimonials from './components/Testimonials';
 import Subscription from './components/Subscription';
 import VibeCheck from './components/VibeCheck';
 import Photos from './components/Photos';
-import Blog from './components/Blog'; // ADD THIS IMPORT
+import Blog from './components/Blog';
+import SignalChat from './components/SignalChat';
 
 function App() {
   return (
@@ -36,10 +37,11 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/vibecheck" element={<VibeCheck />} />
           <Route path="/photos" element={<Photos />} />
-          <Route path="/blog" element={<Blog />} /> {/* ADD THIS ROUTE */}
+          <Route path="/blog" element={<Blog />} />
           <Route path="*" element={<div>Page Not Found</div>} />
         </Routes>
         
+        <SignalChat />
         <Footer />
       </div>
     </Router>
