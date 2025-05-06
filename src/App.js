@@ -19,7 +19,7 @@ import SignalChat from './components/SignalChat';
 
 function App() {
   return (
-    <Router basename="/React-Website">
+    <Router>
       <div className="App">
         <Header />
         

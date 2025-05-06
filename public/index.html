@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <!-- Add base href for GitHub Pages -->
     <base href="%PUBLIC_URL%/" />
-    <!-- Relaxed CSP for React -->
+    <!-- Updated CSP with Google Forms permission -->
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self';
@@ -12,7 +12,7 @@
         style-src 'self' 'unsafe-inline';
         img-src 'self' data: %PUBLIC_URL%;
         font-src 'self';
-        connect-src 'self';"
+        connect-src 'self' https://docs.google.com/forms/u/0/d/e/1FAIpQLSfhMCTSn5w5E2O091mmWmGVy4UTXOEfje3Rp3wf7GAinKNSlg https://docs.google.com;"
     />
     <link rel="icon" href="logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
