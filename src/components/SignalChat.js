@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignalMessenger } from '@fortawesome/free-brands-svg-icons';
-import babyHelloGif from './gif/baby-hello.gif';
+// import babyHelloGif from './gif/baby-hello.gif';
 import './SignalChat.css';
 
 const SignalChat = () => {
@@ -23,11 +23,11 @@ const SignalChat = () => {
     <div className="signal-chat-container">
       {showPopup && (
         <div className="signal-popup">
-          <img 
+          {/* <img 
             src={babyHelloGif} 
             alt="Waving hello" 
             className="waving-gif"
-          />
+          /> */}
           <p>Need quick help? Chat with us on Signal!</p>
           <p>We typically reply within minutes.</p>
         </div>

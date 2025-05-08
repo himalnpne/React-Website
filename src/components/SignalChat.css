@@ -39,13 +39,6 @@
   align-items: center;
 }
 
-.waving-gif {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
 
 .signal-popup p {
   margin: 0 0 8px 0;
