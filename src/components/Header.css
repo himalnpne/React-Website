@@ -48,6 +48,7 @@
 .nav-links-container {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .nav-link {
@@ -55,9 +56,10 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   position: relative;
   white-space: nowrap;
+  padding: 0.5rem 0;
 }
 
 .nav-link:hover {
@@ -77,6 +79,23 @@
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+.hire-me-btn {
+  background-color: #4a6fa5;
+  color: white !important;
+  padding: 0.5rem 1.5rem !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.hire-me-btn:hover {
+  background-color: #3a5a8f;
+  transform: translateY(-2px);
+}
+
+.hire-me-btn::after {
+  display: none;
 }
 
 .hamburger-btn {
@@ -193,13 +212,29 @@
   color: #333;
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   padding: 0.5rem 0;
   display: block;
 }
 
 .menu-link:hover {
   color: #4a6fa5;
+}
+
+.hire-me-menu-link {
+  background-color: #4a6fa5;
+  color: white !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.hire-me-menu-link:hover {
+  background-color: #3a5a8f;
+  color: white !important;
+  transform: translateY(-2px);
 }
 
 .contact-section {

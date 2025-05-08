@@ -45,7 +45,8 @@ function Header() {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Contact', path: '/contact' },
+    { name: 'Hire Me', path: '/hire-me', isButton: true }
   ];
 
   // Portfolio items
@@ -76,13 +77,23 @@ function Header() {
         <nav className="desktop-nav">
           <div className="nav-links-container">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className="nav-link"
-              >
-                {item.name}
-              </Link>
+              item.isButton ? (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className="nav-link hire-me-btn"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className="nav-link"
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </div>
           
@@ -119,7 +130,7 @@ function Header() {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="menu-link"
+                  className={`menu-link ${item.isButton ? 'hire-me-menu-link' : ''}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -145,7 +156,7 @@ function Header() {
             </div>
           </div>
 
-          {/* New: Vibe & Hobbies Section */}
+          {/* Vibe & Hobbies Section */}
           <div className="menu-section">
             <h3 className="menu-heading">Vibe & Hobbies</h3>
             <div className="menu-links">
