@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4c262d9a.css",
-    "main.js": "/static/js/main.07e61b80.js",
+    "main.css": "/static/css/main.e1102cc4.css",
+    "main.js": "/static/js/main.a5fa8f68.js",
     "static/media/water-9528888.jpg": "/static/media/water-9528888.3237b4fe82609824c273.jpg",
     "static/media/nature-9528890.jpg": "/static/media/nature-9528890.edc5fcc53800848f7bef.jpg",
     "static/media/nature-9498242.jpg": "/static/media/nature-9498242.bb59297d15d2e6df362d.jpg",
@@ -19,7 +19,6 @@
     "static/media/mist-9432928.jpg": "/static/media/mist-9432928.87110c8c7abf6db444ee.jpg",
     "static/media/20211014_123916.jpg": "/static/media/20211014_123916.d66f8cd8b2ff668e0cdc.jpg",
     "static/media/default-avatar.png": "/static/media/default-avatar.04f808f1059a1b12f5e7.png",
-    "static/media/baby-hello.gif": "/static/media/baby-hello.d61e36942141e6de0313.gif",
     "static/media/jamesmay.gif": "/static/media/jamesmay.b980197cb72c433c6d9a.gif",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.1815e00441357e01619e.ttf",
@@ -39,11 +38,11 @@
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
-    "main.4c262d9a.css.map": "/static/css/main.4c262d9a.css.map",
-    "main.07e61b80.js.map": "/static/js/main.07e61b80.js.map"
+    "main.e1102cc4.css.map": "/static/css/main.e1102cc4.css.map",
+    "main.a5fa8f68.js.map": "/static/js/main.a5fa8f68.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c262d9a.css",
-    "static/js/main.07e61b80.js"
+    "static/css/main.e1102cc4.css",
+    "static/js/main.a5fa8f68.js"
   ]
 }
