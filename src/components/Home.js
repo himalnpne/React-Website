@@ -501,9 +501,9 @@ function Home() {
               >
                 {[
                   "Travelling", "Hiking", "Food Exploration", "Photography", 
-                  "Mountain Climbing", "Coffee Connoisseur", "Tech Gadgets", 
-                  "Minimalism", "Music Production", "3D Art", "Cycling",
-                  "Digital Nomad", "Language Learning", "Board Games"
+                  "Mountain Climbing", "Tech Gadgets", 
+                  "Minimalism", "3D Art", "Cycling",
+                  "Digital Nomad", "Language Learning", "Racing Games"
                 ].map((hobby, index) => (
                   <motion.span 
                     className="interest-tag"
