@@ -11,7 +11,7 @@ const Contact = () => {
     message: '' 
   });
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState(null); // 'success' | 'error' | 'loading' | null
+  const [status, setStatus] = useState(null);
   const [touched, setTouched] = useState({});
 
   const handleChange = (e) => {
@@ -95,7 +95,7 @@ const Contact = () => {
             <input 
               type="text" 
               id="name" 
-              placeholder="Enter your name here"
+              placeholder="John Doe"
               className={`form-control ${touched.name && errors.name ? 'input-error' : ''}`} 
               value={form.name} 
               onChange={handleChange} 
@@ -196,6 +196,36 @@ const Contact = () => {
         </form>
       ) : (
         <div className="success-content">
+          <div className="submitted-data">
+            <h3>Your Submission</h3>
+            <div className="data-row">
+              <span className="data-label">Name:</span>
+              <span className="data-value">{form.name}</span>
+            </div>
+            {form.email && (
+              <div className="data-row">
+                <span className="data-label">Email:</span>
+                <span className="data-value">{form.email}</span>
+              </div>
+            )}
+            {form.username && (
+              <>
+                <div className="data-row">
+                  <span className="data-label">Username:</span>
+                  <span className="data-value">{form.username}</span>
+                </div>
+                <div className="data-row">
+                  <span className="data-label">Platform:</span>
+                  <span className="data-value">{form.platform}</span>
+                </div>
+              </>
+            )}
+            <div className="data-row">
+              <span className="data-label">Message:</span>
+              <p className="data-value">{form.message}</p>
+            </div>
+          </div>
+
           <div className="alert success-alert">
             <svg viewBox="0 0 20 20">
               <path fill="url(#icon-gradient)" fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />

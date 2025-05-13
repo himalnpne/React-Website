@@ -39,16 +39,6 @@
   font-display: swap;
 }
 
-/* Font loading states */
-.fonts-loading .home-title {
-  font-family: var(--font-family);
-  font-size-adjust: 0.5;
-}
-
-.fonts-loaded .home-title {
-  font-family: var(--font-family-josefin);
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -153,12 +143,9 @@ body, button, input, textarea, select {
   backdrop-filter: blur(5px);
 }
 
-/* Name animation styles */
+/* Simplified name styles */
 .name-container {
-  position: relative;
   margin-bottom: 3rem;
-  perspective: 1000px;
-  transform-style: preserve-3d;
   display: inline-block;
 }
 
@@ -175,48 +162,6 @@ body, button, input, textarea, select {
   position: relative;
   z-index: 3;
   letter-spacing: -0.05em;
-}
-
-.splash-effect, .ripple-effect, .ripple-effect-2 {
-  position: absolute;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.splash-effect {
-  background: radial-gradient(
-    circle, 
-    rgba(255,62,77,0.3) 0%, 
-    rgba(71,118,230,0.3) 70%, 
-    transparent 100%
-  );
-  width: 150%;
-  height: 150%;
-}
-
-.ripple-effect {
-  background: radial-gradient(
-    circle, 
-    rgba(255,62,77,0.15) 0%, 
-    rgba(71,118,230,0.15) 70%, 
-    transparent 100%
-  );
-  width: 200%;
-  height: 200%;
-}
-
-.ripple-effect-2 {
-  background: radial-gradient(
-    circle, 
-    rgba(142,45,226,0.1) 0%, 
-    transparent 70%
-  );
-  width: 250%;
-  height: 250%;
 }
 
 .home-subtitle {

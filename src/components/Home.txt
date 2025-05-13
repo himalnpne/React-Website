@@ -1,4 +1,668 @@
-import React, { useEffect, useState, useRef } from 'react';
+/* Home.css */
+:root {
+  --accent-red: #FF3E4D;
+  --accent-blue: #4776E6;
+  --accent-purple: #8E2DE2;
+  --accent-orange: #FF6B6B;
+  --accent-teal: #20B2AA;
+  --accent-light-red: rgba(255, 62, 77, 0.1);
+  --accent-light-blue: rgba(71, 118, 230, 0.1);
+  --accent-light-purple: rgba(142, 45, 226, 0.1);
+  --text-light: #f8f9fa;
+  --text-dark: #2D3748;
+  --text-muted: #718096;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-bg-darker: rgba(255, 255, 255, 0.95);
+  --glass-blur: 20px;
+  --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  --section-padding: 8rem 2rem;
+  --font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --box-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Font definitions */
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('../fonts/JosefinSans-Medium.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('../fonts/JosefinSans-LightItalic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Font loading states */
+.fonts-loading .home-title {
+  font-family: var(--font-family);
+  font-size-adjust: 0.5;
+}
+
+.fonts-loaded .home-title {
+  font-family: var(--font-family-josefin);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, button, input, textarea, select {
+  font-family: var(--font-family);
+  color: var(--text-dark);
+}
+
+.home {
+  position: relative;
+  padding: var(--section-padding);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  overflow: hidden;
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255, 62, 77, 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(71, 118, 230, 0.1) 0%, transparent 30%);
+  z-index: -1;
+}
+
+/* Floating accent elements */
+.floating-accent {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.2;
+  z-index: 0;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+
+.red-accent {
+  top: 15%;
+  left: 20%;
+  width: 400px;
+  height: 400px;
+  background-color: var(--accent-red);
+}
+
+.blue-accent {
+  bottom: 15%;
+  right: 20%;
+  width: 350px;
+  height: 350px;
+  background-color: var(--accent-blue);
+}
+
+.purple-accent {
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background-color: var(--accent-purple);
+}
+
+/* Floating gradient orbs */
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(30px);
+  z-index: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -30px);
+  }
+  100% {
+    transform: translate(-20px, 40px);
+  }
+}
+
+.home-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  backdrop-filter: blur(5px);
+}
+
+/* Name animation styles */
+.name-container {
+  position: relative;
+  margin-bottom: 3rem;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  display: inline-block;
+}
+
+.home-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #FF512F, #DD2476, #1A2980);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+  letter-spacing: -0.05em;
+}
+
+.splash-effect, .ripple-effect, .ripple-effect-2 {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.splash-effect {
+  background: radial-gradient(
+    circle, 
+    rgba(255,62,77,0.3) 0%, 
+    rgba(71,118,230,0.3) 70%, 
+    transparent 100%
+  );
+  width: 150%;
+  height: 150%;
+}
+
+.ripple-effect {
+  background: radial-gradient(
+    circle, 
+    rgba(255,62,77,0.15) 0%, 
+    rgba(71,118,230,0.15) 70%, 
+    transparent 100%
+  );
+  width: 200%;
+  height: 200%;
+}
+
+.ripple-effect-2 {
+  background: radial-gradient(
+    circle, 
+    rgba(142,45,226,0.1) 0%, 
+    transparent 70%
+  );
+  width: 250%;
+  height: 250%;
+}
+
+.home-subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.5s forwards;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+.typing-text {
+  position: relative;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite steps(1);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Tech stack styles */
+.tech-stack {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem auto 3rem;
+  max-width: 600px;
+}
+
+.tech-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--glass-bg);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--box-shadow);
+  will-change: transform;
+}
+
+.tech-tooltip {
+  position: absolute;
+  top: -40px;
+  background: var(--text-dark);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  pointer-events: none;
+  font-weight: 500;
+}
+
+.tech-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--text-dark);
+}
+
+/* Enhanced Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem auto;
+  max-width: 1000px;
+  position: relative;
+  z-index: 2;
+}
+
+.skill-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--border-radius);
+  padding: 2.5rem 1.5rem;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  text-align: center;
+  will-change: transform;
+}
+
+.skill-card:nth-child(1) { animation-delay: 0.8s; }
+.skill-card:nth-child(2) { animation-delay: 0.9s; }
+.skill-card:nth-child(3) { animation-delay: 1.0s; }
+.skill-card:nth-child(4) { animation-delay: 1.1s; }
+.skill-card:nth-child(5) { animation-delay: 1.2s; }
+.skill-card:nth-child(6) { animation-delay: 1.3s; }
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent-red), var(--accent-blue));
+  opacity: 0.8;
+}
+
+.skill-card-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover .skill-card-highlight {
+  opacity: 1;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  background: var(--glass-bg-darker);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.skill-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.skill-card p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+/* Interests Section */
+.interests {
+  margin-top: 4rem;
+  opacity: 0;
+  animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) 1.4s forwards;
+  position: relative;
+  z-index: 2;
+}
+
+.hobbies-toggle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: var(--glass-bg);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  color: var(--text-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  will-change: transform;
+}
+
+.hobbies-toggle:hover {
+  box-shadow: var(--box-shadow-hover);
+  transform: translateY(-3px);
+}
+
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+}
+
+.interest-tag {
+  background: rgba(71, 118, 230, 0.1);
+  color: var(--accent-blue);
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  will-change: transform;
+}
+
+.interest-tag:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  transition: var(--transition);
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--box-shadow);
+}
+
+.social-icon:hover {
+  color: #fff;
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 1.2rem 2.8rem;
+  background: linear-gradient(135deg, var(--accent-red), var(--accent-purple));
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 10px 30px rgba(255, 62, 77, 0.3);
+  opacity: 0;
+  animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) 1.6s forwards;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  will-change: transform;
+}
+
+.cta-text {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-arrow {
+  margin-left: 10px;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 62, 77, 0.4);
+}
+
+.cta-button:hover .cta-arrow {
+  transform: translateX(5px);
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .home {
+    padding: 6rem 1.5rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  
+  .floating-accent {
+    opacity: 0.15;
+    filter: blur(60px);
+  }
+  
+  .red-accent {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .blue-accent {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    padding: 1rem;
+  }
+  
+  .home-title {
+    font-size: 3rem;
+  }
+  
+  .home-subtitle {
+    margin-bottom: 2rem;
+  }
+  
+  .skill-card {
+    padding: 2rem 1.2rem;
+  }
+  
+  .tech-stack {
+    gap: 1rem;
+  }
+  
+  .tech-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .home-title {
+    font-size: 2.5rem;
+  }
+  
+  .interest-tags {
+    gap: 0.6rem;
+  }
+  
+  .interest-tag {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .cta-button {
+    padding: 1rem 2.2rem;
+    font-size: 1rem;
+  }
+  
+  .social-links {
+    gap: 1rem;
+  }
+  
+  .social-icon {
+    font-size: 1.3rem;
+  }
+}import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import { 
@@ -46,8 +710,10 @@ function Home() {
     mouseMoveListenerRef.current = handleMouseMove;
     window.addEventListener('mousemove', mouseMoveListenerRef.current);
     
+    // Start animations when component mounts
     controls.start("visible");
     
+    // Add floating orbs animation
     const orbs = orbRefs.current;
     orbs.forEach((orb, i) => {
       if (orb) {
@@ -65,6 +731,7 @@ function Home() {
   }, [controls]);
 
   useEffect(() => {
+    // Add skill card hover effects
     const skillCards = skillCardsRef.current;
     const listeners = [];
     
@@ -169,15 +836,17 @@ function Home() {
     { icon: <FaFlutter />, name: "Flutter", color: "#28282B" },
     { icon: <FaDatabase />, name: "PostgreSQL", color: "#353935" },
     { icon: <FaPython />, name: "Python", color: "#28282B" },
+    
   ];
 
   const socialLinks = [
-    // { icon: <FiGithub />, url: "https://github.com", color: "#333" },
-    // { icon: <FiLinkedin />, url: "https://linkedin.com", color: "#0077B5" },
-    // { icon: <FiTwitter />, url: "https://twitter.com", color: "#1DA1F2" },
-    // { icon: <FiInstagram />, url: "https://instagram.com", color: "#E1306C" }
+   // { icon: <FiGithub />, url: "https://github.com", color: "#333" },
+   // { icon: <FiLinkedin />, url: "https://linkedin.com", color: "#0077B5" },
+   // { icon: <FiTwitter />, url: "https://twitter.com", color: "#1DA1F2" },
+    //{ icon: <FiInstagram />, url: "https://instagram.com", color: "#E1306C" }
   ];
 
+  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -199,6 +868,61 @@ function Home() {
         damping: 12,
         stiffness: 100,
         bounce: 0.4
+      }
+    }
+  };
+
+  const nameAnimation = {
+    hidden: { y: -100, rotateX: 90, opacity: 0 },
+    visible: {
+      y: 0,
+      rotateX: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: 15,
+        stiffness: 100,
+        mass: 0.5,
+        bounce: 0.5
+      }
+    }
+  };
+
+  const splashAnimation = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: [0.8, 0],
+      transition: {
+        duration: 1.2,
+        ease: [0.16, 1, 0.3, 1],
+        delay: 0.3
+      }
+    }
+  };
+
+  const rippleAnimation = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: [0.5, 0],
+      transition: {
+        duration: 1.8,
+        ease: [0.16, 1, 0.3, 1],
+        delay: 0.4
+      }
+    }
+  };
+
+  const rippleAnimation2 = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: [0.3, 0],
+      transition: {
+        duration: 2,
+        ease: "easeOut",
+        delay: 0.5
       }
     }
   };
@@ -372,10 +1096,42 @@ function Home() {
           </defs>
         </svg>
 
-        {/* Simplified name container */}
-        <div className="name-container">
-          <h1 className="home-title">Himal Neupane</h1>
-        </div>
+        {/* Name with splash effect container */}
+        <motion.div 
+          className="name-container"
+          initial="hidden"
+          animate={controls}
+          variants={container}
+          whileHover={{
+            rotateY: 5,
+            rotateX: 2,
+            transition: { 
+              type: "spring",
+              stiffness: 200,
+              damping: 10,
+              duration: 0.5 
+            }
+          }}
+        >
+          <motion.h1 
+            className="home-title"
+            variants={nameAnimation}
+          >
+            Himal Neupane
+          </motion.h1>
+          <motion.div 
+            className="splash-effect" 
+            variants={splashAnimation}
+          />
+          <motion.div 
+            className="ripple-effect" 
+            variants={rippleAnimation}
+          />
+          <motion.div 
+            className="ripple-effect-2" 
+            variants={rippleAnimation2}
+          />
+        </motion.div>
         
         <motion.p 
           className="home-subtitle"
@@ -584,10 +1340,14 @@ function Home() {
 
 // Helper function to convert hex to rgb
 function hexToRgb(hex) {
+  // Remove # if present
   hex = hex.replace('#', '');
+  
+  // Parse r, g, b values
   const r = parseInt(hex.substring(0, 2), 16);
   const g = parseInt(hex.substring(2, 4), 16);
   const b = parseInt(hex.substring(4, 6), 16);
+  
   return `${r}, ${g}, ${b}`;
 }
 
