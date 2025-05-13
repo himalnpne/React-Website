@@ -244,3 +244,31 @@
     transform: translateY(0);
   }
 }
+.newsletter-success-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.newsletter-success-email {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.newsletter-submit-another {
+  background: var(--glass-bg-darker);
+  color: var(--accent-blue);
+  border: 1px solid rgba(1, 75, 146, 0.2);
+}
+
+.newsletter-submit-another:hover {
+  background: var(--glass-bg-darker);
+  color: var(--accent-blue);
+  border-color: rgba(1, 75, 146, 0.4);
+}
+
+.newsletter-alert div {
+  display: flex;
+  flex-direction: column;
+}
