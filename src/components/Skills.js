@@ -1,32 +1,40 @@
 import React from 'react';
 import './Skills.css';
-import CV from './CV/Himal_Neupane_CV.pdf'; // Import PDF from same directory
+import CV from './CV/Himal_Neupane_CV.pdf';
 
 function Skills() {
-  // Skill data with categories
-  const skillsData = {
-    'Design': [
-      { name: 'Figma', rating: 4.5 },
-      { name: 'Adobe Illustrator', rating: 4 },
-      { name: 'Adobe Photoshop', rating: 4 },
-      { name: 'Adobe After Effects', rating: 4 },
-    ],
-    'Development': [
-      { name: 'React', rating: 3.5 },
-      { name: 'Flutter', rating: 2.5 },
-      { name: 'Python', rating: 4 },
-      { name: 'java', rating: 3 },
-      { name: 'C Programming', rating: 3.5 },
-    ],
-    'Other': [
-      { name: 'WordPress', rating: 4.5 },
-      { name: 'SQL', rating: 3 },
-      { name: 'Microsoft Office', rating: 4.5 },
-      { name: 'Prompt Engineering', rating: 4.5 },
-    ]
-  };
+  // Skill data with categories in desired order
+  const skillsData = [
+    { 
+      category: 'Design',
+      skills: [
+        { name: 'Figma', rating: 4.5 },
+        { name: 'Adobe Illustrator', rating: 4 },
+        { name: 'Adobe Photoshop', rating: 4 },
+        { name: 'Adobe After Effects', rating: 4 },
+      ]
+    },
+    { 
+      category: 'Development',
+      skills: [
+        { name: 'React', rating: 3.5 },
+        { name: 'Flutter', rating: 2.5 },
+        { name: 'Python', rating: 4 },
+        { name: 'Java', rating: 3 },
+        { name: 'C Programming', rating: 3.5 },
+      ]
+    },
+    { 
+      category: 'Other',
+      skills: [
+        { name: 'WordPress', rating: 4.5 },
+        { name: 'SQL', rating: 3 },
+        { name: 'Microsoft Office', rating: 4.5 },
+        { name: 'Prompt Engineering', rating: 4.5 },
+      ]
+    }
+  ];
 
-  // Render skill progress
   const renderProgress = (rating) => {
     const percentage = (rating / 5) * 100;
     return (
@@ -42,7 +50,6 @@ function Skills() {
     );
   };
 
-  // PDF download function
   const downloadCV = () => {
     try {
       const link = document.createElement('a');
@@ -70,12 +77,12 @@ function Skills() {
       </div>
       
       <div className="skills-container">
-        {Object.entries(skillsData).map(([category, skills]) => (
-          <div key={category} className="skill-category">
-            <h3>{category}</h3>
+        {skillsData.map((categoryData, index) => (
+          <div key={categoryData.category} className="skill-category">
+            <h3>{categoryData.category}</h3>
             <div className="skills-list">
-              {skills.map((skill, index) => (
-                <div key={index} className="skill-item">
+              {categoryData.skills.map((skill, skillIndex) => (
+                <div key={skillIndex} className="skill-item">
                   <div className="skill-info">
                     <span className="skill-name">{skill.name}</span>
                     {renderProgress(skill.rating)}

@@ -1,24 +1,24 @@
 /* Skills.css */
 .skills-section {
-  max-width: 1400px; /* Increased from 1200px */
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 6rem 3rem; /* More vertical padding */
+  padding: 6rem 3rem;
   font-family: var(--font-family);
 }
 
 .skills-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Align to top */
-  margin-bottom: 5rem; /* Increased spacing */
+  align-items: flex-start;
+  margin-bottom: 5rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  flex-wrap: wrap; /* Allow wrapping on small screens */
-  gap: 2rem; /* Minimum gap between title and button */
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .skills-header h2 {
-  font-size: 3rem; /* Larger heading */
+  font-size: 3rem;
   color: var(--text-dark);
   margin: 0;
   font-weight: 700;
@@ -28,8 +28,8 @@
   background-clip: text;
   letter-spacing: -1px;
   line-height: 1.2;
-  flex: 1; /* Allow title to grow */
-  min-width: 300px; /* Prevent squeezing */
+  flex: 1;
+  min-width: 300px;
 }
 
 .cv-download-btn {
@@ -39,7 +39,7 @@
   background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
   color: var(--text-light);
   border: none;
-  padding: 1.25rem 2.5rem; /* Larger button */
+  padding: 1.25rem 2.5rem;
   border-radius: var(--border-radius);
   font-size: 1.1rem;
   font-weight: 600;
@@ -48,9 +48,9 @@
   box-shadow: var(--box-shadow);
   position: relative;
   overflow: hidden;
-  align-self: center; /* Center vertically */
-  margin-top: 0.5rem; /* Small top margin for alignment */
-  flex-shrink: 0; /* Prevent button from shrinking */
+  align-self: center;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
 }
 
 .cv-download-btn::before {
@@ -78,25 +78,47 @@
 }
 
 .download-icon {
-  width: 20px; /* Slightly larger icon */
+  width: 20px;
   height: 20px;
   fill: currentColor;
 }
 
+/* Main container for the grid layout */
 .skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Wider cards */
-  gap: 3rem; /* Increased gap */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Each skill category card */
 .skill-category {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
   border-radius: var(--border-radius);
-  padding: 3rem; /* More internal padding */
+  padding: 3rem;
   box-shadow: var(--box-shadow);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: var(--transition);
+  width: 100%;
+  max-width: 500px; /* Adjust this value to control card width */
+  flex-grow: 1;
+}
+
+/* First two cards (Design and Development) */
+.skill-category:nth-child(1),
+.skill-category:nth-child(2) {
+  flex-basis: calc(50% - 1.5rem); /* Half width minus half gap */
+  min-width: 380px;
+}
+
+/* Third card (Other) */
+.skill-category:nth-child(3) {
+  flex-basis: calc(50% - 1.5rem);
+  min-width: 380px;
+  max-width: 500px;
 }
 
 .skill-category:hover {
@@ -108,8 +130,8 @@
 .skill-category h3 {
   color: var(--accent-blue);
   margin-top: 0;
-  margin-bottom: 2.5rem; /* More spacing */
-  font-size: 1.6rem; /* Larger category title */
+  margin-bottom: 2.5rem;
+  font-size: 1.6rem;
   position: relative;
   display: inline-block;
   font-weight: 600;
@@ -118,9 +140,9 @@
 .skill-category h3::after {
   content: '';
   position: absolute;
-  bottom: -12px; /* Adjusted position */
+  bottom: -12px;
   left: 0;
-  width: 50px; /* Longer underline */
+  width: 50px;
   height: 4px;
   background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
   border-radius: 2px;
@@ -129,33 +151,33 @@
 .skills-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* More space between skills */
+  gap: 2rem;
 }
 
 .skill-item {
-  padding: 0.5rem 0; /* More vertical padding */
+  padding: 0.5rem 0;
 }
 
 .skill-info {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* More space between elements */
+  gap: 1rem;
 }
 
 .skill-name {
   font-weight: 600;
   color: var(--text-dark);
-  font-size: 1.15rem; /* Slightly larger */
+  font-size: 1.15rem;
 }
 
 .skill-progress {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* More space between percentage and bar */
+  gap: 1.5rem;
 }
 
 .skill-percentage {
-  min-width: 50px; /* More space for percentages */
+  min-width: 50px;
   font-size: 1rem;
   font-weight: 600;
   color: var(--accent-blue);
@@ -163,7 +185,7 @@
 
 .progress-bar {
   flex-grow: 1;
-  height: 10px; /* Thicker progress bar */
+  height: 10px;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
   overflow: hidden;
@@ -183,7 +205,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 10px; /* Matched to thicker bar */
+  width: 10px;
   height: 100%;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
@@ -243,12 +265,20 @@
 
 @media (max-width: 992px) {
   .skills-container {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+    flex-direction: column;
+    align-items: center;
   }
   
   .skill-category {
-    padding: 2.5rem;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .skill-category:nth-child(1),
+  .skill-category:nth-child(2),
+  .skill-category:nth-child(3) {
+    flex-basis: auto;
+    min-width: auto;
   }
 }
 

@@ -32,6 +32,7 @@ function Home() {
   });
   const orbRefs = useRef([]);
   const skillCardsRef = useRef([]);
+  const interestTagsRef = useRef([]);
   const mouseMoveListenerRef = useRef(null);
   const skillCardListenersRef = useRef([]);
 
@@ -97,6 +98,23 @@ function Home() {
       });
     };
   }, []);
+
+  // New effect for setting index properties for staggered animations
+  useEffect(() => {
+    // Set index for skill cards for staggered animations
+    skillCardsRef.current.forEach((card, index) => {
+      if (card) {
+        card.style.setProperty('--index', index);
+      }
+    });
+    
+    // Set index for interest tags for staggered animations
+    interestTagsRef.current.forEach((tag, index) => {
+      if (tag) {
+        tag.style.setProperty('--tag-index', index);
+      }
+    });
+  }, [showHobbies]); // Re-run when showHobbies changes to ensure interests are indexed after they appear
 
   useEffect(() => {
     if (inView) {
@@ -511,6 +529,7 @@ function Home() {
                     className="interest-tag"
                     key={hobby}
                     variants={hobbyItem}
+                    ref={el => interestTagsRef.current[index] = el}
                     whileHover={{ 
                       scale: 1.05,
                       y: -3,
