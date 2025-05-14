@@ -96,7 +96,7 @@ const Contact = () => {
             <input 
               type="text" 
               id="name" 
-              placeholder="John Doe"
+              placeholder="Enter Your Name Here"
               className={`form-control ${touched.name && errors.name ? 'input-error' : ''}`} 
               value={form.name} 
               onChange={handleChange} 
