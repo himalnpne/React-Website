@@ -17,7 +17,7 @@ import {
 } from 'react-icons/fi';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaReact, FaFigma, FaWordpress, FaAws, FaLinux, FaPython, FaDatabase } from 'react-icons/fa';
+import { FaReact, FaFigma, FaWordpress, FaAws, FaLinux, FaPython, FaDatabase, FaPhp, FaJava } from 'react-icons/fa';
 import { SiAdobeillustrator, SiAdobexd, SiWireshark } from 'react-icons/si';
 import { FaC, FaFileExcel, FaFlutter } from 'react-icons/fa6';
 
@@ -168,7 +168,9 @@ function Home() {
     { icon: <SiWireshark />, name: "Wireshark", color: "#1B1212" },
     { icon: <FaFlutter />, name: "Flutter", color: "#28282B" },
     { icon: <FaDatabase />, name: "PostgreSQL", color: "#353935" },
+    { icon: <FaPhp />, name: "PHP", color: "#023020" },
     { icon: <FaPython />, name: "Python", color: "#28282B" },
+    { icon: <FaJava />, name: "Java", color: "#1B1212" },
   ];
 
   const socialLinks = [

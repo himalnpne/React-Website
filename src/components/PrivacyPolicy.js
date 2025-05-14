@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="privacy-policy">
       <Helmet>
-        <title>Privacy Policy | My Portfolio</title>
+        <title>HIMALNPNE</title>
         <meta name="description" content="Our comprehensive privacy policy detailing how your data is collected, processed, and protected." />
       </Helmet>
 
