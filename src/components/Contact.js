@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Contact.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -191,7 +192,7 @@ const Contact = () => {
           )}
 
           <div className="privacy-note">
-            By submitting, you agree to our <a href="#" className="privacy-link">Privacy Policy</a>.
+            By submitting, you agree to our <Link to="/privacy-policy" className="privacy-link">Privacy Policy</Link>.
           </div>
         </form>
       ) : (
@@ -241,7 +242,7 @@ const Contact = () => {
           </button>
           
           <div className="privacy-note">
-            Need help? <a href="#" className="privacy-link">Contact us</a>
+            Need help? <Link to="/contact" className="privacy-link">Contact us</Link>
           </div>
         </div>
       )}

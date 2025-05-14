@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Subscription.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -121,7 +122,7 @@ export default function NewsletterForm() {
 
           <p className="newsletter-privacy">
             By subscribing, you agree to our{' '}
-            <a href="#" className="newsletter-privacy-link">Privacy Policy</a>. We'll never spam you or share your email with third parties.
+            <Link to="/privacy-policy" className="privacy-link">Privacy Policy</Link>. We'll never spam you or share your email with third parties.
           </p>
         </form>
       ) : (
@@ -146,7 +147,7 @@ export default function NewsletterForm() {
           </button>
           
           <p className="newsletter-privacy">
-            Need help? <a href="#" className="newsletter-privacy-link">Contact us</a>
+            Need help? <Link to="/contact" className="privacy-link">Contact us</Link>
           </p>
         </div>
       )}

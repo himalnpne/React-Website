@@ -17,6 +17,7 @@ import Photos from './components/Photos';
 import Blog from './components/Blog';
 import SignalChat from './components/SignalChat';
 import HireMe from './components/HireMe';
+import PrivacyPolicy from './components/PrivacyPolicy'; // Add this import
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/photos" element={<Photos />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/hire-me" element={<HireMe />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* Add this route */}
           <Route path="*" element={<div>Page Not Found</div>} />
         </Routes>
         
