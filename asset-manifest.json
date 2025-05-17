@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e351b301.css",
-    "main.js": "/static/js/main.1cbde774.js",
+    "main.css": "/static/css/main.8ccadaa3.css",
+    "main.js": "/static/js/main.574592c5.js",
     "static/media/water-9528888.jpg": "/static/media/water-9528888.3237b4fe82609824c273.jpg",
     "static/media/nature-9528890.jpg": "/static/media/nature-9528890.edc5fcc53800848f7bef.jpg",
     "static/media/nature-9498242.jpg": "/static/media/nature-9498242.bb59297d15d2e6df362d.jpg",
@@ -19,30 +19,39 @@
     "static/media/mist-9432928.jpg": "/static/media/mist-9432928.87110c8c7abf6db444ee.jpg",
     "static/media/20211014_123916.jpg": "/static/media/20211014_123916.d66f8cd8b2ff668e0cdc.jpg",
     "static/media/default-avatar.png": "/static/media/default-avatar.04f808f1059a1b12f5e7.png",
+    "static/media/Isle_of_Man_TT.jpg": "/static/media/Isle_of_Man_TT.556fab704ace60e3d9b9.jpg",
     "static/media/jamesmay.gif": "/static/media/jamesmay.b980197cb72c433c6d9a.gif",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/Naruto_logo..png": "/static/media/Naruto_logo..f950e76c5d0bbadf808e.png",
+    "static/media/one_piece_logo.png": "/static/media/one_piece_logo.0b14337a95296d295a52.png",
     "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.1815e00441357e01619e.ttf",
     "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
     "static/media/anish1.jpg": "/static/media/anish1.48237f61d15eeb289199.jpg",
     "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.c210719e60948b211a12.woff2",
     "static/media/Himal_Neupane_CV.pdf": "/static/media/Himal_Neupane_CV.39aca13b0f7b9a3f0219.pdf",
+    "static/media/Vinland_Saga_simplified_logo.png": "/static/media/Vinland_Saga_simplified_logo.dd3f0978ab2353000147.png",
     "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
+    "static/media/That_Time_I_Got_Reincarnated_as_a_Slime_logo.png": "/static/media/That_Time_I_Got_Reincarnated_as_a_Slime_logo.a6335cce5860eb80677c.png",
     "static/media/hemant.jpg": "/static/media/hemant.a3822de18fd18d9aef18.jpg",
+    "static/media/24_Hours_of_Le_Mans.png": "/static/media/24_Hours_of_Le_Mans.3671920a29118c06e07d.png",
     "static/media/JosefinSans-Regular.woff": "/static/media/JosefinSans-Regular.c8e74084b240c16bcb86.woff",
     "static/media/JosefinSans-LightItalic.woff2": "/static/media/JosefinSans-LightItalic.0592fb51053c0e3d97de.woff2",
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
+    "static/media/motogp.png": "/static/media/motogp.e81012c91a13424bf40f.png",
     "static/media/JosefinSans-Regular.woff2": "/static/media/JosefinSans-Regular.f4957adac433e264cd24.woff2",
     "static/media/JosefinSans-Medium.woff2": "/static/media/JosefinSans-Medium.4b2414d474e36efc4b8e.woff2",
-    "static/media/music.gif": "/static/media/music.9059496fc968311c8a48.gif",
+    "static/media/gintamalogo.png": "/static/media/gintamalogo.b995730c2fc23319e2f1.png",
+    "static/media/WRC.png": "/static/media/WRC.f57b3a29554cbe36fc00.png",
     "static/media/niran.jpg": "/static/media/niran.06f82f70a37a0bdde287.jpg",
+    "static/media/Hxh_logo.jpg": "/static/media/Hxh_logo.2d06b818d9b119910ca0.jpg",
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
-    "main.e351b301.css.map": "/static/css/main.e351b301.css.map",
-    "main.1cbde774.js.map": "/static/js/main.1cbde774.js.map"
+    "main.8ccadaa3.css.map": "/static/css/main.8ccadaa3.css.map",
+    "main.574592c5.js.map": "/static/js/main.574592c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.e351b301.css",
-    "static/js/main.1cbde774.js"
+    "static/css/main.8ccadaa3.css",
+    "static/js/main.574592c5.js"
   ]
 }
