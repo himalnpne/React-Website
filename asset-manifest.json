@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.fe46cdd3.css",
-    "main.js": "/static/js/main.2c2c6126.js",
+    "main.css": "/static/css/main.bfa3913e.css",
+    "main.js": "/static/js/main.4b8739a5.js",
     "static/media/default-avatar.png": "/static/media/default-avatar.04f808f1059a1b12f5e7.png",
     "static/media/Isle_of_Man_TT.jpg": "/static/media/Isle_of_Man_TT.556fab704ace60e3d9b9.jpg",
+    "static/media/performance-graph.jpg": "/static/media/performance-graph.9dca8b8932d276481496.jpg",
     "static/media/jamesmay.gif": "/static/media/jamesmay.b980197cb72c433c6d9a.gif",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/one_piece_logo.png": "/static/media/one_piece_logo.5331c5e1ae1c40d5e607.png",
@@ -22,6 +23,7 @@
     "static/media/honda-9513667_640.jpg": "/static/media/honda-9513667_640.5bbacf3e7d734e07394e.jpg",
     "static/media/forest-9450651_640.jpg": "/static/media/forest-9450651_640.e34790896bedf0470ec8.jpg",
     "static/media/honda-9513650_640.jpg": "/static/media/honda-9513650_640.977eeda570fdc72a00d1.jpg",
+    "static/media/success-celebration.jpg": "/static/media/success-celebration.68820e9c720442ad15fe.jpg",
     "static/media/man-9515487_640.jpg": "/static/media/man-9515487_640.e3d771e14f5de6196a8a.jpg",
     "static/media/ally-9484238_640.jpg": "/static/media/ally-9484238_640.5456cdf3d665c6ec854f.jpg",
     "static/media/dam-9432863_640.jpg": "/static/media/dam-9432863_640.f6aca0e764d0adda40f0.jpg",
@@ -43,6 +45,7 @@
     "static/media/greenery-9513579_640.jpg": "/static/media/greenery-9513579_640.1e76961a453eb938075d.jpg",
     "static/media/nepal-9513669_640.jpg": "/static/media/nepal-9513669_640.edfe585676e91b19855c.jpg",
     "static/media/nature-9484250_640.jpg": "/static/media/nature-9484250_640.64ee0b181e5f470bb22c.jpg",
+    "static/media/laptop-hero.jpg": "/static/media/laptop-hero.fc44d4191268c5f2bbce.jpg",
     "static/media/patan-9484253_640.jpg": "/static/media/patan-9484253_640.88ab6d8e74da88b1ebb3.jpg",
     "static/media/attackontitan_logo.png": "/static/media/attackontitan_logo.06931855fa54ca164b0e.png",
     "static/media/nature-9528890_640.jpg": "/static/media/nature-9528890_640.28d22c733a254f7acad6.jpg",
@@ -51,6 +54,7 @@
     "static/media/nature-9498242_640.jpg": "/static/media/nature-9498242_640.45e71f395272f4f15daa.jpg",
     "static/media/buddhism-9456599_640.jpg": "/static/media/buddhism-9456599_640.8fcde2e1f4f0c35872ed.jpg",
     "static/media/mist-9432928_640.jpg": "/static/media/mist-9432928_640.9288d31f783153cbd433.jpg",
+    "static/media/laptop-portability.jpg": "/static/media/laptop-portability.59fde66132ff2351a101.jpg",
     "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
     "static/media/food-9432833_640.jpg": "/static/media/food-9432833_640.d295c18253e2016839ac.jpg",
     "static/media/the blacklist.jpg": "/static/media/the blacklist.1c07f18c546650c3afb2.jpg",
@@ -59,6 +63,7 @@
     "static/media/rainbow-9432931_640.jpg": "/static/media/rainbow-9432931_640.4191d7cc1c3f19f41beb.jpg",
     "static/media/my name.jpg": "/static/media/my name.b8b0e3d10da6ba0767b2.jpg",
     "static/media/fire-9509645_640.jpg": "/static/media/fire-9509645_640.8eb301dd7ee24bdb34a7.jpg",
+    "static/media/chromebook.jpg": "/static/media/chromebook.a27f4035487c28669f02.jpg",
     "static/media/hemant.jpg": "/static/media/hemant.a3822de18fd18d9aef18.jpg",
     "static/media/24_Hours_of_Le_Mans.png": "/static/media/24_Hours_of_Le_Mans.3671920a29118c06e07d.png",
     "static/media/vincenzo.webp": "/static/media/vincenzo.a332b2432fbfee8d5908.webp",
@@ -73,11 +78,11 @@
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
-    "main.fe46cdd3.css.map": "/static/css/main.fe46cdd3.css.map",
-    "main.2c2c6126.js.map": "/static/js/main.2c2c6126.js.map"
+    "main.bfa3913e.css.map": "/static/css/main.bfa3913e.css.map",
+    "main.4b8739a5.js.map": "/static/js/main.4b8739a5.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe46cdd3.css",
-    "static/js/main.2c2c6126.js"
+    "static/css/main.bfa3913e.css",
+    "static/js/main.4b8739a5.js"
   ]
 }
