@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bfa3913e.css",
-    "main.js": "/static/js/main.4b8739a5.js",
+    "main.js": "/static/js/main.ab287cb2.js",
     "static/media/default-avatar.png": "/static/media/default-avatar.04f808f1059a1b12f5e7.png",
     "static/media/Isle_of_Man_TT.jpg": "/static/media/Isle_of_Man_TT.556fab704ace60e3d9b9.jpg",
     "static/media/performance-graph.jpg": "/static/media/performance-graph.9dca8b8932d276481496.jpg",
@@ -79,10 +79,10 @@
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
     "main.bfa3913e.css.map": "/static/css/main.bfa3913e.css.map",
-    "main.4b8739a5.js.map": "/static/js/main.4b8739a5.js.map"
+    "main.ab287cb2.js.map": "/static/js/main.ab287cb2.js.map"
   },
   "entrypoints": [
     "static/css/main.bfa3913e.css",
-    "static/js/main.4b8739a5.js"
+    "static/js/main.ab287cb2.js"
   ]
 }
