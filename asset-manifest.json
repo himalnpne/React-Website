@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fdcff29a.css",
-    "main.js": "/static/js/main.37a57c92.js",
+    "main.css": "/static/css/main.5600fdb9.css",
+    "main.js": "/static/js/main.72a44bef.js",
     "static/media/Isle_of_Man_TT.jpg": "/static/media/Isle_of_Man_TT.556fab704ace60e3d9b9.jpg",
     "static/media/performance-graph.jpg": "/static/media/performance-graph.9dca8b8932d276481496.jpg",
     "static/media/jamesmay.gif": "/static/media/jamesmay.b980197cb72c433c6d9a.gif",
@@ -14,6 +14,7 @@
     "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.1815e00441357e01619e.ttf",
     "static/media/Top-Gear-Logo.png": "/static/media/Top-Gear-Logo.5c40152c27c957977bd7.png",
     "static/media/kaligandaki-9443904_640.jpg": "/static/media/kaligandaki-9443904_640.93df6798448b69db49e8.jpg",
+    "static/media/ev-post.jpg": "/static/media/ev-post.e91492f17a908b1ed2ba.jpg",
     "static/media/water-9513580_640.jpg": "/static/media/water-9513580_640.009417790d8963516e53.jpg",
     "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
     "static/media/anish1.jpg": "/static/media/anish1.48237f61d15eeb289199.jpg",
@@ -52,6 +53,7 @@
     "static/media/inital d.jpg": "/static/media/inital d.dc32cb8f7233e554869d.jpg",
     "static/media/nature-9498242_640.jpg": "/static/media/nature-9498242_640.45e71f395272f4f15daa.jpg",
     "static/media/buddhism-9456599_640.jpg": "/static/media/buddhism-9456599_640.8fcde2e1f4f0c35872ed.jpg",
+    "static/media/messaging-privacy.jpg": "/static/media/messaging-privacy.a1d57d3e3396ff2301b5.jpg",
     "static/media/mist-9432928_640.jpg": "/static/media/mist-9432928_640.9288d31f783153cbd433.jpg",
     "static/media/laptop-portability.jpg": "/static/media/laptop-portability.59fde66132ff2351a101.jpg",
     "static/media/bestfreevpn.jpg": "/static/media/bestfreevpn.0b91392349c43a9f564b.jpg",
@@ -79,11 +81,11 @@
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
-    "main.fdcff29a.css.map": "/static/css/main.fdcff29a.css.map",
-    "main.37a57c92.js.map": "/static/js/main.37a57c92.js.map"
+    "main.5600fdb9.css.map": "/static/css/main.5600fdb9.css.map",
+    "main.72a44bef.js.map": "/static/js/main.72a44bef.js.map"
   },
   "entrypoints": [
-    "static/css/main.fdcff29a.css",
-    "static/js/main.37a57c92.js"
+    "static/css/main.5600fdb9.css",
+    "static/js/main.72a44bef.js"
   ]
 }
