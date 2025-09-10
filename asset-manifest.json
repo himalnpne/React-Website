@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5600fdb9.css",
-    "main.js": "/static/js/main.72a44bef.js",
+    "main.css": "/static/css/main.28bfae2d.css",
+    "main.js": "/static/js/main.7b6f29f9.js",
     "static/media/Isle_of_Man_TT.jpg": "/static/media/Isle_of_Man_TT.556fab704ace60e3d9b9.jpg",
     "static/media/performance-graph.jpg": "/static/media/performance-graph.9dca8b8932d276481496.jpg",
     "static/media/jamesmay.gif": "/static/media/jamesmay.b980197cb72c433c6d9a.gif",
@@ -17,7 +17,6 @@
     "static/media/ev-post.jpg": "/static/media/ev-post.e91492f17a908b1ed2ba.jpg",
     "static/media/water-9513580_640.jpg": "/static/media/water-9513580_640.009417790d8963516e53.jpg",
     "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
-    "static/media/anish1.jpg": "/static/media/anish1.48237f61d15eeb289199.jpg",
     "static/media/garden-9484247_640.jpg": "/static/media/garden-9484247_640.5c09e865ed4c75c7e565.jpg",
     "static/media/Hxh_logo.jpg": "/static/media/Hxh_logo.ef4f52f71378129ab796.jpg",
     "static/media/honda-9513667_640.jpg": "/static/media/honda-9513667_640.5bbacf3e7d734e07394e.jpg",
@@ -66,7 +65,6 @@
     "static/media/my name.jpg": "/static/media/my name.b8b0e3d10da6ba0767b2.jpg",
     "static/media/fire-9509645_640.jpg": "/static/media/fire-9509645_640.8eb301dd7ee24bdb34a7.jpg",
     "static/media/chromebook.jpg": "/static/media/chromebook.a27f4035487c28669f02.jpg",
-    "static/media/hemant.jpg": "/static/media/hemant.a3822de18fd18d9aef18.jpg",
     "static/media/24_Hours_of_Le_Mans.png": "/static/media/24_Hours_of_Le_Mans.3671920a29118c06e07d.png",
     "static/media/vincenzo.webp": "/static/media/vincenzo.a332b2432fbfee8d5908.webp",
     "static/media/JosefinSans-Regular.woff": "/static/media/JosefinSans-Regular.c8e74084b240c16bcb86.woff",
@@ -77,15 +75,14 @@
     "static/media/JosefinSans-Medium.woff2": "/static/media/JosefinSans-Medium.4b2414d474e36efc4b8e.woff2",
     "static/media/JosefinSans-Bold.woff2": "/static/media/JosefinSans-Bold.e3021fc34c658df7155c.woff2",
     "static/media/WRC.png": "/static/media/WRC.f57b3a29554cbe36fc00.png",
-    "static/media/niran.jpg": "/static/media/niran.06f82f70a37a0bdde287.jpg",
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
-    "main.5600fdb9.css.map": "/static/css/main.5600fdb9.css.map",
-    "main.72a44bef.js.map": "/static/js/main.72a44bef.js.map"
+    "main.28bfae2d.css.map": "/static/css/main.28bfae2d.css.map",
+    "main.7b6f29f9.js.map": "/static/js/main.7b6f29f9.js.map"
   },
   "entrypoints": [
-    "static/css/main.5600fdb9.css",
-    "static/js/main.72a44bef.js"
+    "static/css/main.28bfae2d.css",
+    "static/js/main.7b6f29f9.js"
   ]
 }
