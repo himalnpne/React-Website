@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.4ca198bb.css",
-    "main.js": "/static/js/main.fbb141a7.js",
+    "main.css": "/static/css/main.e83023a7.css",
+    "main.js": "/static/js/main.a647bbcd.js",
     "static/media/Isle_of_Man_TT.jpg": "/static/media/Isle_of_Man_TT.556fab704ace60e3d9b9.jpg",
     "static/media/performance-graph.jpg": "/static/media/performance-graph.9dca8b8932d276481496.jpg",
     "static/media/jamesmay.gif": "/static/media/jamesmay.b980197cb72c433c6d9a.gif",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/one_piece_logo.png": "/static/media/one_piece_logo.5331c5e1ae1c40d5e607.png",
     "static/media/gintamalogo.png": "/static/media/gintamalogo.d9c06ae1075b5ea4dffb.png",
+    "static/media/digital-privacy.jpg": "/static/media/digital-privacy.29dce38c0194f34b26d0.jpg",
     "static/media/dragobballz.png": "/static/media/dragobballz.11a80d93085dbceee181.png",
     "static/media/That_Time_I_Got_Reincarnated_as_a_Slime_logo.png": "/static/media/That_Time_I_Got_Reincarnated_as_a_Slime_logo.8c903dbb30c3bc124981.png",
     "static/media/breaking-bad-logo.png": "/static/media/breaking-bad-logo.a27e9e24ff2dd25dfb02.png",
@@ -53,7 +54,6 @@
     "static/media/nature-9498242_640.jpg": "/static/media/nature-9498242_640.45e71f395272f4f15daa.jpg",
     "static/media/buddhism-9456599_640.jpg": "/static/media/buddhism-9456599_640.8fcde2e1f4f0c35872ed.jpg",
     "static/media/messaging-privacy.jpg": "/static/media/messaging-privacy.a1d57d3e3396ff2301b5.jpg",
-    "static/media/digital-privacy.jpg": "/static/media/digital-privacy.e051fc3654a3b87ecbda.jpg",
     "static/media/mist-9432928_640.jpg": "/static/media/mist-9432928_640.9288d31f783153cbd433.jpg",
     "static/media/laptop-portability.jpg": "/static/media/laptop-portability.59fde66132ff2351a101.jpg",
     "static/media/bestfreevpn.jpg": "/static/media/bestfreevpn.0b91392349c43a9f564b.jpg",
@@ -79,11 +79,11 @@
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
-    "main.4ca198bb.css.map": "/static/css/main.4ca198bb.css.map",
-    "main.fbb141a7.js.map": "/static/js/main.fbb141a7.js.map"
+    "main.e83023a7.css.map": "/static/css/main.e83023a7.css.map",
+    "main.a647bbcd.js.map": "/static/js/main.a647bbcd.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ca198bb.css",
-    "static/js/main.fbb141a7.js"
+    "static/css/main.e83023a7.css",
+    "static/js/main.a647bbcd.js"
   ]
 }
