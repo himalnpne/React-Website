@@ -4,11 +4,14 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      sessionStorage.redirect = location.pathname;
-      window.location.replace('/');
+      // Store the intended path and redirect to index.html with a parameter
+      const path = location.pathname;
+      sessionStorage.redirect = path;
+      location.replace('/?redirect=' + encodeURIComponent(path));
     </script>
+    <meta http-equiv="refresh" content="0; URL=/" />
   </head>
   <body>
-    Redirecting...
+    <p>Redirecting to <a href="/">home page</a>...</p>
   </body>
 </html>
