@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e83023a7.css",
-    "main.js": "/static/js/main.d4dfe0df.js",
+    "main.js": "/static/js/main.d281bcfe.js",
     "static/media/Isle_of_Man_TT.jpg": "/static/media/Isle_of_Man_TT.556fab704ace60e3d9b9.jpg",
     "static/media/performance-graph.jpg": "/static/media/performance-graph.9dca8b8932d276481496.jpg",
     "static/media/jamesmay.gif": "/static/media/jamesmay.b980197cb72c433c6d9a.gif",
@@ -80,10 +80,10 @@
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
     "main.e83023a7.css.map": "/static/css/main.e83023a7.css.map",
-    "main.d4dfe0df.js.map": "/static/js/main.d4dfe0df.js.map"
+    "main.d281bcfe.js.map": "/static/js/main.d281bcfe.js.map"
   },
   "entrypoints": [
     "static/css/main.e83023a7.css",
-    "static/js/main.d4dfe0df.js"
+    "static/js/main.d281bcfe.js"
   ]
 }
