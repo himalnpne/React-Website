@@ -1,3 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Sitemap: https://neupanehimal.com.np/sitemap.xml
+Host: neupanehimal.com.np
