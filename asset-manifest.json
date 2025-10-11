@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1fc914d0.css",
-    "main.js": "/static/js/main.59efed37.js",
+    "main.css": "/static/css/main.c4749517.css",
+    "main.js": "/static/js/main.af0b7129.js",
     "static/media/Isle_of_Man_TT.jpg": "/static/media/Isle_of_Man_TT.556fab704ace60e3d9b9.jpg",
     "static/media/performance-graph.jpg": "/static/media/performance-graph.9dca8b8932d276481496.jpg",
     "static/media/jamesmay.gif": "/static/media/jamesmay.b980197cb72c433c6d9a.gif",
@@ -69,19 +69,18 @@
     "static/media/24_Hours_of_Le_Mans.png": "/static/media/24_Hours_of_Le_Mans.3671920a29118c06e07d.png",
     "static/media/vincenzo.webp": "/static/media/vincenzo.a332b2432fbfee8d5908.webp",
     "static/media/JosefinSans-Regular.woff": "/static/media/JosefinSans-Regular.c8e74084b240c16bcb86.woff",
-    "static/media/JosefinSans-LightItalic.woff2": "/static/media/JosefinSans-LightItalic.0592fb51053c0e3d97de.woff2",
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
     "static/media/motogp.png": "/static/media/motogp.e81012c91a13424bf40f.png",
     "static/media/JosefinSans-Regular.woff2": "/static/media/JosefinSans-Regular.f4957adac433e264cd24.woff2",
     "static/media/WRC.png": "/static/media/WRC.f57b3a29554cbe36fc00.png",
+    "index.html": "/index.html",
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
-    "index.html": "/index.html",
-    "main.1fc914d0.css.map": "/static/css/main.1fc914d0.css.map",
-    "main.59efed37.js.map": "/static/js/main.59efed37.js.map"
+    "main.c4749517.css.map": "/static/css/main.c4749517.css.map",
+    "main.af0b7129.js.map": "/static/js/main.af0b7129.js.map"
   },
   "entrypoints": [
-    "static/css/main.1fc914d0.css",
-    "static/js/main.59efed37.js"
+    "static/css/main.c4749517.css",
+    "static/js/main.af0b7129.js"
   ]
 }
