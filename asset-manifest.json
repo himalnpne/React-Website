@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c4749517.css",
-    "main.js": "/static/js/main.af0b7129.js",
+    "main.js": "/static/js/main.f870f06a.js",
     "static/media/Isle_of_Man_TT.jpg": "/static/media/Isle_of_Man_TT.556fab704ace60e3d9b9.jpg",
     "static/media/performance-graph.jpg": "/static/media/performance-graph.9dca8b8932d276481496.jpg",
     "static/media/jamesmay.gif": "/static/media/jamesmay.b980197cb72c433c6d9a.gif",
@@ -73,14 +73,14 @@
     "static/media/motogp.png": "/static/media/motogp.e81012c91a13424bf40f.png",
     "static/media/JosefinSans-Regular.woff2": "/static/media/JosefinSans-Regular.f4957adac433e264cd24.woff2",
     "static/media/WRC.png": "/static/media/WRC.f57b3a29554cbe36fc00.png",
-    "index.html": "/index.html",
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
+    "index.html": "/index.html",
     "main.c4749517.css.map": "/static/css/main.c4749517.css.map",
-    "main.af0b7129.js.map": "/static/js/main.af0b7129.js.map"
+    "main.f870f06a.js.map": "/static/js/main.f870f06a.js.map"
   },
   "entrypoints": [
     "static/css/main.c4749517.css",
-    "static/js/main.af0b7129.js"
+    "static/js/main.f870f06a.js"
   ]
 }
