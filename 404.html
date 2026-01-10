@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Redirecting...</title>
-    <script>
-      // Store the intended path and redirect to index.html with a parameter
-      const path = location.pathname;
-      sessionStorage.redirect = path;
-      location.replace('/?redirect=' + encodeURIComponent(path));
-    </script>
-    <meta http-equiv="refresh" content="0; URL=/" />
-  </head>
-  <body>
-    <p>Redirecting to <a href="/">home page</a>...</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>404 – Page Not Found</title>
+  <meta name="robots" content="noindex" />
+</head>
+<body>
+  <script>
+    // Store path for SPA recovery
+    sessionStorage.setItem("redirectPath", location.pathname);
+  </script>
+
+  <h1>404</h1>
+  <p>Page not found.</p>
+  <a href="/">Go Home</a>
+</body>
 </html>

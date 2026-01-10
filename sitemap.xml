@@ -5,12 +5,9 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Sitemap for neupanehimal.com.np -->
-  <!-- Last updated: 2025-10-11 -->
-
   <url>
     <loc>https://neupanehimal.com.np/</loc>
-    <lastmod>2025-10-11T17:11:34+00:00</lastmod>
+    <lastmod>2026-01-10T17:11:34+00:00</lastmod>
     <priority>1.00</priority>
   </url>
 
@@ -33,6 +30,12 @@
   </url>
 
   <url>
+    <loc>https://neupanehimal.com.np/blog</loc>
+    <lastmod>2025-10-11T17:11:34+00:00</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
     <loc>https://neupanehimal.com.np/vibecheck</loc>
     <lastmod>2025-10-11T17:11:34+00:00</lastmod>
     <priority>0.80</priority>
@@ -43,13 +46,6 @@
     <lastmod>2025-10-11T17:11:34+00:00</lastmod>
     <priority>0.80</priority>
   </url>
-
-  <url>
-    <loc>https://neupanehimal.com.np/blog</loc>
-    <lastmod>2025-10-11T17:11:34+00:00</lastmod>
-    <priority>0.85</priority>
-  </url>
-
 
   <url>
     <loc>https://neupanehimal.com.np/hire-me</loc>

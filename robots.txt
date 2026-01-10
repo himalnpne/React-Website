@@ -1,4 +1,9 @@
+
 User-agent: *
 Allow: /
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /config/
+
 Sitemap: https://neupanehimal.com.np/sitemap.xml
-Host: neupanehimal.com.np

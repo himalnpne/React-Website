@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.f8142b3c.css",
-    "main.js": "/static/js/main.92276f18.js",
+    "main.js": "/static/js/main.8d4dd14f.js",
     "static/media/love_alaram.webp": "/static/media/love_alaram.43a2b17e10055fd8b7b3.webp",
     "static/media/taxi_driver.webp": "/static/media/taxi_driver.1d6a803ad12a9b6a1613.webp",
     "static/media/pendrive-authenticity.jpg": "/static/media/pendrive-authenticity.e90b8817f11b63262146.jpg",
@@ -128,13 +128,13 @@
     "static/media/404.png": "/static/media/404.6b6a6bbf5595b2b43b59.png",
     "static/media/WRC.png": "/static/media/WRC.f57b3a29554cbe36fc00.png",
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
-    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
+    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "main.f8142b3c.css.map": "/static/css/main.f8142b3c.css.map",
-    "main.92276f18.js.map": "/static/js/main.92276f18.js.map"
+    "main.8d4dd14f.js.map": "/static/js/main.8d4dd14f.js.map"
   },
   "entrypoints": [
     "static/css/main.f8142b3c.css",
-    "static/js/main.92276f18.js"
+    "static/js/main.8d4dd14f.js"
   ]
 }
