@@ -1,0 +1,109 @@
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { DarkModeProvider, useDarkMode } from './DarkModeContext';
+import './App.css';
+
+// Import components
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Testimonials from './components/Testimonials';
+import Subscription from './components/Subscription';
+import VibeCheck from './components/VibeCheck';
+import Photos from './components/Photos';
+import Blog from './components/Blog';
+import Post from './components/Post';
+import SignalChat from './components/SignalChat';
+import HireMe from './components/HireMe';
+import PrivacyPolicy from './components/PrivacyPolicy';
+
+// ScrollToTop component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
+// RedirectHandler component for GitHub Pages 404 redirection
+const RedirectHandler = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if we have a redirect parameter in the URL
+    const queryParams = new URLSearchParams(location.search);
+    const redirectParam = queryParams.get('redirect');
+    
+    if (redirectParam) {
+      // Navigate to the intended route
+      navigate(redirectParam, { replace: true });
+    }
+    
+    // Check sessionStorage for redirect (from 404.html)
+    const storedRedirect = sessionStorage.redirect;
+    if (storedRedirect) {
+      sessionStorage.removeItem('redirect');
+      navigate(storedRedirect, { replace: true });
+    }
+  }, [navigate, location]);
+
+  return null;
+};
+
+// Main App Content Component
+const AppContent = () => {
+  const { isDarkMode } = useDarkMode();
+
+  return (
+    <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
+      <ScrollToTop />
+      <RedirectHandler />
+      <Header />
+      
+      <main className={isDarkMode ? 'dark-mode' : ''}>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Home />
+              <Testimonials />
+              <Subscription />
+            </>
+          } />
+         
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/vibecheck" element={<VibeCheck />} />
+          <Route path="/photos" element={<Photos />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/post/:slug" element={<Post />} />
+          <Route path="/hire-me" element={<HireMe />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="*" element={<div>Page Not Found</div>} />
+        </Routes>
+      </main>
+      
+      <SignalChat />
+      <Footer />
+    </div>
+  );
+};
+
+function App() {
+  return (
+    <DarkModeProvider>
+      <Router>
+        <AppContent />
+      </Router>
+    </DarkModeProvider>
+  );
+}
+
+export default App;

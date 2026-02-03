@@ -1,0 +1,495 @@
+/* Base Styles */
+.blog-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 2rem 3rem; /* ⚙️ EDIT: Adjust overall container padding */
+}
+
+/* Posts Grid - Professional 4-column layout */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ⚙️ EDIT: Number of columns on desktop */
+  gap: 2rem; /* ⚙️ EDIT: Space between cards */
+  margin-top: 3rem; /* ⚙️ EDIT: Space above grid */
+}
+
+/* Blog Post Card - Professional Design */
+.blog-post {
+  background: white;
+  border-radius: 12px; /* ⚙️ EDIT: Card corner radius */
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); /* ⚙️ EDIT: Card shadow */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05); /* ⚙️ EDIT: Card border */
+}
+
+.blog-post:hover {
+  transform: translateY(-8px); /* ⚙️ EDIT: Hover lift amount */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1); /* ⚙️ EDIT: Hover shadow */
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.post-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.post-link:hover {
+  opacity: 0.98;
+}
+
+/* Image Section - DECREASED HEIGHT FOR DESKTOP */
+.post-image-container {
+  position: relative;
+  width: 100%;
+  height: 180px; /* ↓ DECREASED: From 220px to 180px for desktop */
+  overflow: hidden;
+  background: #f8f9fa; /* ⚙️ EDIT: Image fallback background */
+}
+
+.post-featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-post:hover .post-featured-image {
+  transform: scale(1.05); /* ⚙️ EDIT: Image zoom on hover */
+}
+
+/* Content Section */
+.post-content-wrapper {
+  padding: 1.25rem; /* ↓ DECREASED: From 1.5rem to 1.25rem */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+/* CARD TITLE STYLES - BOLD FONT FIXED */
+.posts-grid .blog-post .post-content-wrapper .post-title {
+  font-size: 0.85rem; /* ⚙️ EDIT: Title font size (Increased from 0.7rem for better readability) */
+  margin: 0 0 0.5rem 0; /* ↓ DECREASED: From 0.75rem to 0.5rem */
+  color: #1a1a1a; /* ⚙️ EDIT: Title color */
+  font-weight: 600 !important; /* ⚠️ CHANGED: Made bold (600 = semi-bold) */
+  line-height: 1.4; /* ⚙️ EDIT: Title line height */
+  letter-spacing: -0.01em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* ↓ DECREASED: From 4 to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 3em; /* Ensures consistent height */
+}
+
+.post-excerpt {
+  font-size: 0.8rem; /* ↓ DECREASED: From 0.85rem to 0.8rem */
+  color: #666; /* ⚙️ EDIT: Excerpt color */
+  line-height: 1.5; /* ⚙️ EDIT: Excerpt line height */
+  margin-bottom: 1rem; /* ↓ DECREASED: From 1.25rem to 1rem */
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* ↓ DECREASED: From 3 to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Meta Information Section */
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem; /* ↓ DECREASED: From 1rem to 0.75rem */
+  border-top: 1px solid rgba(0, 0, 0, 0.08); /* ⚙️ EDIT: Separator line */
+  margin-top: auto;
+}
+
+.post-date {
+  font-size: 0.75rem; /* ↓ DECREASED: From 0.8rem to 0.75rem */
+  color: #888; /* ⚙️ EDIT: Date color */
+  font-weight: 500; /* ⚠️ CHANGED: Made bold */
+}
+
+.read-time {
+  font-size: 0.7rem; /* ↓ DECREASED: From 0.75rem to 0.7rem */
+  color: #666; /* ⚙️ EDIT: Read time color */
+  background: #f5f5f5; /* ⚙️ EDIT: Read time background */
+  padding: 0.2rem 0.6rem; /* ↓ DECREASED: From 0.25rem 0.75rem */
+  border-radius: 10px; /* ↓ DECREASED: From 12px to 10px */
+  font-weight: 500; /* ⚠️ CHANGED: Made bold */
+}
+
+/* Category/Tag Badge */
+.post-category {
+  position: absolute;
+  top: 0.75rem; /* ↓ DECREASED: From 1rem to 0.75rem */
+  left: 0.75rem; /* ↓ DECREASED: From 1rem to 0.75rem */
+  background: rgba(255, 255, 255, 0.95); /* ⚙️ EDIT: Badge background */
+  padding: 0.25rem 0.75rem; /* ↓ DECREASED: From 0.35rem 1rem */
+  border-radius: 16px; /* ↓ DECREASED: From 20px to 16px */
+  font-size: 0.7rem; /* ↓ DECREASED: From 0.75rem to 0.7rem */
+  font-weight: 600; /* ⚠️ CHANGED: Made bold */
+  color: #444; /* ⚙️ EDIT: Badge text color */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08); /* ⚙️ EDIT: Badge border */
+}
+
+/* ========== DARK MODE STYLES - FIXED COLOR SWITCHING ========== */
+body.dark-mode .blog-post {
+  background: rgba(30, 30, 30, 0.95); /* ⚙️ EDIT: Dark mode card background */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .blog-post:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .post-image-container {
+  background: rgba(40, 40, 40, 0.8); /* ⚙️ EDIT: Dark mode image background */
+}
+
+body.dark-mode .post-content-wrapper {
+  background: transparent;
+}
+
+/* FIXED: Dark mode title color */
+body.dark-mode .posts-grid .blog-post .post-content-wrapper .post-title {
+  color: #ffffff !important; /* ⚠️ FIXED: White text in dark mode */
+}
+
+/* FIXED: Dark mode excerpt color */
+body.dark-mode .post-excerpt {
+  color: #cccccc !important; /* ⚠️ FIXED: Light gray text in dark mode */
+}
+
+body.dark-mode .post-meta {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* FIXED: Dark mode date color */
+body.dark-mode .post-date {
+  color: #aaaaaa !important; /* ⚠️ FIXED: Light gray text in dark mode */
+}
+
+/* FIXED: Dark mode read time */
+body.dark-mode .read-time {
+  background: rgba(255, 255, 255, 0.1) !important; /* ⚙️ EDIT: Dark mode read time background */
+  color: #bbbbbb !important; /* ⚠️ FIXED: Light gray text in dark mode */
+}
+
+/* FIXED: Dark mode category badge */
+body.dark-mode .post-category {
+  background: rgba(40, 40, 40, 0.95) !important; /* ⚙️ EDIT: Dark mode badge background */
+  color: #dddddd !important; /* ⚠️ FIXED: Light gray text in dark mode */
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* Large Desktop (1400px and below) */
+@media (max-width: 1400px) {
+  .posts-grid {
+    grid-template-columns: repeat(3, 1fr); /* ⚙️ EDIT: Columns on large screens */
+    gap: 1.75rem; /* ⚙️ EDIT: Gap on large screens */
+  }
+  
+  .blog-container {
+    max-width: 1200px;
+    padding: 6rem 1.5rem 3rem; /* ⚙️ EDIT: Padding on large screens */
+  }
+  
+  .post-image-container {
+    height: 180px; /* Same as desktop for consistency */
+  }
+  
+  .posts-grid .blog-post .post-content-wrapper .post-title {
+    font-size: 0.85rem;
+  }
+  
+  /* Dark mode fixes for large screens */
+  body.dark-mode .posts-grid .blog-post .post-content-wrapper .post-title {
+    color: #ffffff !important;
+  }
+}
+
+/* Tablet Landscape (1024px and below) */
+@media (max-width: 1024px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr); /* ⚙️ EDIT: Columns on tablets */
+    gap: 1.5rem; /* ⚙️ EDIT: Gap on tablets */
+  }
+  
+  .blog-container {
+    padding: 5rem 1.25rem 2.5rem; /* ⚙️ EDIT: Padding on tablets */
+  }
+  
+  .post-image-container {
+    height: 200px; /* ⚙️ EDIT: Image height on tablets (INCREASED for better mobile view) */
+  }
+  
+  .posts-grid .blog-post .post-content-wrapper .post-title {
+    font-size: 0.9rem; /* ⚙️ EDIT: Title size on tablets (LARGER for better readability) */
+  }
+  
+  .post-content-wrapper {
+    padding: 1.5rem; /* Back to original padding for tablets */
+  }
+  
+  .post-title {
+    -webkit-line-clamp: 3; /* Maintain 3 lines on tablets */
+  }
+  
+  /* Dark mode fixes for tablets */
+  body.dark-mode .posts-grid .blog-post .post-content-wrapper .post-title {
+    color: #ffffff !important;
+  }
+}
+
+/* Tablet Portrait (768px and below) */
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: 1fr; /* ⚙️ EDIT: 1 column on mobile */
+    gap: 1.5rem; /* ⚙️ EDIT: Gap on mobile */
+    margin-top: 2rem; /* ⚙️ EDIT: Space above grid on mobile */
+  }
+  
+  .blog-container {
+    padding: 4rem 1rem 2rem; /* ⚙️ EDIT: Padding on mobile */
+  }
+  
+  .blog-post {
+    max-width: 500px; /* ⚙️ EDIT: Max card width on mobile */
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .post-image-container {
+    height: 220px; /* ⚙️ EDIT: Image height on mobile (INCREASED for better mobile view) */
+  }
+  
+  .post-content-wrapper {
+    padding: 1.5rem; /* ⚙️ EDIT: Content padding on mobile */
+  }
+  
+  .posts-grid .blog-post .post-content-wrapper .post-title {
+    font-size: 1rem; /* ⚙️ EDIT: Title size on mobile (LARGER for better readability) */
+    -webkit-line-clamp: 2; /* ⚙️ EDIT: Title lines on mobile */
+    margin-bottom: 0.75rem; /* Slightly more spacing on mobile */
+  }
+  
+  .post-excerpt {
+    font-size: 0.9rem; /* Larger excerpt on mobile */
+    -webkit-line-clamp: 3; /* More lines on mobile */
+    margin-bottom: 1.25rem; /* More spacing on mobile */
+  }
+  
+  .post-meta {
+    padding-top: 1rem; /* More spacing on mobile */
+  }
+  
+  .post-date {
+    font-size: 0.8rem; /* Larger on mobile */
+  }
+  
+  .read-time {
+    font-size: 0.75rem; /* Larger on mobile */
+    padding: 0.25rem 0.75rem; /* Larger padding on mobile */
+  }
+  
+  .post-category {
+    top: 1rem; /* Larger spacing on mobile */
+    left: 1rem; /* Larger spacing on mobile */
+    padding: 0.3rem 0.9rem; /* Larger on mobile */
+    font-size: 0.75rem; /* Larger on mobile */
+  }
+  
+  /* Dark mode fixes for mobile */
+  body.dark-mode .posts-grid .blog-post .post-content-wrapper .post-title {
+    color: #ffffff !important;
+    font-size: 1rem !important;
+  }
+  
+  body.dark-mode .post-excerpt {
+    color: #cccccc !important;
+  }
+  
+  body.dark-mode .post-date {
+    color: #aaaaaa !important;
+  }
+  
+  body.dark-mode .read-time {
+    color: #bbbbbb !important;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .blog-container {
+    padding: 3.5rem 0.75rem 1.5rem; /* ⚙️ EDIT: Padding on small mobile */
+  }
+  
+  .posts-grid {
+    gap: 1.25rem; /* ⚙️ EDIT: Gap on small mobile */
+  }
+  
+  .post-image-container {
+    height: 200px; /* ⚙️ EDIT: Image height on small mobile */
+  }
+  
+  .post-content-wrapper {
+    padding: 1.25rem; /* ⚙️ EDIT: Content padding on small mobile */
+  }
+  
+  .posts-grid .blog-post .post-content-wrapper .post-title {
+    font-size: 0.95rem; /* ⚙️ EDIT: Title size on small mobile */
+    -webkit-line-clamp: 2;
+  }
+  
+  .post-excerpt {
+    font-size: 0.85rem; /* ⚙️ EDIT: Excerpt size on small mobile */
+    -webkit-line-clamp: 2; /* ⚙️ EDIT: Excerpt lines on small mobile */
+  }
+  
+  /* Dark mode fixes for small mobile */
+  body.dark-mode .posts-grid .blog-post .post-content-wrapper .post-title {
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blog-post {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Stagger the animation for each card */
+.blog-post:nth-child(1) { animation-delay: 0.1s; }
+.blog-post:nth-child(2) { animation-delay: 0.2s; }
+.blog-post:nth-child(3) { animation-delay: 0.3s; }
+.blog-post:nth-child(4) { animation-delay: 0.4s; }
+.blog-post:nth-child(5) { animation-delay: 0.5s; }
+.blog-post:nth-child(6) { animation-delay: 0.6s; }
+
+/* ========== OPTIONAL HEADER SECTION ========== */
+.blog-header {
+  text-align: center;
+  margin-bottom: 3rem; /* ⚙️ EDIT: Space below header */
+  padding: 0 1rem;
+}
+
+.blog-title {
+  font-size: 2.5rem; /* ⚙️ EDIT: Blog title font size */
+  color: #1a1a1a; /* ⚙️ EDIT: Blog title color */
+  margin-bottom: 1rem; /* ⚙️ EDIT: Space below blog title */
+  font-weight: 700; /* ⚙️ EDIT: Blog title font weight */
+}
+
+.blog-subtitle {
+  font-size: 1.1rem; /* ⚙️ EDIT: Subtitle font size */
+  color: #666; /* ⚙️ EDIT: Subtitle color */
+  max-width: 600px; /* ⚙️ EDIT: Max width of subtitle */
+  margin: 0 auto; /* ⚙️ EDIT: Center subtitle */
+  line-height: 1.6; /* ⚙️ EDIT: Subtitle line height */
+}
+
+/* Dark mode for blog header */
+body.dark-mode .blog-title {
+  color: #f0f0f0 !important; /* ⚙️ EDIT: Dark mode blog title color */
+}
+
+body.dark-mode .blog-subtitle {
+  color: #aaa !important; /* ⚙️ EDIT: Dark mode subtitle color */
+}
+
+/* Header responsive adjustments */
+@media (max-width: 768px) {
+  .blog-title {
+    font-size: 2rem; /* ⚙️ EDIT: Blog title size on mobile */
+  }
+  
+  .blog-subtitle {
+    font-size: 1rem; /* ⚙️ EDIT: Subtitle size on mobile */
+  }
+}
+
+/* FONT SIZE AND BOLDNESS OVERRIDES - These ensure styles apply properly */
+.posts-grid .blog-post .post-content-wrapper .post-title {
+  font-size: 0.85rem !important;
+  font-weight: 600 !important; /* BOLD */
+}
+
+@media (max-width: 1400px) {
+  .posts-grid .blog-post .post-content-wrapper .post-title {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important; /* BOLD */
+  }
+}
+
+@media (max-width: 1024px) {
+  .posts-grid .blog-post .post-content-wrapper .post-title {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important; /* BOLD */
+  }
+}
+
+@media (max-width: 768px) {
+  .posts-grid .blog-post .post-content-wrapper .post-title {
+    font-size: 1rem !important;
+    font-weight: 600 !important; /* BOLD */
+  }
+}
+
+@media (max-width: 480px) {
+  .posts-grid .blog-post .post-content-wrapper .post-title {
+    font-size: 0.95rem !important;
+    font-weight: 600 !important; /* BOLD */
+  }
+}
+
+/* DARK MODE COLOR OVERRIDES - ENSURES COLOR SWITCHING */
+body.dark-mode .posts-grid .blog-post .post-content-wrapper .post-title,
+body.dark-mode .post-excerpt,
+body.dark-mode .post-date,
+body.dark-mode .read-time,
+body.dark-mode .post-category {
+  color: inherit !important;
+}
+
+/* Specific dark mode colors */
+body.dark-mode {
+  .posts-grid .blog-post .post-content-wrapper .post-title {
+    color: #ffffff !important;
+  }
+  .post-excerpt {
+    color: #cccccc !important;
+  }
+  .post-date {
+    color: #aaaaaa !important;
+  }
+  .read-time {
+    color: #bbbbbb !important;
+  }
+  .post-category {
+    color: #dddddd !important;
+  }
+}

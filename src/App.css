@@ -1,0 +1,41 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode (default) */
+.App {
+  background-color: #ffffff;
+  color: #2D3748;
+}
+
+/* Dark mode */
+.App.dark-mode {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+.App.dark-mode main {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+main {
+  flex: 1;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Remove global body dark mode styles - we'll handle this in DarkModeContext */
+/* 
+body.dark-mode {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+*/
+
+/* Add smooth transitions for all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

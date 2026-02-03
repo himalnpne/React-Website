@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- BASIC -->
+    <meta charset="utf-8" />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- CRITICAL INLINE CSS (Above-the-fold styles) -->
+    <style>
+      /* Minimal critical CSS for immediate rendering */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      html, body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        height: 100%;
+        width: 100%;
+        line-height: 1.5;
+        color: #333;
+        background: #fff;
+      }
+      
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      /* Loading state for SPA */
+      .app-loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        font-size: 1.2rem;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 0.3s ease-out;
+      }
+      
+      .app-loading.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      /* Noscript styles */
+      noscript {
+        display: block;
+      }
+      
+      noscript > div {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      
+      /* Basic typography for noscript */
+      noscript h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        color: #222;
+      }
+      
+      noscript h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #555;
+      }
+      
+      noscript h3 {
+        font-size: 1.4rem;
+        margin: 1.5rem 0 1rem;
+        color: #444;
+      }
+      
+      /* Basic link styles */
+      a {
+        color: #0066cc;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      
+      a:hover {
+        text-decoration: underline;
+      }
+      
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        noscript h1 { font-size: 2rem; }
+        noscript h2 { font-size: 1.5rem; }
+        noscript h3 { font-size: 1.25rem; }
+        noscript > div { padding: 1rem; }
+      }
+    </style>
+
+    <!-- PRELOAD main CSS with async loading -->
+    <link 
+      rel="preload" 
+      href="/css/main.1c732197.css" 
+      as="style" 
+      onload="this.onload=null;this.rel='stylesheet';document.querySelector('.app-loading')?.classList.add('hidden');"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/css/main.1c732197.css" />
+    </noscript>
+
+    <!-- PRELOAD critical assets -->
+    <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
+
+    <!-- SEO -->
+    <title>Himal Neupane | Full Stack Developer Portfolio - React & Node.js Specialist from Nepal</title>
+    <meta
+      name="description"
+      content="Himal Neupane: Nepali Full Stack Developer specializing in React, Node.js, cybersecurity. Building modern web applications and secure solutions from Nepal."
+    />
+    <meta
+      name="keywords"
+      content="Himal Neupane, himalnpne, Full Stack Developer Nepal, React Developer Nepal, Node.js Developer, Cybersecurity Nepal, MERN Stack, Web Developer Nepal"
+    />
+    <meta name="author" content="Himal Neupane" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://neupanehimal.com.np/" />
+    
+    <!-- OPEN GRAPH -->
+    <meta property="og:site_name" content="Himal Neupane Portfolio" />
+    <meta property="og:title" content="Himal Neupane | Full Stack Developer & Cybersecurity Specialist from Nepal" />
+    <meta
+      property="og:description"
+      content="Professional portfolio of Himal Neupane - Nepali Full Stack Developer specializing in React, Node.js, and cybersecurity solutions."
+    />
+    <meta property="og:image" content="https://neupanehimal.com.np/logo192.png" />
+    <meta property="og:image:width" content="192" />
+    <meta property="og:image:height" content="192" />
+    <meta property="og:image:alt" content="Himal Neupane Logo" />
+    <meta property="og:url" content="https://neupanehimal.com.np/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@himalnpne" />
+    <meta name="twitter:creator" content="@himalnpne" />
+    <meta name="twitter:title" content="Himal Neupane | Full Stack Developer Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Nepali Full Stack Developer specializing in React, Node.js, cybersecurity solutions, and modern web development."
+    />
+    <meta name="twitter:image" content="https://neupanehimal.com.np/logo192.png" />
+    <meta name="twitter:image:alt" content="Himal Neupane Portfolio" />
+
+    <!-- ICONS -->
+    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- STRUCTURED DATA -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Himal Neupane",
+        "alternateName": ["himalnpne", "Himal Npne", "himalneupane", "neupanehimal"],
+        "url": "https://neupanehimal.com.np/",
+        "image": "https://neupanehimal.com.np/logo192.png",
+        "sameAs": [
+          "https://github.com/himalnpne",
+          "https://www.linkedin.com/in/himalnpne/",
+          "https://twitter.com/himalnpne",
+          "https://instagram.com/himalnpne"
+        ],
+        "jobTitle": "Full Stack Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance"
+        },
+        "nationality": {
+          "@type": "Country",
+          "name": "Nepal"
+        },
+        "knowsAbout": [
+          "React",
+          "JavaScript",
+          "Node.js",
+          "Web Development",
+          "Cybersecurity",
+          "Ethical Hacking",
+          "MERN Stack",
+          "Full Stack Development"
+        ],
+        "knowsLanguage": ["English", "Nepali"],
+        "homeLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "NP"
+          }
+        },
+        "description": "Full Stack Developer from Nepal specializing in React, Node.js, and cybersecurity."
+      }
+    </script>
+
+    <!-- WEBSITE SCHEMA -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Himal Neupane Portfolio",
+        "alternateName": "himalnpne Portfolio",
+        "url": "https://neupanehimal.com.np/",
+        "description": "Portfolio of Himal Neupane, a Full Stack Developer and Cybersecurity Specialist from Nepal.",
+        "inLanguage": "en-US",
+        "author": {
+          "@type": "Person",
+          "name": "Himal Neupane"
+        }
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <!-- Loading overlay for SPA -->
+    <div class="app-loading">
+      <div>Loading Portfolio...</div>
+    </div>
+
+    <!-- NO JS FALLBACK -->
+    <noscript>
+      <div>
+        <h1>Himal Neupane – Full Stack Developer & Cybersecurity Specialist</h1>
+        <h2>Nepali Developer | React & Node.js Expert | Web Security Consultant</h2>
+        
+        <nav>
+          <h3>Site Navigation</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/skills">Skills</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+        </nav>
+        
+        <div>
+          <p><strong>Welcome to my professional portfolio.</strong> I specialize in building modern web applications using React, Node.js, and the MERN stack. With expertise in both development and cybersecurity, I create secure, scalable solutions.</p>
+          
+          <h3>My Services:</h3>
+          <ul>
+            <li><strong>Full Stack Web Development</strong> - React, Node.js, Express, MongoDB</li>
+            <li><strong>Cybersecurity Consulting</strong> - Web application security, penetration testing</li>
+            <li><strong>API Development</strong> - RESTful APIs, GraphQL, microservices</li>
+            <li><strong>Responsive Web Design</strong> - Mobile-first, accessible UI/UX</li>
+          </ul>
+          
+          <h3>Get in Touch:</h3>
+          <p>
+            Email: <a href="mailto:hi@neupanehimal.com.np">hi@neupanehimal.com.np</a><br>
+            GitHub: <a href="https://github.com/himalnpne">github.com/himalnpne</a><br>
+            Instagram: <a href="https://instagram.com/himalnpne">instagram.com/himalnpne</a><br>
+            LinkedIn: <a href="https://www.linkedin.com/in/himalnpne/">linkedin.com/in/himalnpne</a>
+          </p>
+          
+          <div>
+            <p><strong>JavaScript Required:</strong> Enable JavaScript for the full interactive experience with animations and live demos.</p>
+          </div>
+        </div>
+      </div>
+    </noscript>
+
+    <div id="root"></div>
+
+    <!-- SPA AND PERFORMANCE SCRIPTS -->
+    <script>
+      (function () {
+        // Set language attribute
+        document.documentElement.lang = 'en';
+        
+        // Handle SPA routing
+        const currentPath = window.location.pathname;
+        const currentHash = window.location.hash;
+        
+        // Store path for React Router
+        if (currentPath !== '/' && !currentPath.endsWith('.html')) {
+          sessionStorage.setItem('redirectPath', currentPath + currentHash);
+        }
+        
+        // CSS loading fallback
+        setTimeout(function() {
+          var loadingElement = document.querySelector('.app-loading');
+          if (loadingElement && !loadingElement.classList.contains('hidden')) {
+            loadingElement.classList.add('hidden');
+          }
+        }, 2000);
+        
+        // Initialize after DOM is ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initApp);
+        } else {
+          initApp();
+        }
+        
+        function initApp() {
+          // SPA initialization will happen here
+          // Remove loading screen
+          setTimeout(() => {
+            var loadingElement = document.querySelector('.app-loading');
+            if (loadingElement) {
+              loadingElement.classList.add('hidden');
+            }
+          }, 100);
+        }
+        
+      })();
+    </script>
+
+  </body>
+</html>

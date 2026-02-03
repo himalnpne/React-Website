@@ -1,0 +1,624 @@
+
+.single-post-container {
+  max-width: 900px;
+  margin: 5rem auto 2rem; /* Increased top margin to prevent header overlap */
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.single-post {
+  background-color: #F1F5F9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.post-hero {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.post-featured-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-header-container {
+  padding: 2rem 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.post-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  align-items: center;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  background-color: #f0f0f0;
+  color: #555;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.post-full-content {
+  padding: 0 2rem 2rem;
+  line-height: 1.6;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.post-text {
+  margin-bottom: 1.5rem;
+  overflow-wrap: break-word;
+}
+
+.post-header {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  overflow-wrap: break-word;
+}
+
+.post-image {
+  margin: 1.5rem 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.post-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  max-width: 100%;
+}
+
+.post-image figcaption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.float-left {
+  float: left;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+  max-width: 50%;
+}
+
+.float-right {
+  float: right;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  max-width: 50%;
+}
+
+.post-columns {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  box-sizing: border-box;
+}
+
+.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.post-quote {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-left: 4px solid #ddd;
+  font-style: italic;
+  box-sizing: border-box;
+}
+
+.post-quote footer {
+  margin-top: 0.75rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+.post-navigation {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 2rem 2rem;
+  box-sizing: border-box;
+}
+
+.back-to-blog {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.back-to-blog:hover {
+  background-color: #0056b3;
+}
+
+.post-loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.post-not-found {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Table Styles */
+.table-container {
+  overflow-x: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.post-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  min-width: 600px; /* Ensure table has minimum width for small screens */
+}
+
+.post-table th,
+.post-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+  box-sizing: border-box;
+}
+
+.post-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.post-table tr:hover {
+  background-color: #f5f7f9;
+}
+
+.post-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Utility class to prevent horizontal overflow */
+.no-horizontal-scroll {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* In your Post.css file */
+.post-table tr.green {
+  background-color: rgba(87, 211, 91, 0.1);
+}
+
+.post-table tr.blue {
+  background-color: rgba(33, 150, 243, 0.1);
+}
+
+.post-table tr.red {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+/* New Styles for HTML Content */
+.post-text strong {
+  font-weight: 700;
+  color: #2c3e50;
+  background-color: #f8f9fa;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+  display: inline-block;
+  margin: 4px 0;
+  border-left: 3px solid #007bff;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.post-text em {
+  font-style: italic;
+  color: #555;
+}
+
+/* For command output styling */
+.post-text strong strong {
+  background-color: #e8f4ff;
+  border-left-color: #28a745;
+  color: #155724;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .single-post-container {
+    margin: 4rem auto 1rem; /* Adjusted top margin for mobile */
+    padding: 0 0.5rem;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .post-header-container {
+    padding: 1.5rem 1.5rem 0.75rem;
+  }
+  
+  .post-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .post-full-content {
+    padding: 0 1.5rem 1.5rem;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .cols-2, .cols-3 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .float-left, .float-right {
+    float: none;
+    margin: 1rem 0;
+    width: 100% !important;
+    max-width: 100%;
+  }
+  
+  .post-image {
+    margin: 1rem 0;
+  }
+  
+  .post-text {
+    margin-bottom: 1rem;
+  }
+  
+  .post-header {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+  }
+  
+  .post-quote {
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+  
+  .post-navigation {
+    padding: 1rem 1.5rem 1.5rem;
+  }
+  
+  .table-container {
+    margin: 15px 0;
+    border-radius: 6px;
+  }
+  
+  .post-table th,
+  .post-table td {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .post-text strong {
+    padding: 4px 8px;
+    font-size: 0.9em;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .single-post-container {
+    margin: 3.5rem auto 1rem; /* Further adjusted for very small screens */
+  }
+  
+  .post-header-container {
+    padding: 1.25rem 1.25rem 0.5rem;
+  }
+  
+  .post-title {
+    font-size: 1.5rem;
+  }
+  
+  .post-full-content {
+    padding: 0 1.25rem 1.25rem;
+  }
+  
+  .post-meta {
+    font-size: 0.85rem;
+  }
+  
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .post-header {
+    font-size: 1.35rem;
+  }
+  
+  .post-table th,
+  .post-table td {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .back-to-blog {
+    padding: 0.6rem 1.5rem;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .post-text strong {
+    padding: 3px 6px;
+    font-size: 0.85em;
+  }
+  
+  /* Prevent any horizontal scrolling */
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  * {
+    max-width: 100%;
+  }
+}
+
+/* Additional mobile-specific fixes */
+@media (max-width: 768px) {
+  /* Ensure content doesn't overflow on very small screens */
+  .single-post {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+  }
+  
+  /* Improve touch targets for mobile */
+  .back-to-blog {
+    min-height: 44px; /* Minimum touch target size */
+  }
+  
+  /* Better image handling */
+  .post-image img {
+    height: auto;
+    max-width: 100%;
+  }
+  
+  /* Adjust quote styling for mobile */
+  .post-quote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* Fix header spacing */
+  .post-header-container > * {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  /* Ensure command text wraps properly */
+  .post-text strong {
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .single-post-container {
+  background: transparent;
+}
+
+body.dark-mode .single-post {
+  background-color: #1e293b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .post-title {
+  color: #e9ecef;
+}
+
+body.dark-mode .post-meta {
+  color: #adb5bd;
+}
+
+body.dark-mode .tag {
+  background-color: rgba(67, 97, 238, 0.2);
+  color: #adb5bd;
+}
+
+body.dark-mode .post-full-content {
+  color: #ced4da;
+}
+
+body.dark-mode .post-header {
+  color: #e9ecef;
+}
+
+body.dark-mode .post-text {
+  color: #ced4da;
+}
+
+body.dark-mode .post-quote {
+  background-color: rgba(67, 97, 238, 0.1);
+  border-left-color: #4361ee;
+  color: #e9ecef;
+}
+
+body.dark-mode .post-table {
+  background: #2d3748;
+}
+
+body.dark-mode .post-table th {
+  background-color: #374151;
+  color: #e9ecef;
+}
+
+body.dark-mode .post-table td {
+  color: #d1d5db;
+  border-bottom-color: #4b5563;
+}
+
+body.dark-mode .post-table tr:hover {
+  background-color: #374151;
+}
+
+body.dark-mode .back-to-blog {
+  background-color: #4361ee;
+  color: white;
+}
+
+body.dark-mode .back-to-blog:hover {
+  background-color: #3a56d4;
+}
+
+body.dark-mode .post-loading,
+body.dark-mode .post-not-found {
+  color: #adb5bd;
+}
+
+/* Table row colors in dark mode */
+body.dark-mode .post-table tr.green {
+  background-color: rgba(87, 211, 91, 0.15);
+}
+
+body.dark-mode .post-table tr.blue {
+  background-color: rgba(33, 150, 243, 0.15);
+}
+
+body.dark-mode .post-table tr.red {
+  background-color: rgba(244, 67, 54, 0.15);
+}
+
+/* Dark mode styles for HTML content */
+body.dark-mode .post-text strong {
+  color: #e9ecef;
+  background-color: #2d3748;
+  border-left-color: #4361ee;
+}
+
+body.dark-mode .post-text em {
+  color: #adb5bd;
+}
+
+body.dark-mode .post-text strong strong {
+  background-color: rgba(67, 97, 238, 0.2);
+  border-left-color: #28a745;
+  color: #90ee90;
+}
+
+
+/* Add to Post.css - List styles */
+.post-list {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.post-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.post-list li strong {
+  font-weight: 600;
+  color: #2c3e50;
+  background-color: transparent;
+  padding: 0;
+  border-left: none;
+  font-family: inherit;
+}
+
+.post-list li code {
+  font-family: 'Courier New', monospace;
+  background-color: #f8f9fa;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: #d63384;
+}
+
+/* Dark mode for lists */
+body.dark-mode .post-list li {
+  color: #ced4da;
+}
+
+body.dark-mode .post-list li strong {
+  color: #e9ecef;
+}
+
+body.dark-mode .post-list li code {
+  background-color: #2d3748;
+  color: #f8b2d8;
+}
+
+/* Link styles within lists */
+.post-list li a {
+  color: #007bff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 123, 255, 0.3);
+}
+
+.post-list li a:hover {
+  color: #0056b3;
+  border-bottom-color: #0056b3;
+}
+
+body.dark-mode .post-list li a {
+  color: #4361ee;
+  border-bottom-color: rgba(67, 97, 238, 0.3);
+}
+
+body.dark-mode .post-list li a:hover {
+  color: #3a56d4;
+}
