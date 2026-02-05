@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1c732197.css",
-    "main.js": "/static/js/main.e2f13eb2.js",
+    "main.css": "/static/css/main.4a21bda1.css",
+    "main.js": "/static/js/main.e98026f4.js",
     "static/media/love_alaram.webp": "/static/media/love_alaram.43a2b17e10055fd8b7b3.webp",
     "static/media/taxi_driver.webp": "/static/media/taxi_driver.1d6a803ad12a9b6a1613.webp",
     "static/media/pendrive-authenticity.jpg": "/static/media/pendrive-authenticity.e90b8817f11b63262146.jpg",
@@ -11,7 +11,6 @@
     "static/media/game_of_thrones.webp": "/static/media/game_of_thrones.aba6d30d67de4e858d0c.webp",
     "static/media/the_sorapnos.webp": "/static/media/the_sorapnos.a0f82cda41f455751d8e.webp",
     "static/media/big_mouth.webp": "/static/media/big_mouth.add2cc6fabc50a691da7.webp",
-    "static/media/jamesmay.gif": "/static/media/jamesmay.b980197cb72c433c6d9a.gif",
     "static/media/one_piece.webp": "/static/media/one_piece.fb72764ead63fb62b7f6.webp",
     "static/media/prison_break.webp": "/static/media/prison_break.0638492229805dd05bb3.webp",
     "static/media/narcos.webp": "/static/media/narcos.bfeeea7cb4406538de2e.webp",
@@ -143,17 +142,19 @@
     "static/media/JosefinSans-Regular.woff": "/static/media/JosefinSans-Regular.c8e74084b240c16bcb86.woff",
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
     "static/media/motogp.png": "/static/media/motogp.e81012c91a13424bf40f.png",
+    "static/media/mountain-light.svg": "/static/media/mountain-light.dbd354416bf6be9196127df86770f66f.svg",
+    "static/media/mountain-dark.svg": "/static/media/mountain-dark.88ea50783e9831ac35c8b4673939c737.svg",
     "static/media/JosefinSans-Regular.woff2": "/static/media/JosefinSans-Regular.f4957adac433e264cd24.woff2",
     "static/media/404.png": "/static/media/404.6b6a6bbf5595b2b43b59.png",
     "static/media/WRC.png": "/static/media/WRC.f57b3a29554cbe36fc00.png",
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "index.html": "/index.html",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
-    "main.1c732197.css.map": "/static/css/main.1c732197.css.map",
-    "main.e2f13eb2.js.map": "/static/js/main.e2f13eb2.js.map"
+    "main.4a21bda1.css.map": "/static/css/main.4a21bda1.css.map",
+    "main.e98026f4.js.map": "/static/js/main.e98026f4.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c732197.css",
-    "static/js/main.e2f13eb2.js"
+    "static/css/main.4a21bda1.css",
+    "static/js/main.e98026f4.js"
   ]
 }
