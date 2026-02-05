@@ -41,6 +41,30 @@
   z-index: 1000;
 }
 
+/* Dark mode styles */
+.dark-mode .signal-popup {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .popup-header h3 {
+  color: #ffffff;
+}
+
+.dark-mode .signal-popup p {
+  color: #cccccc;
+}
+
+.dark-mode .close-popup {
+  color: #cccccc;
+}
+
+.dark-mode .close-popup:hover {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
 /* Mobile-specific styles - aligned to right */
 .signal-popup.mobile {
   width: 85vw;

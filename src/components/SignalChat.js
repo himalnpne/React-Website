@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignalMessenger } from '@fortawesome/free-brands-svg-icons';
 import { faComments, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { useDarkMode } from '../DarkModeContext'; // Import the dark mode context
 import './SignalChat.css';
 
 const SignalChat = () => {
@@ -9,7 +10,12 @@ const SignalChat = () => {
   const [isMobile, setIsMobile] = useState(false);
   const popupRef = useRef(null);
   const dismissTimerRef = useRef(null);
-  const signalLink = "https://signal.me/#eu/5n2k8h1hABs_c43gYlL2yfD1jaZbLNu5YZZjigKMxcExpn0xuf9MhZc1XqGtMgTV";
+  
+  // Use the new Signal link
+  const signalLink = "https://signal.me/#eu/TXMDKP0cwDqAYa4TemME17dk_qORav7Z24ZxCcUAioUtERRn7s9Ii563ZlWt6mLs";
+  
+  // Get dark mode state
+  const { isDarkMode } = useDarkMode();
 
   // Check if device is mobile
   useEffect(() => {
@@ -30,7 +36,7 @@ const SignalChat = () => {
     clearTimeout(dismissTimerRef.current);
     dismissTimerRef.current = setTimeout(() => {
       setShowPopup(false);
-    }, 8000); // 4 seconds
+    }, 8000); // 8 seconds
   };
 
   // Show popup after delay
@@ -80,8 +86,14 @@ const SignalChat = () => {
           ref={popupRef}
           onMouseEnter={handlePopupInteraction}
           onClick={handlePopupInteraction}
+          data-dark-mode={isDarkMode} // Add data attribute for debugging
         >
-          <button className="close-popup" onClick={handleClosePopup}>
+          {/* FIX: Added aria-label for accessibility */}
+          <button 
+            className="close-popup" 
+            onClick={handleClosePopup}
+            aria-label="Close chat popup"
+          >
             <FontAwesomeIcon icon={faTimes} />
           </button>
           <div className="popup-content">

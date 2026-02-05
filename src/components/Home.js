@@ -21,6 +21,10 @@ import { FaReact, FaFigma, FaWordpress, FaLinux, FaPython, FaPhp, FaJava } from 
 import { SiAdobeillustrator, SiWireshark, SiDocker, SiDjango, SiPostgresql } from 'react-icons/si';
 import { FaFlutter } from 'react-icons/fa6';
 
+// Import SVG files for mountain backgrounds
+import MountainLight from './mountain-light.svg';
+import MountainDark from './mountain-dark.svg';
+
 function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showHobbies, setShowHobbies] = useState(false);
@@ -319,6 +323,18 @@ function Home() {
       className={`home ${isDarkMode ? 'dark-mode' : ''}`} 
       ref={ref}
     >
+      {/* Mountain Background with full edge blur - between HIMALNPNE and subtitle */}
+      <div className="mountain-bg">
+        <img 
+          src={isDarkMode ? MountainDark : MountainLight}
+          alt="Mountain background"
+          className="mountain-svg"
+        />
+        <div className="mountain-fade"></div>
+        <div className="mountain-left-fade"></div>
+        <div className="mountain-right-fade"></div>
+      </div>
+
       {/* Dynamic floating accents */}
       <motion.div 
         className="floating-accent red-accent"

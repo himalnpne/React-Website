@@ -48,68 +48,78 @@ function HireMe() {
             bring your vision to life with clean, efficient code and modern design principles.
           </p>
           
-          {/* Enhanced Professional Strengths Section */}
+          {/* REDESIGNED Professional Strengths Section */}
           <div className="professional-strengths">
             <h2 className={`strengths-heading ${isLoaded ? 'animate-in' : ''}`}>Professional Approach</h2>
             
             <div className="strengths-grid">
               <div className="strength-card" data-index="1">
                 <div className="strength-card-highlight"></div>
-                <div className="strength-icon agile-icon"></div>
-                <h3 className="strength-title">Agile Methodology</h3>
-                <p>I embrace Agile principles with daily stand-ups, sprint planning, and iterative development cycles to ensure flexible, responsive project management.</p>
+                <div className="strength-icon-container">
+                  <div className="strength-icon agile-icon"></div>
+                  <h3 className="strength-title">Agile Methodology</h3>
+                </div>
+                <p>Embrace Agile principles with daily stand-ups, sprint planning, and iterative development cycles for flexible project management.</p>
                 <ul className="strength-features">
-                  <li>Scrum & Kanban practices</li>
-                  <li>Sprint-based delivery</li>
+                  <li>Scrum & Kanban</li>
+                  <li>Sprint delivery</li>
                   <li>Continuous iteration</li>
                 </ul>
               </div>
               
               <div className="strength-card" data-index="2">
                 <div className="strength-card-highlight"></div>
-                <div className="strength-icon workflow-icon"></div>
-                <h3 className="strength-title">Development Workflow</h3>
-                <p>My structured workflow includes clear requirements gathering, architecture planning, and systematic implementation with proper version control.</p>
+                <div className="strength-icon-container">
+                  <div className="strength-icon workflow-icon"></div>
+                  <h3 className="strength-title">Development Workflow</h3>
+                </div>
+                <p>Structured workflow with requirements gathering, architecture planning, and systematic implementation.</p>
                 <ul className="strength-features">
-                  <li>Git-based version control</li>
-                  <li>CI/CD implementation</li>
+                  <li>Git version control</li>
+                  <li>CI/CD pipelines</li>
                   <li>Clear documentation</li>
                 </ul>
               </div>
               
               <div className="strength-card" data-index="3">
                 <div className="strength-card-highlight"></div>
-                <div className="strength-icon efficiency-icon"></div>
-                <h3 className="strength-title">Efficiency & Delivery</h3>
-                <p>I focus on optimized solutions that balance technical excellence with practical delivery timelines and business requirements.</p>
+                <div className="strength-icon-container">
+                  <div className="strength-icon efficiency-icon"></div>
+                  <h3 className="strength-title">Efficiency & Delivery</h3>
+                </div>
+                <p>Optimized solutions balancing technical excellence with practical delivery timelines and business requirements.</p>
                 <ul className="strength-features">
                   <li>On-time delivery</li>
                   <li>Resource optimization</li>
-                  <li>Performance-focused code</li>
+                  <li>Performance focus</li>
                 </ul>
               </div>
               
               <div className="strength-card" data-index="4">
                 <div className="strength-card-highlight"></div>
-                <div className="strength-icon collaboration-icon"></div>
-                <h3 className="strength-title">Collaboration & Communication</h3>
-                <p>Regular updates, clear documentation, and open channels ensure all stakeholders remain informed and engaged throughout the project.</p>
+                <div className="strength-icon-container">
+                  <div className="strength-icon collaboration-icon"></div>
+                  <h3 className="strength-title">Collaboration</h3>
+                </div>
+                <p>Regular updates and clear documentation ensure all stakeholders remain informed and engaged.</p>
                 <ul className="strength-features">
-                  <li>Transparent progress reporting</li>
+                  <li>Progress reporting</li>
                   <li>Stakeholder engagement</li>
-                  <li>Responsive communication</li>
+                  <li>Responsive comms</li>
                 </ul>
               </div>
               
               <div className="strength-card" data-index="5">
                 <div className="strength-card-highlight"></div>
-                <div className="strength-icon quality-icon"></div>
-                <h3 className="strength-title">Quality & Reliability</h3>
-                <p>I implement thorough testing practices, code reviews, and quality assurance processes to deliver reliable, maintainable solutions.</p>
+                <div className="strength-icon-container">
+                  <div className="strength-icon quality-icon"></div>
+                  <h3 className="strength-title">Quality & Reliability</h3>
+                </div>
+                <p>Thorough testing, code reviews, and QA processes to deliver reliable, maintainable solutions.</p>
                 <ul className="strength-features">
                   <li>Automated testing</li>
-                  <li>Code quality standards</li>
-                  <li>Robust error handling</li>
+                  <li>Code standards</li>
+                  <li>Error handling</li>
                 </ul>
               </div>
             </div>
