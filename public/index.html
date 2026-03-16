@@ -112,16 +112,28 @@
       }
     </style>
 
-    <!-- PRELOAD main CSS with async loading -->
-    <link 
-      rel="preload" 
-      href="/css/main.1c732197.css" 
-      as="style" 
-      onload="this.onload=null;this.rel='stylesheet';document.querySelector('.app-loading')?.classList.add('hidden');"
-    />
-    <noscript>
-      <link rel="stylesheet" href="/css/main.1c732197.css" />
-    </noscript>
+    <!-- Check if CSS exists before preloading -->
+    <script>
+      (function() {
+        // Check if CSS file exists before preloading
+        var xhr = new XMLHttpRequest();
+        xhr.open('HEAD', '/css/main.1c732197.css', true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              // CSS exists, preload it
+              var link = document.createElement('link');
+              link.rel = 'preload';
+              link.href = '/css/main.1c732197.css';
+              link.as = 'style';
+              link.onload = function() { this.rel = 'stylesheet'; };
+              document.head.appendChild(link);
+            }
+          }
+        };
+        xhr.send();
+      })();
+    </script>
 
     <!-- PRELOAD critical assets -->
     <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
