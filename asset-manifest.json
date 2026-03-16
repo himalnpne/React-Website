@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4a21bda1.css",
-    "main.js": "/static/js/main.e98026f4.js",
+    "main.js": "/static/js/main.3ab9146d.js",
     "static/media/love_alaram.webp": "/static/media/love_alaram.43a2b17e10055fd8b7b3.webp",
     "static/media/taxi_driver.webp": "/static/media/taxi_driver.1d6a803ad12a9b6a1613.webp",
     "static/media/pendrive-authenticity.jpg": "/static/media/pendrive-authenticity.e90b8817f11b63262146.jpg",
@@ -133,6 +133,7 @@
     "static/media/our_secret.webp": "/static/media/our_secret.b6389560c7add5a0fb31.webp",
     "static/media/its_okay_not_to_be_okay.webp": "/static/media/its_okay_not_to_be_okay.8c9e04cc29ba416983dc.webp",
     "static/media/be_with_you.webp": "/static/media/be_with_you.5ee69ce480072e25e0e2.webp",
+    "static/media/adventure-bikes-nepal.jpg": "/static/media/adventure-bikes-nepal.c776e8aee92d94607710.jpg",
     "static/media/true_beauty.webp": "/static/media/true_beauty.8539bde37658287275af.webp",
     "static/media/marry_my_husband.webp": "/static/media/marry_my_husband.256869c1f558f7c79c1a.webp",
     "static/media/the_glory.webp": "/static/media/the_glory.da79ccc47c14c2c1537d.webp",
@@ -151,10 +152,10 @@
     "index.html": "/index.html",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "main.4a21bda1.css.map": "/static/css/main.4a21bda1.css.map",
-    "main.e98026f4.js.map": "/static/js/main.e98026f4.js.map"
+    "main.3ab9146d.js.map": "/static/js/main.3ab9146d.js.map"
   },
   "entrypoints": [
     "static/css/main.4a21bda1.css",
-    "static/js/main.e98026f4.js"
+    "static/js/main.3ab9146d.js"
   ]
 }
