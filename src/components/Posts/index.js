@@ -8,6 +8,7 @@ import fifthPost from './fifth-post';
 import sixthPost from './sixth-post';
 import iptracking from './ip-tracking';
 import nepaltravelguide from './nepal-travel-guide';
+import adventurebikenepal from './adventure-bikes-nepal';
  // Changed from secondPostPost to secondPost
 
 // Export all posts as an array
@@ -16,6 +17,7 @@ const allPosts = [
   fourthPost,
   sixthPost,
   iptracking,
+  adventurebikenepal,
   nepaltravelguide,
   fifthPost,
   secondPost,

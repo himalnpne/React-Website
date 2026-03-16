@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#343434" />
 
     <!-- CRITICAL INLINE CSS (Above-the-fold styles) -->
     <style>
@@ -25,8 +25,8 @@
         height: 100%;
         width: 100%;
         line-height: 1.5;
-        color: #333;
-        background: #fff;
+        color: #343434;
+        background: #F9F6EE;
       }
       
       #root {
@@ -45,9 +45,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        font-size: 1.2rem;
+        background: linear-gradient(135deg, #343434 0%, #8B0000 100%);
+        color: #F9F6EE;
+        font-size: 1.8rem;
+        font-weight: 500;
         z-index: 9999;
         opacity: 1;
         transition: opacity 0.3s ease-out;
@@ -75,24 +76,24 @@
         font-size: 2.5rem;
         margin-bottom: 1rem;
         line-height: 1.2;
-        color: #222;
+        color: #343434;
       }
       
       noscript h2 {
         font-size: 1.8rem;
         margin-bottom: 1rem;
-        color: #555;
+        color: #8B0000;
       }
       
       noscript h3 {
         font-size: 1.4rem;
         margin: 1.5rem 0 1rem;
-        color: #444;
+        color: #343434;
       }
       
       /* Basic link styles */
       a {
-        color: #0066cc;
+        color: #8B0000;
         text-decoration: none;
         transition: color 0.2s;
       }
@@ -103,6 +104,7 @@
       
       /* Mobile responsiveness */
       @media (max-width: 768px) {
+        .app-loading { font-size: 1.5rem; }
         noscript h1 { font-size: 2rem; }
         noscript h2 { font-size: 1.5rem; }
         noscript h3 { font-size: 1.25rem; }
@@ -238,7 +240,7 @@
   <body>
     <!-- Loading overlay for SPA -->
     <div class="app-loading">
-      <div>Loading Portfolio...</div>
+      <div>Loading Website...</div>
     </div>
 
     <!-- NO JS FALLBACK -->
