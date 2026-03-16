@@ -1,3 +1,4 @@
+<!-- public/404.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +16,8 @@
       padding: 40px 20px;
       text-align: center;
     }
-    h1 {
-      font-size: 4rem;
-      margin: 0;
-      color: #007bff;
-    }
-    p {
-      font-size: 1.2rem;
-      margin: 20px 0 30px;
-    }
+    h1 { font-size: 4rem; margin: 0; color: #007bff; }
+    p { font-size: 1.2rem; margin: 20px 0 30px; }
     a {
       display: inline-block;
       padding: 12px 30px;
@@ -34,25 +28,53 @@
       font-weight: bold;
       transition: background 0.3s;
     }
-    a:hover {
-      background: #0056b3;
+    a:hover { background: #0056b3; }
+    .loading { margin: 20px 0; }
+    .dot-flashing {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: #007bff;
+      animation: dotFlashing 1s infinite linear alternate;
+      animation-delay: 0.5s;
+    }
+    @keyframes dotFlashing {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
     }
   </style>
   <script>
-    // Store the 404 path for React Router to handle
-    const fullPath = window.location.pathname + window.location.search + window.location.hash;
-    
-    if (fullPath !== '/') {
-      sessionStorage.setItem('redirectPath', fullPath);
-    }
-    
-    // Redirect to homepage
-    window.location.href = '/';
+    (function() {
+      // Get the full path that caused the 404
+      const fullPath = window.location.pathname + window.location.search + window.location.hash;
+      
+      // Store it for React Router to handle
+      if (fullPath !== '/') {
+        sessionStorage.setItem('redirectPath', fullPath);
+        
+        // Show loading message with dots
+        document.addEventListener('DOMContentLoaded', function() {
+          const loadingEl = document.getElementById('loadingMessage');
+          if (loadingEl) {
+            loadingEl.innerHTML = 'Loading <span class="dot-flashing"></span><span class="dot-flashing"></span><span class="dot-flashing"></span>';
+          }
+        });
+        
+        // Redirect to homepage after a brief moment
+        setTimeout(function() {
+          window.location.href = '/';
+        }, 500);
+      } else {
+        window.location.href = '/';
+      }
+    })();
   </script>
 </head>
 <body>
   <h1>404</h1>
-  <p>Page not found. Redirecting to homepage...</p>
+  <p id="loadingMessage">Loading Website<span class="dot-flashing"></span></p>
   <p>If you are not redirected automatically, <a href="/">click here</a>.</p>
 </body>
 </html>
