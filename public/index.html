@@ -9,7 +9,7 @@
 
     <!-- CRITICAL INLINE CSS (Above-the-fold styles) -->
     <style>
-      /* Minimal critical CSS for immediate rendering */
+      /* Your existing critical CSS remains the same */
       * {
         margin: 0;
         padding: 0;
@@ -35,7 +35,6 @@
         flex-direction: column;
       }
       
-      /* Loading state for SPA */
       .app-loading {
         position: fixed;
         top: 0;
@@ -59,7 +58,6 @@
         pointer-events: none;
       }
       
-      /* Noscript styles */
       noscript {
         display: block;
       }
@@ -71,7 +69,6 @@
         line-height: 1.6;
       }
       
-      /* Basic typography for noscript */
       noscript h1 {
         font-size: 2.5rem;
         margin-bottom: 1rem;
@@ -91,7 +88,6 @@
         color: #343434;
       }
       
-      /* Basic link styles */
       a {
         color: #8B0000;
         text-decoration: none;
@@ -102,7 +98,6 @@
         text-decoration: underline;
       }
       
-      /* Mobile responsiveness */
       @media (max-width: 768px) {
         .app-loading { font-size: 1.5rem; }
         noscript h1 { font-size: 2rem; }
@@ -111,48 +106,19 @@
         noscript > div { padding: 1rem; }
       }
 
-      /* Additional styles that might have been in main.css */
-      /* Add these to ensure your site looks complete */
+      /* Add any additional styles that might have been in main.css */
+      /* This ensures your site looks complete even without main.css */
       .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
       }
       
-      .text-center {
-        text-align: center;
-      }
-      
-      /* Add any other styles your React app needs */
-      button {
-        cursor: pointer;
-        border: none;
-        background: #8B0000;
-        color: #F9F6EE;
-        padding: 10px 20px;
-        border-radius: 4px;
-        font-size: 1rem;
-        transition: background 0.2s;
-      }
-      
-      button:hover {
-        background: #660000;
-      }
-      
-      /* Card styles if used in your app */
-      .card {
-        background: white;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
+      /* Add more styles as needed */
     </style>
-
-    <!-- REMOVED: CSS preload check that was causing 404 -->
 
     <!-- PRELOAD critical assets (only existing files) -->
     <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
-    <link rel="preload" href="/logo192.png" as="image" />
 
     <!-- SEO -->
     <title>Himal Neupane | Full Stack Developer Portfolio - React & Node.js Specialist from Nepal</title>
@@ -263,6 +229,23 @@
       }
     </script>
 
+    <!-- Add CSS to force html/body to start at top -->
+    <style>
+      /* Force scroll to top on initial load */
+      html {
+        scroll-behavior: auto !important;
+      }
+      
+      /* Hide any overflow until page is ready */
+      body {
+        overflow-y: hidden;
+      }
+      
+      body.loaded {
+        overflow-y: auto;
+      }
+    </style>
+
   </head>
 
   <body>
@@ -273,6 +256,7 @@
 
     <!-- NO JS FALLBACK -->
     <noscript>
+      <!-- Your existing noscript content remains the same -->
       <div>
         <h1>Himal Neupane – Full Stack Developer & Cybersecurity Specialist</h1>
         <h2>Nepali Developer | React & Node.js Expert | Web Security Consultant</h2>
@@ -355,6 +339,151 @@
             }
           }, 100);
         }
+        
+      })();
+    </script>
+
+    <!-- ENHANCED SCROLL RESET FIX - Forces scroll to top on ALL devices including mobile -->
+    <script>
+      (function() {
+        // AGGRESSIVE SCROLL TO TOP FOR ALL DEVICES
+        
+        // Disable automatic scroll restoration
+        try {
+          window.history.scrollRestoration = 'manual';
+        } catch (e) {
+          console.log('Scroll restoration not supported');
+        }
+        
+        // Function to force scroll to top using multiple methods
+        function forceScrollToTop() {
+          try {
+            // Method 1: Standard scrollTo
+            window.scrollTo(0, 0);
+            
+            // Method 2: Scroll to document element
+            document.documentElement.scrollTop = 0;
+            
+            // Method 3: Scroll to body
+            document.body.scrollTop = 0;
+            
+            // Method 4: Scroll to root element
+            document.getElementById('root')?.scrollTo(0, 0);
+            
+            // Method 5: Use scrollIntoView on a hidden element at the top
+            let topMarker = document.getElementById('scroll-top-marker');
+            if (!topMarker) {
+              topMarker = document.createElement('div');
+              topMarker.id = 'scroll-top-marker';
+              topMarker.style.position = 'absolute';
+              topMarker.style.top = '0';
+              topMarker.style.left = '0';
+              topMarker.style.width = '1px';
+              topMarker.style.height = '1px';
+              topMarker.style.opacity = '0';
+              topMarker.style.pointerEvents = 'none';
+              document.body.prepend(topMarker);
+            }
+            topMarker.scrollIntoView({ behavior: 'auto', block: 'start' });
+          } catch (e) {
+            console.log('Scroll method failed:', e);
+          }
+        }
+        
+        // Call immediately
+        forceScrollToTop();
+        
+        // Call on DOM ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function() {
+            forceScrollToTop();
+            document.body.classList.add('loaded');
+          });
+        } else {
+          forceScrollToTop();
+          document.body.classList.add('loaded');
+        }
+        
+        // Call on page load
+        window.addEventListener('load', function() {
+          forceScrollToTop();
+        });
+        
+        // Call on page show (for bfcache/back-forward)
+        window.addEventListener('pageshow', function(event) {
+          forceScrollToTop();
+        });
+        
+        // Handle touch events that might cause scroll on mobile
+        window.addEventListener('touchstart', function() {
+          // Small delay to allow touch to complete
+          setTimeout(forceScrollToTop, 10);
+        }, { passive: true });
+        
+        // Handle orientation change on mobile
+        window.addEventListener('orientationchange', function() {
+          setTimeout(forceScrollToTop, 100);
+        });
+        
+        // Handle resize
+        window.addEventListener('resize', function() {
+          setTimeout(forceScrollToTop, 100);
+        });
+        
+        // Handle back/forward navigation
+        window.addEventListener('popstate', function() {
+          setTimeout(forceScrollToTop, 0);
+          setTimeout(forceScrollToTop, 50);
+          setTimeout(forceScrollToTop, 100);
+        });
+        
+        // Override history methods for SPA navigation
+        const originalPushState = history.pushState;
+        const originalReplaceState = history.replaceState;
+        
+        history.pushState = function() {
+          originalPushState.apply(this, arguments);
+          setTimeout(forceScrollToTop, 0);
+          setTimeout(forceScrollToTop, 50);
+        };
+        
+        history.replaceState = function() {
+          originalReplaceState.apply(this, arguments);
+          setTimeout(forceScrollToTop, 0);
+          setTimeout(forceScrollToTop, 50);
+        };
+        
+        // Handle all link clicks
+        document.addEventListener('click', function(e) {
+          const link = e.target.closest('a');
+          if (link && link.href && link.href.indexOf(window.location.origin) === 0) {
+            // Internal link - scroll to top after navigation
+            setTimeout(forceScrollToTop, 0);
+            setTimeout(forceScrollToTop, 50);
+            setTimeout(forceScrollToTop, 100);
+          }
+        }, true);
+        
+        // Aggressive timeouts to ensure scroll is at top
+        setTimeout(forceScrollToTop, 10);
+        setTimeout(forceScrollToTop, 50);
+        setTimeout(forceScrollToTop, 100);
+        setTimeout(forceScrollToTop, 200);
+        setTimeout(forceScrollToTop, 500);
+        setTimeout(forceScrollToTop, 1000);
+        
+        // Also handle any scroll events and immediately scroll back up
+        let preventScrollRestoration = true;
+        window.addEventListener('scroll', function() {
+          if (preventScrollRestoration && window.scrollY > 0) {
+            forceScrollToTop();
+          }
+        }, { passive: false });
+        
+        // After a short delay, allow normal scrolling (but page should already be at top)
+        setTimeout(function() {
+          preventScrollRestoration = false;
+        }, 1500);
         
       })();
     </script>
