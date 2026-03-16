@@ -9,7 +9,7 @@
 
     <!-- CRITICAL INLINE CSS (Above-the-fold styles) -->
     <style>
-      /* Your existing critical CSS remains the same */
+      /* Minimal critical CSS for immediate rendering */
       * {
         margin: 0;
         padding: 0;
@@ -35,6 +35,7 @@
         flex-direction: column;
       }
       
+      /* Loading state for SPA */
       .app-loading {
         position: fixed;
         top: 0;
@@ -58,6 +59,7 @@
         pointer-events: none;
       }
       
+      /* Noscript styles */
       noscript {
         display: block;
       }
@@ -69,6 +71,7 @@
         line-height: 1.6;
       }
       
+      /* Basic typography for noscript */
       noscript h1 {
         font-size: 2.5rem;
         margin-bottom: 1rem;
@@ -88,6 +91,7 @@
         color: #343434;
       }
       
+      /* Basic link styles */
       a {
         color: #8B0000;
         text-decoration: none;
@@ -98,6 +102,7 @@
         text-decoration: underline;
       }
       
+      /* Mobile responsiveness */
       @media (max-width: 768px) {
         .app-loading { font-size: 1.5rem; }
         noscript h1 { font-size: 2rem; }
@@ -106,19 +111,48 @@
         noscript > div { padding: 1rem; }
       }
 
-      /* Add any additional styles that might have been in main.css */
-      /* This ensures your site looks complete even without main.css */
+      /* Additional styles that might have been in main.css */
+      /* Add these to ensure your site looks complete */
       .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
       }
       
-      /* Add more styles as needed */
+      .text-center {
+        text-align: center;
+      }
+      
+      /* Add any other styles your React app needs */
+      button {
+        cursor: pointer;
+        border: none;
+        background: #8B0000;
+        color: #F9F6EE;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: background 0.2s;
+      }
+      
+      button:hover {
+        background: #660000;
+      }
+      
+      /* Card styles if used in your app */
+      .card {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
     </style>
+
+    <!-- REMOVED: CSS preload check that was causing 404 -->
 
     <!-- PRELOAD critical assets (only existing files) -->
     <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="/logo192.png" as="image" />
 
     <!-- SEO -->
     <title>Himal Neupane | Full Stack Developer Portfolio - React & Node.js Specialist from Nepal</title>
@@ -239,7 +273,6 @@
 
     <!-- NO JS FALLBACK -->
     <noscript>
-      <!-- Your existing noscript content remains the same -->
       <div>
         <h1>Himal Neupane – Full Stack Developer & Cybersecurity Specialist</h1>
         <h2>Nepali Developer | React & Node.js Expert | Web Security Consultant</h2>
