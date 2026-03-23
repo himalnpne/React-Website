@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Skills from './components/Skills';
+//import ScrollToTop from './components/ScrollToTop';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Testimonials from './components/Testimonials';
@@ -36,10 +37,14 @@ const RedirectHandler = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const storedRedirect = sessionStorage.getItem('redirectPath');
-    if (storedRedirect && storedRedirect !== '/') {
-      sessionStorage.removeItem('redirectPath');
-      navigate(storedRedirect, { replace: true });
+    try {
+      const storedRedirect = sessionStorage.getItem('redirectPath');
+      if (storedRedirect && storedRedirect !== '/') {
+        sessionStorage.removeItem('redirectPath');
+        navigate(storedRedirect, { replace: true });
+      }
+    } catch (e) {
+      console.warn('sessionStorage not available:', e);
     }
   }, [navigate]);
 
