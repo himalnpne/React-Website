@@ -555,3 +555,6 @@ body, button, input, textarea, select {
     height: 280px;
   }
 }
+.drama-category.shortcdrama {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+}

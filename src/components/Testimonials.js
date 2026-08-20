@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Testimonials.css';
 
 // Mock images (in a real app, you would import these)
-import anishImage from './testimonials/anish1.jpg';
-import niranImage from './testimonials/niran.jpg';
-import hemantImage from './testimonials/hemant.jpg';
-import defaultAvatar from './testimonials/defaultuser.png';
+import anishImage from './images/anish1.jpg';
+import niranImage from './images/niran.jpg';
+import hemantImage from './images/hemant.jpg';
+import defaultAvatar from './images/defaultuser.png';
 
 const testimonials = [
   {

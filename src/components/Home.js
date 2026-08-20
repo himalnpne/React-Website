@@ -17,7 +17,7 @@ import {
 } from 'react-icons/fi';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaReact, FaFigma, FaWordpress, FaLinux, FaPython, FaPhp, FaJava } from 'react-icons/fa';
+import { FaReact, FaFigma, FaWordpress, FaLinux, FaPython, FaPhp, FaJava ,FaCloudflare} from 'react-icons/fa';
 import { SiAdobeillustrator, SiWireshark, SiDocker, SiDjango, SiPostgresql } from 'react-icons/si';
 import { FaFlutter } from 'react-icons/fa6';
 
@@ -184,14 +184,15 @@ function Home() {
     { icon: <FaFigma />, name: "Figma", color: "#353935" },
     { icon: <SiAdobeillustrator />, name: "Adobe Illustrator", color: "#1B1212" },
     { icon: <FaWordpress />, name: "WordPress", color: "#023020" },
-    { icon: <FaLinux />, name: "Linux", color: "#F353935" },
-    { icon: <SiWireshark />, name: "Wireshark", color: "#1B1212" },
+    { icon: <FaLinux />, name: "Linux", color: "#180e05" },
+    { icon: <SiWireshark />, name: "Wireshark", color: "#150606" },
     { icon: <SiDjango />, name: "Django", color: "#1B1233" },
     { icon: <SiDocker />, name: "Docker", color: "#200404ff" },
     { icon: <FaFlutter />, name: "Flutter", color: "#28282B" },
     { icon: <SiPostgresql />, name: "PostgreSQL", color: "#353935" },
     { icon: <FaPhp />, name: "PHP", color: "#023020" },
     { icon: <FaPython />, name: "Python", color: "#28282B" },
+     { icon: <FaCloudflare />, name: "cloudflare", color: "#080825" },
     { icon: <FaJava />, name: "Java", color: "#1B1212" },
   ];
 

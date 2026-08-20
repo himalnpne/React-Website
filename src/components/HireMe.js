@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 import { useDarkMode } from '../DarkModeContext';
 import './HireMe.css';
 
+// Import the GIF from the images folder in the same directory
+import handshakeGif from './images/Handshake.gif';
+
 function HireMe() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [gifError, setGifError] = useState(false);
   const { isDarkMode } = useDarkMode();
 
   useEffect(() => {
@@ -125,11 +129,49 @@ function HireMe() {
             </div>
           </div>
 
+          {/* Handshake GIF Section - Partnership CTA */}
+          <div className="partnership-section">
+            <div className="partnership-card">
+              <div className="partnership-content">
+                <div className="partnership-image">
+                  {!gifError ? (
+                    <img 
+                      src={handshakeGif}
+                      alt="Partnership handshake" 
+                      className="handshake-gif"
+                      loading="lazy"
+                      onError={() => setGifError(true)}
+                    />
+                  ) : (
+                    <div className="handshake-fallback">
+                      <span className="handshake-emoji">🤝</span>
+                      <span className="handshake-text">Let's Partner</span>
+                    </div>
+                  )}
+                </div>
+                <div className="partnership-info">
+                  <h3>Ready to Build Something Great?</h3>
+                  <p>
+                    Whether you need a solo developer or a full team, I'm committed to delivering 
+                    exceptional results that exceed your expectations. Let's create something 
+                    remarkable together.
+                  </p>
+                  <Link to="/contact" className="partnership-btn">
+                    <span className="btn-text">Start the Conversation</span>
+                    <span className="btn-icon">→</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Professional Team Section */}
           <div className="team-section">
             <div className="team-card">
               <div className="team-content">
-                <div className="strength-icon team-icon"></div>
+                <div className="team-icon-wrapper">
+                  <div className="strength-icon team-icon"></div>
+                </div>
                 <div className="team-info">
                   <h3>Professional Team on Standby</h3>
                   <p>
@@ -194,6 +236,25 @@ function HireMe() {
                     <span className="btn-icon">→</span>
                   </Link>
                 </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Contact section moved above email section */}
+          <div className="contact-cta-section">
+            <div className="contact-cta-card">
+              <div className="contact-cta-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </div>
+              <div className="contact-cta-content">
+                <h3>Let's Talk About Your Project</h3>
+                <p>Have a question or want to discuss your project in detail? Reach out through our contact page.</p>
+                <Link to="/contact" className="contact-cta-btn">
+                  <span className="btn-text">Visit Contact Page</span>
+                  <span className="btn-icon">→</span>
+                </Link>
               </div>
             </div>
           </div>

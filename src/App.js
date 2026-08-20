@@ -20,6 +20,8 @@ import Post from './components/Post';
 import SignalChat from './components/SignalChat';
 import HireMe from './components/HireMe';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import SupportMe from './components/SupportMe';
+
 
 // ScrollToTop component
 const ScrollToTop = () => {
@@ -83,6 +85,7 @@ const AppContent = () => {
           <Route path="/blog/post/:slug" element={<Post />} />
           <Route path="/hire-me" element={<HireMe />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/support" element={<SupportMe />} />
 
           {/* React-side 404 - Enhanced */}
           <Route 

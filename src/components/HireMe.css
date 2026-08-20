@@ -366,6 +366,155 @@
   font-size: 1.2rem;
 }
 
+/* Partnership Section - Handshake GIF */
+.partnership-section {
+  margin-bottom: 5rem;
+}
+
+.partnership-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  transition: var(--transition);
+  border: 1px solid rgba(148, 6, 6, 0.1);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.6s forwards;
+}
+
+.partnership-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--card-gradient);
+  z-index: -1;
+  border-radius: var(--border-radius);
+}
+
+.partnership-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+  border-color: rgba(148, 6, 6, 0.2);
+}
+
+.partnership-content {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.partnership-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.handshake-gif {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: rgba(148, 6, 6, 0.05);
+  padding: 8px;
+}
+
+/* Handshake Fallback */
+.handshake-fallback {
+  width: 100%;
+  max-width: 180px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(148, 6, 6, 0.06);
+  border-radius: 16px;
+  border: 2px dashed rgba(148, 6, 6, 0.2);
+  transition: var(--transition);
+}
+
+.handshake-fallback:hover {
+  border-color: rgba(148, 6, 6, 0.4);
+  background: rgba(148, 6, 6, 0.1);
+}
+
+.handshake-emoji {
+  font-size: 4rem;
+  line-height: 1;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.handshake-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.partnership-info {
+  text-align: left;
+}
+
+.partnership-info h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.partnership-info p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.partnership-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, var(--accent-red), #d63031);
+  color: white;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 8px 25px rgba(148, 6, 6, 0.3);
+  position: relative;
+  overflow: hidden;
+  font-size: 1rem;
+}
+
+.partnership-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(148, 6, 6, 0.4);
+  color: white;
+}
+
+.partnership-btn .btn-icon {
+  margin-left: 10px;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+.partnership-btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+
 /* Enhanced Hire Options */
 .hire-options-wrap {
   margin-bottom: 5rem;
@@ -456,6 +605,7 @@
 .hire-option-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(148, 6, 6, 0.4);
+  color: white;
 }
 
 .btn-text {
@@ -488,6 +638,95 @@
 
 .hire-option-btn:hover::before {
   left: 100%;
+}
+
+/* Contact CTA Section - New */
+.contact-cta-section {
+  margin-bottom: 3rem;
+}
+
+.contact-cta-card {
+  background: linear-gradient(135deg, rgba(148, 6, 6, 0.06) 0%, rgba(148, 6, 6, 0.02) 100%);
+  border-radius: var(--border-radius);
+  padding: 2.5rem 3rem;
+  border: 1px solid rgba(148, 6, 6, 0.12);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  text-align: left;
+}
+
+.contact-cta-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-hover);
+  border-color: rgba(148, 6, 6, 0.2);
+}
+
+.contact-cta-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(148, 6, 6, 0.12);
+  border-radius: 16px;
+  color: var(--accent-red);
+}
+
+.contact-cta-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.contact-cta-content {
+  flex: 1;
+}
+
+.contact-cta-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.contact-cta-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.contact-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.8rem;
+  background: linear-gradient(135deg, var(--accent-red), #d63031);
+  color: white;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(148, 6, 6, 0.25);
+  font-size: 0.95rem;
+}
+
+.contact-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(148, 6, 6, 0.35);
+  color: white;
+}
+
+.contact-cta-btn .btn-icon {
+  margin-left: 8px;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+.contact-cta-btn:hover .btn-icon {
+  transform: translateX(5px);
 }
 
 /* Team Section */
@@ -533,6 +772,10 @@
   grid-template-columns: auto 1fr;
   gap: 2rem;
   align-items: start;
+}
+
+.team-icon-wrapper {
+  flex-shrink: 0;
 }
 
 .team-icon {
@@ -604,9 +847,7 @@
 /* Enhanced Contact Section */
 .hire-me-contact {
   text-align: center;
-  margin-top: 3rem;
-  opacity: 0;
-  animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) 1.2s forwards;
+  margin-top: 0;
   padding: 2rem;
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
@@ -617,6 +858,8 @@
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0;
+  animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) 1.3s forwards;
 }
 
 .hire-me-contact h3 {
@@ -700,6 +943,25 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
+  
+  .partnership-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .partnership-info {
+    text-align: center;
+  }
+  
+  .contact-cta-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .team-icon-wrapper {
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -730,6 +992,23 @@
     height: 70px;
     margin: 0 auto;
     background-size: 32px;
+  }
+  
+  .partnership-card {
+    padding: 1.8rem;
+  }
+  
+  .handshake-gif {
+    max-width: 140px;
+  }
+  
+  .handshake-fallback {
+    max-width: 140px;
+    height: 140px;
+  }
+  
+  .handshake-emoji {
+    font-size: 3rem;
   }
 }
 
@@ -762,6 +1041,27 @@
   
   .team-features {
     grid-template-columns: 1fr;
+  }
+  
+  .partnership-card {
+    padding: 1.5rem;
+  }
+  
+  .handshake-gif {
+    max-width: 120px;
+  }
+  
+  .handshake-fallback {
+    max-width: 120px;
+    height: 120px;
+  }
+  
+  .handshake-emoji {
+    font-size: 2.5rem;
+  }
+  
+  .contact-cta-card {
+    padding: 1.5rem;
   }
 }
 
@@ -838,7 +1138,9 @@ body.dark-mode .strengths-heading,
 body.dark-mode .strength-title,
 body.dark-mode .hire-option h3,
 body.dark-mode .hire-me-contact h3,
-body.dark-mode .team-info h3 {
+body.dark-mode .team-info h3,
+body.dark-mode .partnership-info h3,
+body.dark-mode .contact-cta-content h3 {
   color: #f1f5f9;
 }
 
@@ -846,7 +1148,9 @@ body.dark-mode .strength-card p,
 body.dark-mode .strength-features li,
 body.dark-mode .hire-option p,
 body.dark-mode .team-info p,
-body.dark-mode .team-features li {
+body.dark-mode .team-features li,
+body.dark-mode .partnership-info p,
+body.dark-mode .contact-cta-content p {
   color: #cbd5e1;
 }
 
@@ -874,22 +1178,36 @@ body.dark-mode .strength-icon {
 
 body.dark-mode .hire-option,
 body.dark-mode .hire-me-contact,
-body.dark-mode .team-card {
+body.dark-mode .team-card,
+body.dark-mode .partnership-card,
+body.dark-mode .contact-cta-card {
   background: rgba(30, 41, 59, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-mode .hire-option::before,
-body.dark-mode .team-card::before {
+body.dark-mode .team-card::before,
+body.dark-mode .partnership-card::before {
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 }
 
 body.dark-mode .hire-option:hover,
-body.dark-mode .team-card:hover {
+body.dark-mode .team-card:hover,
+body.dark-mode .partnership-card:hover {
   background: rgba(30, 41, 59, 0.9);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
   border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .contact-cta-card {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(247, 54, 54, 0.15);
+}
+
+body.dark-mode .contact-cta-icon {
+  background: rgba(247, 54, 54, 0.15);
+  color: #F73636;
 }
 
 body.dark-mode .strength-features li:before,
@@ -906,13 +1224,31 @@ body.dark-mode .email-link:hover {
   border-bottom-color: #ff6b6b;
 }
 
-body.dark-mode .hire-option-btn {
+body.dark-mode .hire-option-btn,
+body.dark-mode .partnership-btn,
+body.dark-mode .contact-cta-btn {
   background: linear-gradient(135deg, #F73636, #ff6b6b);
   box-shadow: 0 8px 25px rgba(247, 54, 54, 0.3);
 }
 
-body.dark-mode .hire-option-btn:hover {
+body.dark-mode .hire-option-btn:hover,
+body.dark-mode .partnership-btn:hover,
+body.dark-mode .contact-cta-btn:hover {
   box-shadow: 0 12px 30px rgba(247, 54, 54, 0.4);
+}
+
+body.dark-mode .handshake-fallback {
+  background: rgba(247, 54, 54, 0.06);
+  border-color: rgba(247, 54, 54, 0.2);
+}
+
+body.dark-mode .handshake-fallback:hover {
+  border-color: rgba(247, 54, 54, 0.4);
+  background: rgba(247, 54, 54, 0.1);
+}
+
+body.dark-mode .handshake-text {
+  color: #94a3b8;
 }
 
 /* Update icon colors for dark mode with thicker strokes */
