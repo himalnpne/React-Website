@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4a21bda1.css",
-    "main.js": "/static/js/main.d65b98a7.js",
+    "main.css": "/static/css/main.962cd768.css",
+    "main.js": "/static/js/main.06c3a1dc.js",
     "static/media/love_alaram.webp": "/static/media/love_alaram.43a2b17e10055fd8b7b3.webp",
     "static/media/taxi_driver.webp": "/static/media/taxi_driver.1d6a803ad12a9b6a1613.webp",
     "static/media/pendrive-authenticity.jpg": "/static/media/pendrive-authenticity.e90b8817f11b63262146.jpg",
@@ -41,6 +41,7 @@
     "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.1815e00441357e01619e.ttf",
     "static/media/mr_crow_miss_lizard.webp": "/static/media/mr_crow_miss_lizard.ecb2300a5fe923d2e8c5.webp",
     "static/media/gintama.webp": "/static/media/gintama.63a57371ba293128a10c.webp",
+    "static/media/Handshake.gif": "/static/media/Handshake.bbabd61f69840885085c.gif",
     "static/media/haikyu.webp": "/static/media/haikyu.0ce753ed7ad28228afb0.webp",
     "static/media/vagabond.webp": "/static/media/vagabond.f42557c149e588ed1d43.webp",
     "static/media/attack_on_titan.webp": "/static/media/attack_on_titan.d911dc75bca737b0ca84.webp",
@@ -142,6 +143,7 @@
     "static/media/24_Hours_of_Le_Mans.png": "/static/media/24_Hours_of_Le_Mans.3671920a29118c06e07d.png",
     "static/media/JosefinSans-Regular.woff": "/static/media/JosefinSans-Regular.c8e74084b240c16bcb86.woff",
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
+    "static/media/payoneer-logo.svg": "/static/media/payoneer-logo.18489e2bdec9a83aa02f1225a93f2b7b.svg",
     "static/media/motogp.png": "/static/media/motogp.e81012c91a13424bf40f.png",
     "static/media/mountain-light.svg": "/static/media/mountain-light.dbd354416bf6be9196127df86770f66f.svg",
     "static/media/mountain-dark.svg": "/static/media/mountain-dark.88ea50783e9831ac35c8b4673939c737.svg",
@@ -151,11 +153,11 @@
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "index.html": "/index.html",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
-    "main.4a21bda1.css.map": "/static/css/main.4a21bda1.css.map",
-    "main.d65b98a7.js.map": "/static/js/main.d65b98a7.js.map"
+    "main.962cd768.css.map": "/static/css/main.962cd768.css.map",
+    "main.06c3a1dc.js.map": "/static/js/main.06c3a1dc.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a21bda1.css",
-    "static/js/main.d65b98a7.js"
+    "static/css/main.962cd768.css",
+    "static/js/main.06c3a1dc.js"
   ]
 }
