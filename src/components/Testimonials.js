@@ -49,7 +49,6 @@ const TestimonialCard = ({ testimonial, isExpanded, onToggleExpand, isMobile }) 
   useEffect(() => {
     const checkOverflow = () => {
       if (contentRef.current) {
-        // Reset to collapsed state to measure natural height
         const wasExpanded = isExpanded;
         if (wasExpanded) {
           contentRef.current.style.webkitLineClamp = isMobile ? '3' : '4';
@@ -60,14 +59,12 @@ const TestimonialCard = ({ testimonial, isExpanded, onToggleExpand, isMobile }) 
         const maxHeight = lineHeight * (isMobile ? 3 : 4);
         setIsOverflowing(contentHeight > maxHeight);
         
-        // Restore expanded state if it was expanded
         if (wasExpanded) {
           contentRef.current.style.webkitLineClamp = 'unset';
         }
       }
     };
 
-    // Use requestAnimationFrame to ensure DOM is ready
     requestAnimationFrame(checkOverflow);
     window.addEventListener('resize', checkOverflow);
     return () => window.removeEventListener('resize', checkOverflow);
@@ -139,7 +136,6 @@ const Testimonials = () => {
   const [touchEnd, setTouchEnd] = useState(null);
   const carouselRef = useRef(null);
 
-  // Minimum swipe distance required
   const minSwipeDistance = 50;
 
   useEffect(() => {
@@ -147,7 +143,6 @@ const Testimonials = () => {
       const mobile = window.innerWidth <= 768;
       setIsMobile(mobile);
       
-      // Reset expanded state when switching between mobile and desktop
       if (!mobile && Object.keys(expandedCards).length > 0) {
         setExpandedCards({});
       }
@@ -159,7 +154,6 @@ const Testimonials = () => {
   }, [expandedCards]);
 
   const onTouchStart = (e) => {
-    // Only track touch events on the carousel container, not on buttons
     if (!e.target.closest('.see-more-btn')) {
       setTouchEnd(null);
       setTouchStart(e.targetTouches[0].clientX);
@@ -167,14 +161,12 @@ const Testimonials = () => {
   };
 
   const onTouchMove = (e) => {
-    // Only track touch events on the carousel container, not on buttons
     if (!e.target.closest('.see-more-btn')) {
       setTouchEnd(e.targetTouches[0].clientX);
     }
   };
 
   const onTouchEnd = (e) => {
-    // Don't process swipe if interaction was with see-more button
     if (e.target.closest('.see-more-btn')) {
       return;
     }
@@ -206,7 +198,6 @@ const Testimonials = () => {
     setExpandedCards({});
   };
 
-  // For desktop carousel
   const getVisibleTestimonials = () => {
     const visible = [];
     for (let i = 0; i < 3; i++) {
@@ -218,13 +209,11 @@ const Testimonials = () => {
 
   const handleToggleExpand = (cardId) => {
     setExpandedCards(prev => {
-      // If the card is already expanded, collapse it
       if (prev[cardId]) {
         const newState = {...prev};
         delete newState[cardId];
         return newState;
       }
-      // Otherwise expand it
       return {...prev, [cardId]: true};
     });
   };

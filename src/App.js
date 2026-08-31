@@ -7,8 +7,8 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
+import Logo3DAnimation from './components/Logo3DAnimation'; // Now imports .js file
 import Skills from './components/Skills';
-//import ScrollToTop from './components/ScrollToTop';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Testimonials from './components/Testimonials';
@@ -21,7 +21,6 @@ import SignalChat from './components/SignalChat';
 import HireMe from './components/HireMe';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import SupportMe from './components/SupportMe';
-
 
 // ScrollToTop component
 const ScrollToTop = () => {
@@ -61,6 +60,10 @@ const AppContent = () => {
     <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
       <ScrollToTop />
       <RedirectHandler />
+      
+      {/* 3D Background - Sits behind everything */}
+      <Logo3DAnimation />
+      
       <Header />
 
       <main className={isDarkMode ? 'dark-mode' : ''}>
@@ -128,8 +131,6 @@ const AppContent = () => {
 function App() {
   return (
     <DarkModeProvider>
-      {/* Remove basename if deploying to root domain */}
-      {/* Use basename="/React-Website" if deploying to GitHub Pages subdirectory */}
       <Router basename="/">
         <AppContent />
       </Router>

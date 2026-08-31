@@ -8,14 +8,20 @@ import {
   FaBolt,
   FaCopy,
   FaArrowRight,
-  FaLink
+  FaLink,
+  FaPhoneAlt
 } from 'react-icons/fa';
 import { SiSignal } from 'react-icons/si';
 import './SupportMe.css';
 
-// Import QR code image and Payoneer logo
+// Import QR code image and Payoneer logos
 import payoneerQr from './images/payoneer-qr.png';
-import payoneerLogo from './images/payoneer-logo.svg';
+import payoneerBlack from './images/Payoneer-black.png';
+import payoneerWhite from './images/Payoneer-white.png';
+
+// Import payment method logos
+import esewaLogo from './images/esewa-logo.png';
+import khaltiLogo from './images/khalti-logo.png';
 
 function SupportMe() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -43,6 +49,9 @@ function SupportMe() {
       alert('Copy this link: ' + link);
     });
   };
+
+  // Select Payoneer logo based on theme
+  const payoneerLogo = isDarkMode ? payoneerWhite : payoneerBlack;
 
   return (
     <div className={`support-page ${isDarkMode ? 'dark-mode' : ''}`}>
@@ -75,7 +84,7 @@ function SupportMe() {
                   <img 
                     src={payoneerLogo} 
                     alt="Payoneer" 
-                    className={`payoneer-logo ${isDarkMode ? 'dark-mode' : ''}`}
+                    className="payoneer-logo"
                   />
                 </div>
 
@@ -138,16 +147,68 @@ function SupportMe() {
             </div>
           </div>
 
-          {/* Alternative Ways to Support - Signal Only */}
+          {/* Alternative Ways to Support - Redesigned */}
           <div className="alt-support-section">
             <div className="alt-support-card">
               <div className="alt-support-content">
-                <h3>Other Ways to Support</h3>
-                <p>
-                  You can support my work through the payment option above. For eSewa, Khalti, 
-                  bank transfer, SWIFT, or other payment methods, please contact me for details. 
-                  Every bit of support is genuinely appreciated.
+                <h3 className="section-heading">Other Ways to Support</h3>
+                <p className="alt-support-text">
+                  You can support my work through the payment option above or choose from these alternative methods:
                 </p>
+                
+                {/* Payment Methods Grid */}
+                <div className="payment-methods-grid">
+                  {/* eSewa Card */}
+                  <div className="payment-method-card esewa-card">
+                    <div className="payment-method-icon">
+                      <img 
+                        src={esewaLogo} 
+                        alt="eSewa" 
+                        className="payment-method-logo"
+                      />
+                    </div>
+                    <div className="payment-method-info">
+                      <span className="payment-method-name">eSewa</span>
+                      <span className="payment-method-desc">Nepal's leading wallet</span>
+                    </div>
+                  </div>
+
+                  {/* Khalti Card - Red (Monza) */}
+                  <div className="payment-method-card khalti-card">
+                    <div className="payment-method-icon khalti-icon">
+                      <img 
+                        src={khaltiLogo} 
+                        alt="Khalti" 
+                        className="payment-method-logo"
+                      />
+                    </div>
+                    <div className="payment-method-info">
+                      <span className="payment-method-name khalti-name">Khalti</span>
+                      <span className="payment-method-desc">Digital payment service</span>
+                    </div>
+                  </div>
+
+                  {/* SWIFT Card - Blue */}
+                  <div className="payment-method-card swift-card">
+                    <div className="payment-method-icon swift-icon">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" strokeWidth="2"/>
+                        <path d="M8 12h8M12 8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
+                      </svg>
+                    </div>
+                    <div className="payment-method-info">
+                      <span className="payment-method-name swift-name">International Bank Transfer</span>
+                      <span className="payment-method-desc swift-desc">SWIFT / Wire Transfer</span>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="alt-support-footer">
+                  For other payment methods, please <span className="contact-highlight">contact me</span> for details. 
+                  Every bit of support is genuinely appreciated. ❤️
+                </p>
+
                 <div className="alt-support-links">
                   <a 
                     href={signalLink}
@@ -155,8 +216,16 @@ function SupportMe() {
                     rel="noopener noreferrer"
                     className="alt-support-btn signal-btn"
                   >
-                    <SiSignal className="btn-icon" />
-                    <span className="btn-text">Message on Signal</span>
+                    <div className="signal-btn-content">
+                      <div className="signal-icon-wrapper">
+                        <SiSignal className="btn-icon" />
+                      </div>
+                      <div className="signal-btn-text">
+                        <span className="signal-main-text">Message on Signal</span>
+                        <span className="signal-sub-text">Secure &amp; Private</span>
+                      </div>
+                      <FaPhoneAlt className="signal-phone-icon" />
+                    </div>
                   </a>
                 </div>
               </div>
@@ -165,7 +234,7 @@ function SupportMe() {
 
           {/* Why Support Section */}
           <div className="why-support-section">
-            <h2 className="why-title">Why Your Support Matters</h2>
+            <h2 className="section-heading">Why Your Support Matters</h2>
             <div className="why-grid">
               <div className="why-card">
                 <FaHeart className="why-icon" />

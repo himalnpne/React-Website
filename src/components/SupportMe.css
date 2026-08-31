@@ -19,6 +19,8 @@
   --signal-primary: #3A76F0;
   --signal-hover: #2C5DC5;
   --payoneer-primary: #FF4800;
+  --khalti-red: #C00000;
+  --swift-blue: #0066CC;
 }
 
 .dark-mode {
@@ -31,6 +33,8 @@
   --icon-color: #f73636;
   --signal-primary: #5A8EF0;
   --signal-hover: #3A76F0;
+  --khalti-red: #FF3333;
+  --swift-blue: #4A9EFF;
 }
 
 * {
@@ -215,47 +219,26 @@
   z-index: 1;
 }
 
-/* Payoneer Logo - Rectangle with white background in dark mode */
+/* Payoneer Logo - Reduced Size */
 .support-logo-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
 .payoneer-logo {
-  max-width: 200px;
+  max-width: 150px;
   width: 100%;
   height: auto;
   object-fit: contain;
   transition: all 0.4s ease;
   border-radius: 8px;
-  padding: 8px;
-}
-
-/* Light mode - original colors, transparent background */
-.payoneer-logo {
-  background: transparent;
-  filter: none;
-}
-
-/* Dark mode - white background for visibility */
-.payoneer-logo.dark-mode {
-  background: #ffffff;
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  filter: brightness(1) drop-shadow(0 0 30px rgba(255, 72, 0, 0.15));
 }
 
 .payoneer-logo:hover {
-  transform: scale(1.02);
-}
-
-.payoneer-logo.dark-mode:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 72, 0, 0.2);
+  transform: scale(1.03);
 }
 
 .support-description {
@@ -462,6 +445,7 @@
   transform: translateX(5px);
 }
 
+/* Alternative Support Section */
 .alt-support-section {
   margin: 3rem 0 2rem;
   opacity: 0;
@@ -469,7 +453,7 @@
 }
 
 .alt-support-card {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
@@ -485,15 +469,17 @@
   box-shadow: var(--box-shadow-hover);
 }
 
-.alt-support-content h3 {
-  font-size: 1.4rem;
+/* Consistent Section Headings */
+.section-heading {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 0.75rem;
   transition: color 0.3s ease;
+  text-align: center;
 }
 
-.alt-support-content p {
+.alt-support-text {
   color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.8;
@@ -502,80 +488,366 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
+/* Payment Methods Grid - Modern Card Design */
+.payment-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.payment-method-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  background: var(--glass-bg-darker);
+  border-radius: var(--border-radius);
+  border: 2px solid rgba(0, 0, 0, 0.06);
+  transition: var(--transition);
+  cursor: default;
+  gap: 0.75rem;
+  min-height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-method-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+}
+
+.payment-method-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.payment-method-card:hover::before {
+  opacity: 1;
+}
+
+/* eSewa Card Styling */
+.esewa-card {
+  border-color: #1a8d3b;
+}
+
+.esewa-card::before {
+  background: linear-gradient(135deg, rgba(26, 141, 59, 0.08), rgba(26, 141, 59, 0.02));
+}
+
+.esewa-card:hover {
+  border-color: #1a8d3b;
+  box-shadow: 0 8px 25px rgba(26, 141, 59, 0.15);
+}
+
+/* Khalti Card - Red (Monza) */
+.khalti-card {
+  border-color: var(--khalti-red);
+}
+
+.khalti-card::before {
+  background: linear-gradient(135deg, rgba(192, 0, 0, 0.08), rgba(192, 0, 0, 0.02));
+}
+
+.khalti-card:hover {
+  border-color: var(--khalti-red);
+  box-shadow: 0 8px 25px rgba(192, 0, 0, 0.15);
+}
+
+.dark-mode .khalti-card {
+  border-color: #FF3333;
+}
+
+.dark-mode .khalti-card::before {
+  background: linear-gradient(135deg, rgba(255, 51, 51, 0.08), rgba(255, 51, 51, 0.02));
+}
+
+.dark-mode .khalti-card:hover {
+  box-shadow: 0 8px 25px rgba(255, 51, 51, 0.15);
+}
+
+.khalti-name {
+  color: var(--khalti-red) !important;
+  font-weight: 700;
+}
+
+/* SWIFT Card - Blue */
+.swift-card {
+  border-color: var(--swift-blue);
+}
+
+.swift-card::before {
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.08), rgba(0, 102, 204, 0.02));
+}
+
+.swift-card:hover {
+  border-color: var(--swift-blue);
+  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.15);
+}
+
+.dark-mode .swift-card {
+  border-color: #4A9EFF;
+}
+
+.dark-mode .swift-card::before {
+  background: linear-gradient(135deg, rgba(74, 158, 255, 0.08), rgba(74, 158, 255, 0.02));
+}
+
+.dark-mode .swift-card:hover {
+  box-shadow: 0 8px 25px rgba(74, 158, 255, 0.15);
+}
+
+.swift-name {
+  color: var(--swift-blue) !important;
+  font-weight: 700;
+}
+
+.swift-desc {
+  color: var(--swift-blue) !important;
+  opacity: 0.8;
+}
+
+/* Payment Method Icon */
+.payment-method-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.dark-mode .payment-method-icon {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.payment-method-card:hover .payment-method-icon {
+  transform: scale(1.08);
+}
+
+.payment-method-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+/* Khalti Icon */
+.khalti-icon {
+  background: rgba(192, 0, 0, 0.1);
+}
+
+.dark-mode .khalti-icon {
+  background: rgba(255, 51, 51, 0.15);
+}
+
+/* SWIFT Icon */
+.payment-method-icon.swift-icon {
+  background: rgba(0, 102, 204, 0.1);
+  color: var(--swift-blue);
+}
+
+.dark-mode .payment-method-icon.swift-icon {
+  background: rgba(74, 158, 255, 0.15);
+  color: #4A9EFF;
+}
+
+.payment-method-icon.swift-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Payment Method Info */
+.payment-method-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  text-align: center;
+}
+
+.payment-method-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.payment-method-name.swift-name {
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.payment-method-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+  opacity: 0.7;
+}
+
+.alt-support-footer {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 0.5rem;
+  transition: color 0.3s ease;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-highlight {
+  color: var(--icon-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .contact-highlight {
+  color: #f73636;
+}
+
+/* Enhanced Signal Button */
 .alt-support-links {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1.5rem;
 }
 
 .alt-support-btn.signal-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2.5rem;
-  background: var(--signal-primary);
+  justify-content: center;
+  padding: 0;
+  background: linear-gradient(135deg, #3A76F0, #2C5DC5);
   color: white;
-  border-radius: 50px;
-  font-weight: 700;
+  border-radius: 60px;
   text-decoration: none;
   transition: var(--transition);
-  font-size: 1.1rem;
-  border: 2px solid var(--signal-primary);
+  border: none;
   font-family: var(--font-family);
-  box-shadow: 0 8px 25px rgba(58, 118, 240, 0.3);
-  min-width: 220px;
-  justify-content: center;
+  box-shadow: 0 8px 30px rgba(58, 118, 240, 0.35);
+  min-width: 280px;
+  overflow: hidden;
+  position: relative;
 }
 
-.alt-support-btn.signal-btn .btn-icon {
-  font-size: 1.6rem;
-  color: white;
-  transition: all 0.3s ease;
+.alt-support-btn.signal-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.6s ease;
 }
 
-.alt-support-btn.signal-btn .btn-text {
-  font-size: 1.1rem;
-  letter-spacing: 0.3px;
-}
-
-.alt-support-btn.signal-btn:hover {
-  background: var(--signal-hover);
-  border-color: var(--signal-hover);
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 35px rgba(58, 118, 240, 0.45);
-  color: white;
-}
-
-.alt-support-btn.signal-btn:hover .btn-icon {
-  transform: scale(1.1);
+.alt-support-btn.signal-btn:hover::before {
+  left: 100%;
 }
 
 .dark-mode .alt-support-btn.signal-btn {
-  background: var(--signal-primary);
-  border-color: var(--signal-primary);
-  box-shadow: 0 8px 30px rgba(90, 142, 240, 0.35);
+  background: linear-gradient(135deg, #5A8EF0, #3A76F0);
+  box-shadow: 0 8px 30px rgba(90, 142, 240, 0.4);
+}
+
+.alt-support-btn.signal-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(58, 118, 240, 0.5);
 }
 
 .dark-mode .alt-support-btn.signal-btn:hover {
-  background: var(--signal-hover);
-  border-color: var(--signal-hover);
-  box-shadow: 0 12px 40px rgba(90, 142, 240, 0.55);
+  box-shadow: 0 12px 40px rgba(90, 142, 240, 0.6);
 }
 
+.signal-btn-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 2rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.signal-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.alt-support-btn.signal-btn:hover .signal-icon-wrapper {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(-10deg) scale(1.05);
+}
+
+.signal-icon-wrapper .btn-icon {
+  font-size: 1.4rem;
+  color: white;
+}
+
+.signal-btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.signal-main-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.signal-sub-text {
+  font-size: 0.7rem;
+  opacity: 0.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.signal-phone-icon {
+  font-size: 1rem;
+  opacity: 0.7;
+  transition: var(--transition);
+  margin-left: auto;
+}
+
+.alt-support-btn.signal-btn:hover .signal-phone-icon {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+/* Why Support Section */
 .why-support-section {
   margin: 4rem 0 3rem;
   opacity: 0;
   animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) 1.2s forwards;
-}
-
-.why-title {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 2rem;
-  transition: color 0.3s ease;
 }
 
 .why-grid {
@@ -620,7 +892,7 @@
 }
 
 .why-card p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.6;
   transition: color 0.3s ease;
@@ -660,6 +932,7 @@
   }
 }
 
+/* Responsive Styles */
 @media (max-width: 992px) {
   .support-page {
     padding: 6rem 1.5rem 3rem;
@@ -671,6 +944,10 @@
   
   .support-card {
     padding: 2rem 1.5rem;
+  }
+
+  .payment-methods-grid {
+    gap: 0.75rem;
   }
 }
 
@@ -698,41 +975,108 @@
   }
   
   .payoneer-logo {
-    max-width: 160px;
-    padding: 6px;
-  }
-  
-  .payoneer-logo.dark-mode {
-    padding: 10px;
+    max-width: 130px;
   }
   
   .why-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
+  }
+
+  .why-card {
+    padding: 1.5rem 1rem;
   }
   
   .alt-support-card {
     padding: 2rem 1.2rem;
   }
-  
-  .alt-support-btn.signal-btn {
-    min-width: 180px;
-    padding: 0.9rem 2rem;
-    font-size: 1rem;
-    width: 100%;
-    max-width: 300px;
+
+  /* Mobile: Stack payment methods vertically with horizontal layout */
+  .payment-methods-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    max-width: 100%;
   }
-  
-  .alt-support-btn.signal-btn .btn-icon {
-    font-size: 1.4rem;
+
+  .payment-method-card {
+    flex-direction: row;
+    padding: 0.8rem 1.2rem;
+    min-height: 70px;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
   }
-  
-  .alt-support-btn.signal-btn .btn-text {
-    font-size: 1rem;
+
+  .payment-method-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
   }
-  
-  .alt-support-content p {
+
+  .payment-method-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .payment-method-icon.swift-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .payment-method-info {
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+  }
+
+  .payment-method-name {
     font-size: 0.95rem;
+  }
+
+  .payment-method-name.swift-name {
+    font-size: 0.85rem;
+  }
+
+  .payment-method-desc {
+    font-size: 0.7rem;
+  }
+
+  .alt-support-footer {
+    font-size: 0.9rem;
+  }
+
+  .signal-btn-content {
+    padding: 0.8rem 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .signal-icon-wrapper {
+    width: 34px;
+    height: 34px;
+  }
+
+  .signal-icon-wrapper .btn-icon {
+    font-size: 1.2rem;
+  }
+
+  .signal-main-text {
+    font-size: 0.95rem;
+  }
+
+  .signal-sub-text {
+    font-size: 0.65rem;
+  }
+
+  .signal-phone-icon {
+    font-size: 0.85rem;
+  }
+
+  .alt-support-btn.signal-btn {
+    min-width: 240px;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
   }
 }
 
@@ -755,12 +1099,7 @@
   }
   
   .payoneer-logo {
-    max-width: 140px;
-    padding: 4px;
-  }
-  
-  .payoneer-logo.dark-mode {
-    padding: 8px;
+    max-width: 110px;
   }
   
   .support-card h2 {
@@ -802,6 +1141,10 @@
   .why-card {
     padding: 1.5rem 1rem;
   }
+
+  .why-card p {
+    font-size: 0.9rem;
+  }
   
   .alt-support-card {
     padding: 1.5rem 1rem;
@@ -811,24 +1154,96 @@
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
   }
-  
-  .alt-support-content p {
+
+  /* Mobile: Stack payment methods vertically with horizontal layout */
+  .payment-methods-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    max-width: 100%;
+  }
+
+  .payment-method-card {
+    flex-direction: row;
+    padding: 0.8rem 1.2rem;
+    min-height: 70px;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .payment-method-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .payment-method-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .payment-method-icon.swift-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .payment-method-info {
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+  }
+
+  .payment-method-name {
+    font-size: 0.95rem;
+  }
+
+  .payment-method-name.swift-name {
+    font-size: 0.85rem;
+  }
+
+  .payment-method-desc {
+    font-size: 0.7rem;
+  }
+
+  .alt-support-footer {
     font-size: 0.9rem;
-    line-height: 1.6;
   }
-  
+
+  .signal-btn-content {
+    padding: 0.7rem 1.2rem;
+    gap: 0.6rem;
+  }
+
+  .signal-icon-wrapper {
+    width: 30px;
+    height: 30px;
+  }
+
+  .signal-icon-wrapper .btn-icon {
+    font-size: 1rem;
+  }
+
+  .signal-main-text {
+    font-size: 0.85rem;
+  }
+
+  .signal-sub-text {
+    font-size: 0.6rem;
+  }
+
+  .signal-phone-icon {
+    font-size: 0.75rem;
+  }
+
   .alt-support-btn.signal-btn {
-    min-width: 160px;
-    padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
-    width: 100%;
+    min-width: 200px;
   }
-  
-  .alt-support-btn.signal-btn .btn-icon {
-    font-size: 1.3rem;
+
+  .section-heading {
+    font-size: 1.6rem;
   }
-  
-  .alt-support-btn.signal-btn .btn-text {
-    font-size: 0.95rem;
+
+  .alt-support-text {
+    font-size: 0.9rem;
   }
 }

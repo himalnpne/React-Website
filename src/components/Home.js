@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useDarkMode } from '../DarkModeContext';
 import './Home.css';
+import Logo3DAnimation from './Logo3DAnimation';
 import { 
   FiCode, 
   FiPenTool, 
@@ -17,7 +18,7 @@ import {
 } from 'react-icons/fi';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaReact, FaFigma, FaWordpress, FaLinux, FaPython, FaPhp, FaJava ,FaCloudflare} from 'react-icons/fa';
+import { FaReact, FaFigma, FaWordpress, FaLinux, FaPython, FaPhp, FaJava, FaCloudflare } from 'react-icons/fa';
 import { SiAdobeillustrator, SiWireshark, SiDocker, SiDjango, SiPostgresql } from 'react-icons/si';
 import { FaFlutter } from 'react-icons/fa6';
 
@@ -29,6 +30,7 @@ function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showHobbies, setShowHobbies] = useState(false);
   const [activeTech, setActiveTech] = useState(null);
+  const [cursorGlowActive, setCursorGlowActive] = useState(false);
   const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.1,
@@ -37,7 +39,36 @@ function Home() {
   
   const orbRefs = useRef([]);
   const skillCardsRef = useRef([]);
+  const cursorGlowRef = useRef(null);
   const { isDarkMode } = useDarkMode();
+
+  // Cursor glow effect
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (cursorGlowRef.current) {
+        cursorGlowRef.current.style.left = `${e.clientX}px`;
+        cursorGlowRef.current.style.top = `${e.clientY}px`;
+      }
+    };
+
+    const handleMouseEnter = () => setCursorGlowActive(true);
+    const handleMouseLeave = () => setCursorGlowActive(false);
+
+    const homeSection = document.getElementById('home');
+    if (homeSection) {
+      homeSection.addEventListener('mousemove', handleMouseMove);
+      homeSection.addEventListener('mouseenter', handleMouseEnter);
+      homeSection.addEventListener('mouseleave', handleMouseLeave);
+    }
+
+    return () => {
+      if (homeSection) {
+        homeSection.removeEventListener('mousemove', handleMouseMove);
+        homeSection.removeEventListener('mouseenter', handleMouseEnter);
+        homeSection.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, []);
 
   // Simple mouse move effect
   useEffect(() => {
@@ -121,7 +152,16 @@ function Home() {
   const toggleHobbies = () => {
     setShowHobbies(!showHobbies);
   };
-  
+
+  // Touch feedback handler
+  const handleTouchStart = (e) => {
+    const target = e.currentTarget;
+    target.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      target.style.transform = '';
+    }, 150);
+  };
+
   const skills = [
     {
       icon: <FiLayers />,
@@ -192,7 +232,7 @@ function Home() {
     { icon: <SiPostgresql />, name: "PostgreSQL", color: "#353935" },
     { icon: <FaPhp />, name: "PHP", color: "#023020" },
     { icon: <FaPython />, name: "Python", color: "#28282B" },
-     { icon: <FaCloudflare />, name: "cloudflare", color: "#080825" },
+    { icon: <FaCloudflare />, name: "Cloudflare", color: "#080825" },
     { icon: <FaJava />, name: "Java", color: "#1B1212" },
   ];
 
@@ -231,19 +271,37 @@ function Home() {
         staggerChildren: 0.05,
         bounce: 0.2
       }
+    },
+    exit: {
+      opacity: 0,
+      height: 0,
+      transition: {
+        when: "afterChildren",
+        staggerChildren: 0.03,
+        staggerDirection: -1
+      }
     }
   };
 
   const hobbyItem = {
-    hidden: { y: -10, opacity: 0 },
+    hidden: { y: -10, opacity: 0, scale: 0.9 },
     visible: {
       y: 0,
       opacity: 1,
+      scale: 1,
       transition: {
         type: "spring",
         stiffness: 300,
         damping: 12,
         bounce: 0.3
+      }
+    },
+    exit: {
+      y: -10,
+      opacity: 0,
+      scale: 0.9,
+      transition: {
+        duration: 0.2
       }
     }
   };
@@ -269,21 +327,28 @@ function Home() {
         damping: 15,
         duration: 0.2 
       }
+    },
+    tap: {
+      scale: 0.9,
+      transition: { duration: 0.1 }
     }
   };
 
   const ctaButton = {
     hover: {
-      y: -5,
-      boxShadow: "0 8px 25px rgba(1, 75, 146, 0.3)",
+      y: -6,
+      scale: 1.02,
+      boxShadow: "0 15px 45px rgba(1, 75, 146, 0.3)",
       transition: { 
         type: "spring", 
         stiffness: 300,
+        damping: 15,
         duration: 0.3
       }
     },
     tap: { 
-      scale: 0.95 
+      scale: 0.96,
+      transition: { duration: 0.1 }
     }
   };
 
@@ -294,10 +359,10 @@ function Home() {
         key={skill.title}
         variants={item}
         ref={el => skillCardsRef.current[index] = el}
+        data-color={skill.color}
         whileHover={{
-          y: -10,
-          background: `rgba(${hexToRgb(skill.color)}, 0.1)`,
-          boxShadow: `0 12px 40px rgba(${hexToRgb(skill.color)}, 0.15)`,
+          y: -12,
+          scale: 1.02,
           transition: { 
             type: "spring", 
             stiffness: 300,
@@ -306,17 +371,39 @@ function Home() {
             duration: 0.3
           }
         }}
-        style={{ borderTop: `3px solid ${skill.color}` }}
+        whileTap={{
+          scale: 0.98,
+          transition: { duration: 0.1 }
+        }}
+        onTouchStart={handleTouchStart}
+        style={{ 
+          '--card-border-color': skill.color,
+          '--card-border-color-hover': `linear-gradient(135deg, ${skill.color}, ${adjustColor(skill.color, 30)})`
+        }}
       >
         <div className="skill-icon" style={{ color: skill.color }}>
           {skill.icon}
         </div>
         <h3 className="skill-title">{skill.title}</h3>
         <p className="skill-description">{skill.description}</p>
-        <div className="skill-card-highlight" />
       </motion.div>
     ));
   }, [skills, item]);
+
+  const adjustColor = (hex, percent) => {
+    const colors = {
+      '#8A2BE2': '#9B4BED',
+      '#00BFFF': '#33CCFF',
+      '#FF6347': '#FF7A5C',
+      '#20B2AA': '#2FCDBF',
+      '#9370DB': '#A88ADD',
+      '#FFA500': '#FFB83D',
+      '#FF69B4': '#FF82C0',
+      '#4682B4': '#5A96C4',
+      '#32CD32': '#4AD84A'
+    };
+    return colors[hex] || '#666666';
+  };
 
   return (
     <section 
@@ -324,16 +411,22 @@ function Home() {
       className={`home ${isDarkMode ? 'dark-mode' : ''}`} 
       ref={ref}
     >
-      {/* Mountain Background with full edge blur - between HIMALNPNE and subtitle */}
+      {/* 3D LOGO ANIMATION - Full screen background */}
+      <Logo3DAnimation />
+
+      {/* Cursor Glow Effect */}
+      <div 
+        ref={cursorGlowRef}
+        className={`cursor-glow ${cursorGlowActive ? 'active' : ''}`}
+      />
+
+      {/* Mountain Background */}
       <div className="mountain-bg">
         <img 
           src={isDarkMode ? MountainDark : MountainLight}
           alt="Mountain background"
           className="mountain-svg"
         />
-        <div className="mountain-fade"></div>
-        <div className="mountain-left-fade"></div>
-        <div className="mountain-right-fade"></div>
       </div>
 
       {/* Dynamic floating accents */}
@@ -400,13 +493,24 @@ function Home() {
             background: `linear-gradient(${Math.random() * 360}deg, 
               hsl(${Math.random() * 360}, 80%, 60%), 
               hsl(${Math.random() * 360}, 80%, 60%))`,
-            opacity: 0.3 + Math.random() * 0.3
+            opacity: 0.15 + Math.random() * 0.15
           }}
         />
       ))}
 
       <div className="home-content">
-        <div className="name-container">
+        <motion.div 
+          className="name-container"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            type: "spring",
+            damping: 12,
+            stiffness: 100,
+            bounce: 0.3
+          }}
+        >
           <h1 className="home-title">HIMAL NEUPANE</h1>
           <motion.div 
             className="aka-container"
@@ -425,7 +529,7 @@ function Home() {
             </div>
             <div className="himalnpne-text">HIMALNPNE</div>
           </motion.div>
-        </div>
+        </motion.div>
         
         <motion.p 
           className="home-subtitle"
@@ -456,22 +560,37 @@ function Home() {
               className="tech-icon"
               variants={techItem}
               whileHover="hover"
+              whileTap="tap"
               onMouseEnter={() => setActiveTech(tech.name)}
               onMouseLeave={() => setActiveTech(null)}
-              style={{ color: tech.color }}
+              onTouchStart={handleTouchStart}
+              style={{ 
+                color: tech.color,
+                cursor: 'pointer'
+              }}
             >
               {tech.icon}
-              {activeTech === tech.name && (
-                <motion.span 
-                  className="tech-tooltip"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  style={{ backgroundColor: tech.color }}
-                >
-                  {tech.name}
-                </motion.span>
-              )}
+              <AnimatePresence>
+                {activeTech === tech.name && (
+                  <motion.span 
+                    className="tech-tooltip"
+                    initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.9 }}
+                    transition={{ 
+                      type: "spring", 
+                      stiffness: 500, 
+                      damping: 15 
+                    }}
+                    style={{ 
+                      backgroundColor: isDarkMode ? '#023020' : tech.color,
+                      color: isDarkMode ? '#e8f0f8' : '#ffffff'
+                    }}
+                  >
+                    {tech.name}
+                  </motion.span>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </motion.div>
@@ -490,15 +609,20 @@ function Home() {
             className="hobbies-toggle" 
             onClick={toggleHobbies}
             whileHover={{ 
-              y: -3,
-              boxShadow: "0 5px 15px rgba(1, 75, 146, 0.2)",
+              y: -4,
+              scale: 1.02,
+              boxShadow: "0 12px 35px rgba(1, 75, 146, 0.2)",
               transition: {
                 type: "spring",
                 stiffness: 400,
                 damping: 10
               }
             }}
-            whileTap={{ scale: 0.98 }}
+            whileTap={{ 
+              scale: 0.96,
+              transition: { duration: 0.1 }
+            }}
+            onTouchStart={handleTouchStart}
           >
             My Hobbies & Interests 
             <motion.span
@@ -519,7 +643,7 @@ function Home() {
                 className="interest-tags"
                 initial="hidden"
                 animate="visible"
-                exit="hidden"
+                exit="exit"
                 variants={hobbiesContainer}
               >
                 {[
@@ -533,18 +657,27 @@ function Home() {
                     key={hobby}
                     variants={hobbyItem}
                     whileHover={{ 
-                      scale: 1.05,
-                      y: -3,
-                      boxShadow: "0 5px 15px rgba(1, 75, 146, 0.1)",
+                      scale: 1.08,
+                      y: -4,
+                      boxShadow: "0 8px 25px rgba(1, 75, 146, 0.1)",
                       transition: {
                         type: "spring",
                         stiffness: 400,
                         damping: 10
                       }
                     }}
+                    whileTap={{
+                      scale: 0.94,
+                      transition: { duration: 0.1 }
+                    }}
+                    onTouchStart={handleTouchStart}
                     style={{
-                      background: `hsl(${index * 30}, 80%, 90%)`,
-                      color: `hsl(${index * 30}, 80%, 30%)`
+                      background: isDarkMode 
+                        ? `hsla(${index * 30}, 70%, 30%, 0.2)` 
+                        : `hsl(${index * 30}, 80%, 90%)`,
+                      color: isDarkMode 
+                        ? `hsl(${index * 30}, 70%, 70%)` 
+                        : `hsl(${index * 30}, 80%, 30%)`
                     }}
                   >
                     {hobby}
@@ -559,18 +692,25 @@ function Home() {
           className="cta-button"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.6, type: "spring", bounce: 0.4 }}
+          transition={{ 
+            delay: 1.6, 
+            type: "spring", 
+            bounce: 0.4,
+            stiffness: 100,
+            damping: 12
+          }}
           whileHover="hover"
           whileTap="tap"
           variants={ctaButton}
+          onTouchStart={handleTouchStart}
         >
           <Link to="/contact" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
             <span className="cta-text">Let's Create Together</span>
             <motion.span 
               className="cta-arrow"
               initial={{ x: 0 }}
-              whileHover={{ x: 5 }}
-              transition={{ type: "spring", stiffness: 500 }}
+              whileHover={{ x: 8, scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 500, damping: 15 }}
             >
               <FiArrowRight />
             </motion.span>
@@ -579,15 +719,6 @@ function Home() {
       </div>
     </section>
   );
-}
-
-// Helper function to convert hex to rgb
-function hexToRgb(hex) {
-  hex = hex.replace('#', '');
-  const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
-  const b = parseInt(hex.substring(4, 6), 16);
-  return `${r}, ${g}, ${b}`;
 }
 
 export default Home;

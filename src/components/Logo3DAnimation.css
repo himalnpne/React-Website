@@ -1,0 +1,261 @@
+/* Logo3DAnimation.css - H and N Logos with Sharp Edge Transition */
+
+/* The main layer - Full screen background overlay */
+.bg-3d-layer {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  opacity: 1 !important;
+}
+
+/* Scene wrapper - centered in the viewport */
+.bg-scene-wrapper {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  perspective: 1000px;
+  width: 900px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Subtle glow - increased visibility */
+.bg-scene-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 1000px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(150, 6, 5, 0.08),
+    transparent 70%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* Scene container */
+.bg-scene {
+  position: relative;
+  width: 800px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.08s linear;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo halves - Sharp edge clipping */
+.bg-logo-half {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sharp edge - no rounded corners, clean cut */
+.bg-logo-half.left-half {
+  clip-path: inset(0 50% 0 0);
+  -webkit-clip-path: inset(0 50% 0 0);
+}
+
+.bg-logo-half.right-half {
+  clip-path: inset(0 0 0 50%);
+  -webkit-clip-path: inset(0 0 0 50%);
+}
+
+/* Logo container - INCREASED SIZE (twice the original) */
+.bg-logo-container {
+  width: 500px;  /* DOUBLED from 250px */
+  height: 500px; /* DOUBLED from 250px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  flex-shrink: 0;
+}
+
+/* Logo image - clean and sharp with subtle blur effect */
+.bg-logo-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  filter: blur(0.5px) drop-shadow(0 0 40px rgba(150, 6, 5, 0.08));
+  transition: filter 0.3s ease;
+}
+
+/* SVG styling - fill container completely with proper scaling */
+.bg-logo-image svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  /* Preserve aspect ratio */
+  aspect-ratio: 1/1;
+}
+
+.bg-logo-image svg path {
+  fill: #960605;
+  transition: fill 0.3s ease;
+}
+
+/* Subtle blur on hover/interaction */
+.bg-logo-image:hover {
+  filter: blur(1px) drop-shadow(0 0 60px rgba(150, 6, 5, 0.15));
+}
+
+/* Dark mode - adjusted colors and blur */
+@media (prefers-color-scheme: dark) {
+  .bg-logo-image {
+    filter: blur(0.5px) drop-shadow(0 0 40px rgba(255, 68, 68, 0.06));
+  }
+  
+  .bg-logo-image svg path {
+    fill: #ff4444;
+  }
+  
+  .bg-scene-wrapper::before {
+    background: radial-gradient(
+      circle,
+      rgba(255, 68, 68, 0.05),
+      transparent 70%
+    );
+  }
+  
+  .bg-logo-image:hover {
+    filter: blur(1px) drop-shadow(0 0 60px rgba(255, 68, 68, 0.15));
+  }
+}
+
+/* Mobile responsive - maintain proportional logo size */
+@media (max-width: 1024px) {
+  .bg-scene-wrapper {
+    transform: translate(-50%, -50%) scale(0.75) !important;
+    width: 800px;
+    height: 450px;
+  }
+  
+  .bg-scene-wrapper::before {
+    width: 900px;
+    height: 600px;
+  }
+  
+  .bg-scene {
+    width: 700px;
+    height: 350px;
+  }
+  
+  .bg-logo-container {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-scene-wrapper {
+    transform: translate(-50%, -50%) scale(0.6) !important;
+    width: 700px;
+    height: 400px;
+  }
+  
+  .bg-scene-wrapper::before {
+    width: 800px;
+    height: 500px;
+  }
+  
+  .bg-scene {
+    width: 600px;
+    height: 300px;
+  }
+  
+  .bg-logo-container {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .bg-3d-layer {
+    opacity: 0.7;
+  }
+  
+  .bg-logo-image {
+    filter: blur(0.3px) drop-shadow(0 0 30px rgba(150, 6, 5, 0.05));
+  }
+}
+
+@media (max-width: 576px) {
+  .bg-scene-wrapper {
+    transform: translate(-50%, -50%) scale(0.4) !important;
+    width: 600px;
+    height: 350px;
+  }
+  
+  .bg-scene-wrapper::before {
+    display: none;
+  }
+  
+  .bg-scene {
+    width: 500px;
+    height: 250px;
+  }
+  
+  .bg-logo-container {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .bg-3d-layer {
+    opacity: 0.5;
+  }
+  
+  .bg-logo-image {
+    filter: blur(0.2px) drop-shadow(0 0 20px rgba(150, 6, 5, 0.03));
+  }
+}
+
+/* Ensure sharp edges on all devices */
+.bg-logo-half,
+.bg-logo-container,
+.bg-logo-image {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .bg-scene,
+  .bg-logo-half,
+  .bg-logo-image,
+  .bg-3d-layer {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .bg-logo-image {
+    filter: blur(0px) !important;
+  }
+}
