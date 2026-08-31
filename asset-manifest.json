@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.962cd768.css",
-    "main.js": "/static/js/main.06c3a1dc.js",
+    "main.css": "/static/css/main.ffd20913.css",
+    "main.js": "/static/js/main.e8ff9cee.js",
     "static/media/love_alaram.webp": "/static/media/love_alaram.43a2b17e10055fd8b7b3.webp",
     "static/media/taxi_driver.webp": "/static/media/taxi_driver.1d6a803ad12a9b6a1613.webp",
     "static/media/pendrive-authenticity.jpg": "/static/media/pendrive-authenticity.e90b8817f11b63262146.jpg",
@@ -77,6 +77,8 @@
     "static/media/IMG_20251201_112015.jpg": "/static/media/IMG_20251201_112015.0013c3867be3791be243.jpg",
     "static/media/temple-9498245_640.jpg": "/static/media/temple-9498245_640.7725f1d5471597c8534e.jpg",
     "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/Payoneer-white.png": "/static/media/Payoneer-white.92a5067803319c91bbf5.png",
+    "static/media/Payoneer-black.png": "/static/media/Payoneer-black.450f066ec1457b64a68c.png",
     "static/media/reborn_rich.webp": "/static/media/reborn_rich.450fce6a7bb0eb1a3978.webp",
     "static/media/DSC00088.jpg": "/static/media/DSC00088.867ca767429345d254ba.jpg",
     "static/media/noodles-9528889_640.jpg": "/static/media/noodles-9528889_640.2c55c11622a659c1abab.jpg",
@@ -115,10 +117,12 @@
     "static/media/go_go_squid.webp": "/static/media/go_go_squid.2e42a53445ec881d68f7.webp",
     "static/media/nature-9498242_640.jpg": "/static/media/nature-9498242_640.45e71f395272f4f15daa.jpg",
     "static/media/00002.jpg": "/static/media/00002.33cc69603f535d3d4ac2.jpg",
+    "static/media/signal-qr.jpeg": "/static/media/signal-qr.be946bbaadd08052d3fb.jpeg",
     "static/media/buddhism-9456599_640.jpg": "/static/media/buddhism-9456599_640.8fcde2e1f4f0c35872ed.jpg",
     "static/media/messaging-privacy.jpg": "/static/media/messaging-privacy.a1d57d3e3396ff2301b5.jpg",
     "static/media/once_we_get_married.webp": "/static/media/once_we_get_married.e1c92aec043056bd96ec.webp",
     "static/media/mist-9432928_640.jpg": "/static/media/mist-9432928_640.9288d31f783153cbd433.jpg",
+    "static/media/khalti-logo.png": "/static/media/khalti-logo.b9235cab321d8d0aae0d.png",
     "static/media/backstreet_rookie.webp": "/static/media/backstreet_rookie.319f119dcdfad3c16595.webp",
     "static/media/bestfreevpn.jpg": "/static/media/bestfreevpn.0b91392349c43a9f564b.jpg",
     "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
@@ -141,9 +145,9 @@
     "static/media/my_demon.webp": "/static/media/my_demon.08ca8604e78c92647681.webp",
     "static/media/move_to_heaven.webp": "/static/media/move_to_heaven.46de6d7564d68de8d9a9.webp",
     "static/media/24_Hours_of_Le_Mans.png": "/static/media/24_Hours_of_Le_Mans.3671920a29118c06e07d.png",
+    "static/media/esewa-logo.png": "/static/media/esewa-logo.8435b48a180d07e5c10f.png",
     "static/media/JosefinSans-Regular.woff": "/static/media/JosefinSans-Regular.c8e74084b240c16bcb86.woff",
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
-    "static/media/payoneer-logo.svg": "/static/media/payoneer-logo.18489e2bdec9a83aa02f1225a93f2b7b.svg",
     "static/media/motogp.png": "/static/media/motogp.e81012c91a13424bf40f.png",
     "static/media/mountain-light.svg": "/static/media/mountain-light.dbd354416bf6be9196127df86770f66f.svg",
     "static/media/mountain-dark.svg": "/static/media/mountain-dark.88ea50783e9831ac35c8b4673939c737.svg",
@@ -153,11 +157,11 @@
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "index.html": "/index.html",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
-    "main.962cd768.css.map": "/static/css/main.962cd768.css.map",
-    "main.06c3a1dc.js.map": "/static/js/main.06c3a1dc.js.map"
+    "main.ffd20913.css.map": "/static/css/main.ffd20913.css.map",
+    "main.e8ff9cee.js.map": "/static/js/main.e8ff9cee.js.map"
   },
   "entrypoints": [
-    "static/css/main.962cd768.css",
-    "static/js/main.06c3a1dc.js"
+    "static/css/main.ffd20913.css",
+    "static/js/main.e8ff9cee.js"
   ]
 }
